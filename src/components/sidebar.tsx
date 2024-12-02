@@ -2,13 +2,12 @@
 import images from "@/assets/images";
 import {
   HiOutlineHome,
-  HiOutlineChartBar,
   HiOutlineClipboard,
   HiOutlineCog,
   HiOutlineLightBulb,
   HiOutlineUserCircle,
 } from "react-icons/hi2";
-
+import { LuNewspaper } from "react-icons/lu";
 
 const Sidebar = () => {
   return (
@@ -28,17 +27,18 @@ const Sidebar = () => {
             {/* Navigation Links */}
             <a
             href="#"
-            className="p-1.5 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
+            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
             <HiOutlineHome className="w-6 h-6" />
-            <span className=" font-regular">Home</span>
+            <span className=" font-regular text-sm">Home</span>
             </a>
 
             <a
             href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
+            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
-            <HiOutlineChartBar className="w-6 h-6" />
+            <LuNewspaper className="w-6 h-5" />
+            <span className=" font-regular text-sm">News</span>
             </a>
 
             <a
