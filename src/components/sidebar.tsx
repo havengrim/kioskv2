@@ -1,4 +1,5 @@
 
+import images from "@/assets/images";
 import {
   HiOutlineHome,
   HiOutlineChartBar,
@@ -7,6 +8,7 @@ import {
   HiOutlineLightBulb,
   HiOutlineUserCircle,
 } from "react-icons/hi2";
+
 
 const Sidebar = () => {
   return (
@@ -17,8 +19,8 @@ const Sidebar = () => {
             {/* Logo */}
             <a href="#">
             <img
-                className="w-auto h-6"
-                src="https://merakiui.com/images/logo.svg"
+                className="w-auto h-10"
+                src={images.logo}
                 alt="Logo"
             />
             </a>
