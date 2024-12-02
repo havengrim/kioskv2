@@ -1,72 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
-  <!-- Tailwind CSS (via CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-</head>
-
-<body class="bg-gray-100">
-
-  <!-- Swiper -->
-  <div class="swiper mySwiper w-full h-screen relative">
-    <div class="absolute z-50 flex justify-center w-full mt-5">
-        <div class="bg-[#1C1A19] px-10 py-4 flex gap-8 rounded-full shadow-lg">
-          <!-- Navbar Icons -->
-          <a href="#home" class="text-white hover:text-yellow-300 flex flex-col items-center"><i class="fas fa-home text-2xl"></i><span>Home</span></a>
-          <a href="#about" class="text-white hover:text-yellow-300 flex flex-col items-center"><i class="fas fa-folder text-2xl"></i><span>Projects</span></a>
-          <a href="#services" class="text-white hover:text-yellow-300 flex flex-col items-center"><i class="fas fa-briefcase text-2xl"></i><span>Tools</span></a>
-          <a href="#settings" class="text-white hover:text-yellow-300 flex flex-col items-center"><i class="fas fa-cogs text-2xl"></i><span>Settings</span></a>
-          <a href="#edit" class="text-white hover:text-yellow-300 flex flex-col items-center"><i class="fas fa-edit text-2xl"></i><span>Edit</span></a>
-        </div>
-      </div>
-    <div class="swiper-wrapper">
-      <!-- Slide 1: Your GitHub image -->
-      <div class="swiper-slide">
-        <img src="https://github.com/havengrim/images/blob/9bf6fef1483344b6efacc61a053de104154eeca5/page1.jpg?raw=true" alt="GitHub Image" class="w-full h-full object-cover" />
-      </div>
-      
-      <!-- Other slides with colors -->
-      <div class="swiper-slide flex justify-center items-center bg-blue-500 text-white text-xl">Slide 2</div>
-      <div class="swiper-slide flex justify-center items-center bg-green-500 text-white text-xl">Slide 3</div>
-      <div class="swiper-slide flex justify-center items-center bg-yellow-500 text-white text-xl">Slide 4</div>
-      <div class="swiper-slide flex justify-center items-center bg-green-800 text-white text-xl">Slide 5</div>
-      <div class="swiper-slide flex justify-center items-center bg-red-800 text-white text-xl">Slide 6</div>
-      <div class="swiper-slide flex justify-center items-center bg-blue-800 text-white text-xl">Slide 7</div>
-      <div class="swiper-slide flex justify-center items-center bg-pink-500 text-white text-xl">Slide 8</div>
-      <div class="swiper-slide flex justify-center items-center bg-gray-800 text-white text-xl">Slide 9</div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
