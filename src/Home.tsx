@@ -31,7 +31,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex flex-col">
       <Sidebar />
       <div className="container mx-auto p-4 pl-20">
         <h1 className="text-3xl font-semibold">Hello Welcome</h1>
@@ -76,7 +76,7 @@ const Home = () => {
           </Swiper>
         </div>
         <div>
-          <h1 className="text-2xl font-semibold text-center mb-6">
+          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
             Choose Section to Get the Latest Update
           </h1>
           <div className="grid grid-cols-4 gap-5">
@@ -99,7 +99,7 @@ const Home = () => {
           </div>
 
           <section className="py-24">
-            <h1 className="text-2xl font-semibold text-center mb-6">
+            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center ">
               Mission and Vision of DSWD
             </h1>
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -190,6 +190,16 @@ const Home = () => {
           </section>
         </div>
       </div>
+      <footer className="bg-gray-800 text-white py-6 text-center">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Department of Social Welfare and Development (DSWD). All rights reserved.
+          </p>
+          <p className="text-xs mt-1">
+            Government Center, Maimpis, City of San Fernando Pampanga
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
