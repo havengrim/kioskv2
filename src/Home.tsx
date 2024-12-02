@@ -1,12 +1,8 @@
 import Sidebar from "@/components/sidebar";
 import { Badge } from "@/components/ui/badge";
+import images from "@/assets/images";
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+    Card
   } from "@/components/ui/card"
 import {
   Avatar,
@@ -19,6 +15,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Button } from "./components/ui/button";
+import { GoArrowRight } from "react-icons/go";
 
 const Home = () => {
   // Array of image URLs
@@ -68,7 +66,7 @@ const Home = () => {
             navigation={true}
             loop={true} 
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-80 mb-8"
+            className="mySwiper rounded-md h-80 mb-20"
           >
             {/* Loop through the image URLs and create a SwiperSlide for each */}
             {imageUrls.map((url, index) => (
@@ -82,44 +80,76 @@ const Home = () => {
             ))}
           </Swiper>
         </div>
-        <div className="grid grid-cols-3 gap-5">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <p>Card Content</p>
-                </CardContent>
-                <CardFooter>
-                    <p>Card Footer</p>
-                </CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <p>Card Content</p>
-                </CardContent>
-                <CardFooter>
-                    <p>Card Footer</p>
-                </CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <p>Card Content</p>
-                </CardContent>
-                <CardFooter>
-                    <p>Card Footer</p>
-                </CardFooter>
-            </Card>
+        <div>
+                <h1 className="text-2xl font-semibold text-center mb-6">
+                    Choose Section to Get the Latest Update
+                </h1>
+            <div className="grid grid-cols-4 gap-5">
+                <Card style={{ backgroundImage: `url(${images.hrppms})` }} className="bg-cover bg-no-repeat h-32 cursor-pointer">
+                </Card>
+                <Card style={{ backgroundImage: `url(${images.lds})` }} className="bg-cover bg-no-repeat h-32 cursor-pointer">
+                </Card>
+                <Card style={{ backgroundImage: `url(${images.hrws})` }} className="bg-cover bg-no-repeat h-32 cursor-pointer">
+                </Card>
+                <Card style={{ backgroundImage: `url(${images.pas})` }} className="bg-cover bg-no-repeat h-32 cursor-pointer">
+                </Card>
+            </div>
+            
+            <section className="py-24">
+            <h1 className="text-2xl font-semibold text-center mb-6">
+                    Mission and Vision of DSWD
+                </h1>
+                    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
+                        {/* Mobile: Image first, Desktop: Text first */}
+                        <div className="order-1 sm:order-1">
+                        <img
+                            src={images.hrppms}
+                            alt="A representative image for Graduate School"
+                            className="w-full h-auto rounded-lg shadow-md"
+                        />
+                        </div>
 
+                        <div className="order-2 sm:order-2">
+                        <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
+                            Vision
+                        </h3>
+                        <p className="text-lg mt-4 leading-relaxed text-gray-600">
+                            We envision a society where the poor, vulnerable and disadvantaged are empowered for an improved quality of life. Towards this end, DSWD will be the world’s standard for the delivery of coordinated social services and social protection for poverty reduction by 2030.
+                        </p>
+                        <Button className="rounded-full mt-4 bg-[#630000] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center">
+                            Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
+                        </Button>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+                <section className="py-24">
+                    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
+                        {/* Mobile: Image first, Desktop: Text first */}
+                        <div className="order-2 sm:order-2">
+                        <img
+                            src={images.hrppms}
+                            alt="A representative image for Graduate School"
+                            className="w-full h-auto rounded-lg shadow-md"
+                        />
+                        </div>
+
+                        <div className="order-1 sm:order-1">
+                        <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
+                            Mission
+                        </h3>
+                        <p className="text-lg mt-4 leading-relaxed text-gray-600">
+                        To develop, implement and coordinate social protection and poverty reduction solutions for and with the poor, vulnerable and disadvantaged.
+                        </p>
+                        <Button className="rounded-full mt-4 bg-[#630000] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center">
+                            Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
+                        </Button>
+                        </div>
+                    </div>
+                    </div>
+                </section>
         </div>
       </div>
 
