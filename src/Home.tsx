@@ -1,7 +1,7 @@
 import Sidebar from "@/components/sidebar";
 import { Badge } from "@/components/ui/badge";
 import images from "@/assets/images";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Avatar,
   AvatarFallback,
@@ -153,6 +153,39 @@ const Home = () => {
                   </Button>
                 </div>
               </div>
+            </div>
+          </section>
+          <section className="py-24">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <h3 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
+                Core Values That Guide Our Mission
+                </h3>
+                <div className="grid grid-cols-3 gap-4">
+                    <Card className="flex flex-col justify-center items-center">
+                        <CardHeader>
+                           <img src={images.value1} alt="respect" className="h-20 w-20"/>
+                        </CardHeader>
+                        <CardContent>
+                        <span className="font-semibold text-md">Respect for Human Dignity</span>
+                        </CardContent>
+                    </Card>
+                    <Card className="flex flex-col justify-center items-center">
+                        <CardHeader>
+                           <img src={images.value2} alt="integrity" className="h-20 w-20"/>
+                        </CardHeader>
+                        <CardContent>
+                        <span className="font-semibold text-md">Integrity</span>
+                        </CardContent>
+                    </Card>
+                    <Card className="flex flex-col justify-center items-center">
+                        <CardHeader>
+                           <img src={images.value3} alt="excellence" className="h-20 w-20"/>
+                        </CardHeader>
+                        <CardContent>
+                        <span className="font-semibold text-md">Service Excellence</span>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
           </section>
         </div>
