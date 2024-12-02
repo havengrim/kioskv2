@@ -1,6 +1,14 @@
 import Sidebar from "@/components/sidebar";
 import { Badge } from "@/components/ui/badge";
 import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+import {
   Avatar,
   AvatarFallback,
   AvatarImage,
@@ -29,7 +37,7 @@ const Home = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 pl-20"> {/* Add padding-left to create space for the sidebar */}
         <h1 className="text-2xl">Hello Welcome</h1>
         <div className="flex w-full justify-end gap-2">
           <Badge className="flex gap-2 p-2 bg-blue-500">
@@ -45,7 +53,8 @@ const Home = () => {
         </div>
         
         {/* Swiper Carousel Section */}
-        <div className="mt-5">
+        <div className="mt-5 flex">
+
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -59,7 +68,7 @@ const Home = () => {
             navigation={true}
             loop={true} 
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-80"
+            className="mySwiper rounded-md h-80 mb-8"
           >
             {/* Loop through the image URLs and create a SwiperSlide for each */}
             {imageUrls.map((url, index) => (
@@ -73,7 +82,47 @@ const Home = () => {
             ))}
           </Swiper>
         </div>
+        <div className="grid grid-cols-3 gap-5">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Card Title</CardTitle>
+                    <CardDescription>Card Description</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <p>Card Content</p>
+                </CardContent>
+                <CardFooter>
+                    <p>Card Footer</p>
+                </CardFooter>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>Card Title</CardTitle>
+                    <CardDescription>Card Description</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <p>Card Content</p>
+                </CardContent>
+                <CardFooter>
+                    <p>Card Footer</p>
+                </CardFooter>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>Card Title</CardTitle>
+                    <CardDescription>Card Description</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <p>Card Content</p>
+                </CardContent>
+                <CardFooter>
+                    <p>Card Footer</p>
+                </CardFooter>
+            </Card>
+
+        </div>
       </div>
+
     </div>
   );
 };
