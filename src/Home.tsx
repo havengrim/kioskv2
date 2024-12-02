@@ -106,7 +106,7 @@ const Home = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
                 <div className="order-1 sm:order-1">
                   <img
-                    src={images.hrppms}
+                    src={images.cover2}
                     alt="A representative image for Graduate School"
                     className="w-full h-auto rounded-lg shadow-md"
                   />
@@ -134,7 +134,7 @@ const Home = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
                 <div className="order-2 sm:order-2">
                   <img
-                    src={images.hrppms}
+                    src={images.cover3}
                     alt="A representative image for Graduate School"
                     className="w-full h-auto rounded-lg shadow-md"
                   />
