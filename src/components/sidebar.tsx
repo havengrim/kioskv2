@@ -11,7 +11,7 @@ import { LuNewspaper } from "react-icons/lu";
 
 const Sidebar = () => {
   return (
-    <div className="fixed w-full left-0 top-0">
+    <div className="fixed left-0 top-0">
 
         <aside className="flex flex-col items-center w-16 h-screen py-8 overflow-y-auto bg-white border-r rtl:border-l rtl:border-r-0 dark:bg-gray-900 dark:border-gray-700">
         <nav className="flex flex-col items-center flex-1 space-y-6">
@@ -26,7 +26,7 @@ const Sidebar = () => {
 
             {/* Navigation Links */}
             <a
-            href="#"
+            href="/"
             className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
             <HiOutlineHome className="w-6 h-6" />
