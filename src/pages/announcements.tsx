@@ -3,17 +3,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; // Ensure autoplay CSS is also imported
 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 
 const Announcement = () => {
   // Example data for announcements
   const announcements = [
-    { title: "New Academic Year", description: "The new academic year starts in September." },
-    { title: "Extracurricular Activities", description: "Sign-ups for extracurricular activities are open." },
-    { title: "Annual Science Fair", description: "The annual science fair is happening next month." },
-    { title: "Holiday Schedule", description: "Check the holiday schedule for the upcoming semester." },
-    { title: "Graduation Date", description: "The graduation ceremony will be held on May 15th." },
+    { title: "Pantawid Pamilya Program", description: "Applications for the Pantawid Pamilya program are now open. Apply today!" },
+    { title: "Social Amelioration Program", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
+    { title: "Kalahi-CIDSS", description: "The Kalahi-CIDSS program is supporting local communities to improve infrastructure and livelihood." },
+    { title: "Tahanan ng Pagmamahal", description: "The Tahanan ng Pagmamahal centers are open for support and shelter to victims of abuse." },
+    { title: "Child Protection Services", description: "Join the DSWD’s child protection program to ensure the welfare of children in your community." },
+    { title: "Bayanihan Outreach", description: "The Bayanihan outreach program aims to distribute basic goods and services to remote areas." },
+    { title: "Disaster Response & Relief", description: "DSWD is ready to provide immediate assistance to areas affected by natural disasters." },
+    { title: "Senior Citizens Assistance", description: "The senior citizens’ assistance program will provide financial help to the elderly this month." },
+    { title: "Early Childhood Care and Development", description: "DSWD promotes early childhood development initiatives to support families with young children." },
+    { title: "Adoption and Foster Care Services", description: "Applications for adoption and foster care programs are now open for qualified families." },
   ];
 
   // Function to get random image from Lorem Picsum
@@ -28,7 +34,7 @@ const Announcement = () => {
 
       {/* Main content */}
       <div className="container mx-auto p-4 lg:pl-20">
-        <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 mb-6">
+        <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 mb-3">
           Announcements
         </h2>
         <p className="mb-10 text-center text-gray-700">
@@ -50,10 +56,11 @@ const Announcement = () => {
           }}
           pagination={true}
           autoplay={{
-            delay: 500, // Delay between slides (in ms)
+            delay: 3000, // Delay between slides (in ms)
             disableOnInteraction: false, // Don't disable autoplay on user interaction
           }}
-          modules={[EffectCoverflow, Pagination]}
+          loop={true}
+          modules={[EffectCoverflow, Pagination, Autoplay]} // Include Autoplay module here
           className="mySwiper"
           breakpoints={{
             640: {
@@ -69,7 +76,7 @@ const Announcement = () => {
         >
           {announcements.map((announcement, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-6 shadow-md rounded-lg">
+              <div className="bg-gray-100 p-6 shadow-md rounded-lg">
                 <img 
                   src={getRandomImage()} 
                   alt={`Announcement ${index + 1}`} 

@@ -5,3 +5,4 @@ declare module 'swiper/css/effect-cards';
 declare module 'swiper/css/coverflow';
 declare module 'swiper/css/effect-coverflow'
 declare module 'faker'
+declare module 'swiper/css/autoplay'
