@@ -96,7 +96,7 @@ const Hrppms = () => {
                       <div className="flex flex-col justify-between">
                         <span className="font-semibold">HRPPMS - DSWD</span>
                         <div className="flex gap-2 items-center -mt-2">
-                            <span className="opacity-75 text-sm">15 mins ago</span>
+                            <span className="opacity-75 text-xs">15 mins ago</span>
                             <IoMdGlobe className="mt-1 h-4" />
                         </div>
                       </div>
@@ -124,7 +124,7 @@ const Hrppms = () => {
                     <div className="flex flex-col justify-between">
                       <span className="font-semibold">HRPPMS - DSWD</span>
                       <div className="flex gap-2 items-center -mt-2">
-                            <span className="opacity-75 text-sm">15 mins ago</span>
+                            <span className="opacity-75 text-xs">15 mins ago</span>
                             <IoMdGlobe className="mt-1 h-4" />
                         </div>
                     </div>
