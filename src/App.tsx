@@ -3,6 +3,7 @@ import Home from "@/Home";
 import './index.css';
 import Announcements from "./pages/announcements";
 import Hrppms from "./pages/hrppms";
+import Lds from "./pages/lds";
 const App = () => {
   return (
     <Router>
@@ -10,6 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/announcements" element={<Announcements />} />
         <Route path="/hrppms" element={<Hrppms />} />
+        <Route path="/lds" element={<Lds />} />
       </Routes>
     </Router>
   );

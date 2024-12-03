@@ -10,6 +10,8 @@ import { BsThreeDots } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { IoMdGlobe } from "react-icons/io";
+import { Button } from "@/components/ui/button";
+
 
 const Hrppms = () => {
   const [activeTab, setActiveTab] = useState("Announcements");
@@ -50,6 +52,7 @@ const Hrppms = () => {
               <p className="text-sm lg:text-md xl:text-lg mt-2">
                 The HRPPMS of DSWD ensures strategic workforce planning and performance management, empowering employees to deliver efficient and responsive social welfare services.
               </p>
+              <Button className="w-40 bg-blue-800">Learn More</Button>
             </div>
             <img
               src={images.cover4}
@@ -60,7 +63,7 @@ const Hrppms = () => {
         </div>
 
         {/* Tabs Section */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mt-5">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-5">
           {tabs.map((tab) => (
             <button
               key={tab.name}
