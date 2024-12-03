@@ -32,6 +32,11 @@ import lqr7 from "@/assets/lqr-7.png";
 import lqr8 from "@/assets/lqr-8.png";
 import lqr9 from "@/assets/lqr-9.png";
 import lqr10 from "@/assets/lqr-10.png";
+import hrws1 from "@/assets/hrws1.png";
+import hrws2 from "@/assets/hrws2.png";
+import hrws3 from "@/assets/hrws3.png";
+import learning1 from "@/assets/learning1.svg"
+import resource1 from "@/assets/resource1.svg"
 
 const images = {
   hrppms,
@@ -67,7 +72,12 @@ const images = {
   lqr7,
   lqr8,
   lqr9,
-  lqr10
+  lqr10,
+  hrws1,
+  hrws2,
+  hrws3,
+  learning1,
+  resource1
 };
 
 export default images;

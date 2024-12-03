@@ -2,33 +2,22 @@ import Sidebar from "@/components/sidebar";
 import { Badge } from "@/components/ui/badge";
 import images from "@/assets/images";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { faker } from "@faker-js/faker";
 import { Button } from "@/components/ui/button";
 import { GoArrowRight } from "react-icons/go";
-
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Home = () => {
-  const imageUrls = [
-    "https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg",
-    "https://images.pexels.com/photos/209006/pexels-photo-209006.jpeg",
-    "https://images.pexels.com/photos/3408749/pexels-photo-3408749.jpeg",
-    "https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg",
-    "https://images.pexels.com/photos/1482183/pexels-photo-1482183.jpeg",
-    "https://images.pexels.com/photos/1534742/pexels-photo-1534742.jpeg",
-    "https://images.pexels.com/photos/355062/pexels-photo-355062.jpeg",
-    "https://images.pexels.com/photos/233487/pexels-photo-233487.jpeg",
-    "https://images.pexels.com/photos/4829648/pexels-photo-4829648.jpeg"
-  ];
+  // Generate random slide data using Faker.js
+  const slides = Array.from({ length: 8 }, () => ({
+    image: faker.image.url({ width: 800, height: 400 }),
+    title: faker.lorem.words(3),
+  }));
 
   return (
     <div className="flex flex-col">
@@ -48,6 +37,7 @@ const Home = () => {
           </Avatar>
         </div>
 
+        {/* Swiper Section */}
         <div className="mt-5 flex">
           <Swiper
             spaceBetween={30}
@@ -64,44 +54,58 @@ const Home = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper rounded-md h-80 mb-20"
           >
-            {imageUrls.map((url, index) => (
+            {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <img
-                  src={url}
-                  alt={`Nature ${index + 1}`}
-                  className="w-full h-auto"
-                />
+                <div className="relative">
+                  <img
+                    src={slide.image}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded">
+                    {slide.title}
+                  </div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
+
+        {/* Section Cards */}
         <div>
           <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
             Choose Section to Get the Latest Update
           </h1>
           <div className="grid grid-cols-4 gap-5">
             <a href="/hrppms">
-            <Card
-              style={{ backgroundImage: `url(${images.hrppms})` }}
-              className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-            ></Card>
+              <Card
+                style={{ backgroundImage: `url(${images.hrppms})` }}
+                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
+              ></Card>
             </a>
-            <Card
-              style={{ backgroundImage: `url(${images.lds})` }}
-              className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-            ></Card>
-            <Card
-              style={{ backgroundImage: `url(${images.hrws})` }}
-              className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-            ></Card>
-            <Card
-              style={{ backgroundImage: `url(${images.pas})` }}
-              className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-            ></Card>
+            <a href="/lds">
+              <Card
+                style={{ backgroundImage: `url(${images.lds})` }}
+                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
+              ></Card>
+            </a>
+            <a href="/hrws">
+              <Card
+                style={{ backgroundImage: `url(${images.hrws})` }}
+                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
+              ></Card>
+            </a>
+            <a href="/pas">
+              <Card
+                style={{ backgroundImage: `url(${images.pas})` }}
+                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
+              ></Card>
+            </a>
           </div>
 
+          {/* Vision Section */}
           <section className="py-24">
-            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center ">
+            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
               Mission and Vision of DSWD
             </h1>
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -131,6 +135,8 @@ const Home = () => {
               </div>
             </div>
           </section>
+
+          {/* Mission Section */}
           <section className="py-24">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
@@ -157,37 +163,39 @@ const Home = () => {
               </div>
             </div>
           </section>
+
+          {/* Core Values */}
           <section className="py-24">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <h3 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
+              <h3 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
                 Core Values That Guide Our Mission
-                </h3>
-                <div className="grid grid-cols-3 gap-4">
-                    <Card className="flex flex-col justify-center items-center">
-                        <CardHeader>
-                           <img src={images.value1} alt="respect" className="h-20 w-20"/>
-                        </CardHeader>
-                        <CardContent>
-                        <span className="font-semibold text-md">Respect for Human Dignity</span>
-                        </CardContent>
-                    </Card>
-                    <Card className="flex flex-col justify-center items-center">
-                        <CardHeader>
-                           <img src={images.value2} alt="integrity" className="h-20 w-20"/>
-                        </CardHeader>
-                        <CardContent>
-                        <span className="font-semibold text-md">Integrity</span>
-                        </CardContent>
-                    </Card>
-                    <Card className="flex flex-col justify-center items-center">
-                        <CardHeader>
-                           <img src={images.value3} alt="excellence" className="h-20 w-20"/>
-                        </CardHeader>
-                        <CardContent>
-                        <span className="font-semibold text-md">Service Excellence</span>
-                        </CardContent>
-                    </Card>
-                </div>
+              </h3>
+              <div className="grid grid-cols-3 gap-4">
+                <Card className="flex flex-col justify-center items-center">
+                  <CardHeader>
+                    <img src={images.value1} alt="respect" className="h-20 w-20" />
+                  </CardHeader>
+                  <CardContent>
+                    <span className="font-semibold text-md">Respect for Human Dignity</span>
+                  </CardContent>
+                </Card>
+                <Card className="flex flex-col justify-center items-center">
+                  <CardHeader>
+                    <img src={images.value2} alt="integrity" className="h-20 w-20" />
+                  </CardHeader>
+                  <CardContent>
+                    <span className="font-semibold text-md">Integrity</span>
+                  </CardContent>
+                </Card>
+                <Card className="flex flex-col justify-center items-center">
+                  <CardHeader>
+                    <img src={images.value3} alt="excellence" className="h-20 w-20" />
+                  </CardHeader>
+                  <CardContent>
+                    <span className="font-semibold text-md">Service Excellence</span>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </section>
         </div>

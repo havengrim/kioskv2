@@ -94,10 +94,10 @@ const Lds = () => {
                     <p className="text-sm lg:text-md xl:text-lg mt-2">
                     The Learning and Development Section of DSWD focuses on enhancing the skills, knowledge, and capabilities of employees. Through targeted training programs and development initiatives, DSWD aims to empower its workforce, enabling them to deliver quality services and contribute to the agency's mission of improving social welfare in the community.
                     </p>
-                    <Button className="w-40 bg-blue-800">Learn More</Button>
+                    <Button className="w-40 bg-blue-800 rounded-full">Learn More</Button>
             </div>
             <img
-              src={images.cover4}
+              src={images.learning1}
               alt="HRPPMS Banner"
               className="h-40 w-full lg:h-60 lg:w-80 object-cover rounded-md"
             />
@@ -236,7 +236,7 @@ const Lds = () => {
                     </div>
                     </div>
                     <div className="">
-                    <h1 className="text-xl font-semibold mb-4">Bacherlor of Science & Master of Science in Social Work</h1>
+                    <h1 className="text-xl font-semibold mb-4">Bachelor of Science & Master of Science in Social Work</h1>
                     <div className="flex justify-center items-center">
                         <img src={images.lds4} alt="" className="rounded-md" />
                     </div>
@@ -314,7 +314,7 @@ const Lds = () => {
         {tabs.find((tab) => tab.name === activeTab)?.type === "photo" && (
             <div className="mt-4">
               <div className="w-full ">
-                
+
               <Swiper
       spaceBetween={30} // Space between slides
       centeredSlides={true} // Center the slides
