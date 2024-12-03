@@ -74,10 +74,10 @@ const Pas = () => {
   
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row dark:bg-gray-900 h-screen">
       <Sidebar />
       <div className="container mx-auto p-4 lg:pl-20">
-        <div className="w-full rounded-md bg-gray-200">
+        <div className="w-full rounded-md bg-gray-200 dark:bg-gray-800 dark:text-white">
           <div className="flex flex-col lg:flex-row justify-between p-6 lg:p-10 items-center gap-6">
             <div className="flex flex-col gap-4 text-center lg:text-left">
                 <span className="text-3xl lg:text-3xl xl:text-5xl font-semibold">
@@ -105,7 +105,7 @@ const Pas = () => {
               className={`rounded-full px-4 py-2 text-center cursor-pointer focus:outline-none ${
                 activeTab === tab.name
                   ? "bg-[#00008E] text-white"
-                  : "bg-gray-200 text-black"
+                  : "bg-gray-200 text-black dark:bg-gray-800 dark:text-white"
               }`}
             >
               {tab.name}
@@ -115,7 +115,7 @@ const Pas = () => {
 
         {/* Tab Content */}
         <div className="mt-6 p-4">
-          <h2 className="text-2xl font-semibold">{activeTab}</h2>
+          <h2 className="text-2xl font-semibold dark:text-white">{activeTab}</h2>
 
           {/* Render content dynamically based on tab type */}
           {tabs.find((tab) => tab.name === activeTab)?.type === "text" && (

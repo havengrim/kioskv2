@@ -31,16 +31,16 @@ const Announcement = () => {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen  dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main content */}
       <div className="container mx-auto p-4 lg:pl-20">
-        <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 mb-3">
+        <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 dark:text-gray-200 mb-3">
           Announcements
         </h2>
-        <p className="mb-10 text-center text-gray-700">
+        <p className="mb-10 text-center text-gray-700 dark:text-gray-400">
           Stay updated with the latest news and announcements from DSWD.
         </p>
 
@@ -79,77 +79,77 @@ const Announcement = () => {
         >
           {announcements.map((announcement, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-100 p-6 shadow-md rounded-lg">
+              <div className="bg-white dark:bg-gray-800 p-6 shadow-md rounded-lg">
                 <img 
                   src={getRandomImage()} 
                   alt={`Announcement ${index + 1}`} 
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
-                <h3 className="text-xl font-semibold mt-4">{announcement.title}</h3>
-                <p className="text-gray-600">{announcement.description}</p>
+                <h3 className="text-xl font-semibold mt-4 text-gray-800 dark:text-gray-200">{announcement.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{announcement.description}</p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
         <section className="py-24">
-            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
-              Mission and Vision of DSWD
-            </h1>
-            <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-              <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
-                <div className="order-1 sm:order-1">
-                  <img
-                    src={images.cover2}
-                    alt="A representative image for Graduate School"
-                    className="w-full h-auto rounded-lg shadow-md"
-                  />
-                </div>
-                <div className="order-2 sm:order-2">
-                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
-                    Vision
-                  </h3>
-                  <p className="text-lg mt-4 leading-relaxed text-gray-600">
-                    We envision a society where the poor, vulnerable and
-                    disadvantaged are empowered for an improved quality of life.
-                    Towards this end, DSWD will be the world’s standard for the
-                    delivery of coordinated social services and social
-                    protection for poverty reduction by 2030.
-                  </p>
-                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center cursor-pointer">
-                    Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
-                  </Button>
-                </div>
+          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
+            Mission and Vision of DSWD
+          </h1>
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
+              <div className="order-1 sm:order-1">
+                <img
+                  src={images.cover2}
+                  alt="A representative image for Graduate School"
+                  className="w-full h-auto rounded-lg shadow-md"
+                />
+              </div>
+              <div className="order-2 sm:order-2">
+                <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+                  Vision
+                </h3>
+                <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
+                  We envision a society where the poor, vulnerable and
+                  disadvantaged are empowered for an improved quality of life.
+                  Towards this end, DSWD will be the world’s standard for the
+                  delivery of coordinated social services and social
+                  protection for poverty reduction by 2030.
+                </p>
+                <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center cursor-pointer dark:bg-[#00008E] dark:text-white">
+                  Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
+                </Button>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Mission Section */}
-          <section className="py-24">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-              <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
-                <div className="order-2 sm:order-2">
-                  <img
-                    src={images.cover3}
-                    alt="A representative image for Graduate School"
-                    className="w-full h-auto rounded-lg shadow-md"
-                  />
-                </div>
-                <div className="order-1 sm:order-1">
-                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
-                    Mission
-                  </h3>
-                  <p className="text-lg mt-4 leading-relaxed text-gray-600">
-                    To develop, implement and coordinate social protection and
-                    poverty reduction solutions for and with the poor,
-                    vulnerable and disadvantaged.
-                  </p>
-                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center">
-                    Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
-                  </Button>
-                </div>
+        {/* Mission Section */}
+        <section className="py-24">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
+              <div className="order-2 sm:order-2">
+                <img
+                  src={images.cover3}
+                  alt="A representative image for Graduate School"
+                  className="w-full h-auto rounded-lg shadow-md"
+                />
+              </div>
+              <div className="order-1 sm:order-1">
+                <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+                  Mission
+                </h3>
+                <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
+                  To develop, implement and coordinate social protection and
+                  poverty reduction solutions for and with the poor,
+                  vulnerable and disadvantaged.
+                </p>
+                <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center dark:bg-[#00008E] dark:text-white">
+                  Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
+                </Button>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
       </div>
     </div>

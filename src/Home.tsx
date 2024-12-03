@@ -11,6 +11,8 @@ import { GoArrowRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Footer from "./components/footer";
+
 
 const Home = () => {
   // Generate random slide data using Faker.js
@@ -20,14 +22,13 @@ const Home = () => {
   }));
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col dark:bg-gray-900 dark:text-white">
       <Sidebar />
       <div className="container mx-auto p-4 pl-20">
-        <h1 className="text-3xl font-semibold">Hello Welcome</h1>
         <div className="flex w-full justify-end gap-2">
-          <Badge className="flex gap-2 p-2 bg-blue-500">
+          <Badge className="flex gap-2 p-2 bg-blue-500 dark:bg-blue-600 dark:text-white">
             Announcements
-            <span className="bg-white text-gray-500 px-2 py-1 rounded-full">
+            <span className="bg-white text-gray-500 dark:bg-gray-700 dark:text-white px-2 py-1 rounded-full">
               5
             </span>
           </Badge>
@@ -73,7 +74,7 @@ const Home = () => {
 
         {/* Section Cards */}
         <div>
-          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
+          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
             Choose Section to Get the Latest Update
           </h1>
           <div className="grid grid-cols-4 gap-5">
@@ -105,7 +106,7 @@ const Home = () => {
 
           {/* Vision Section */}
           <section className="py-24">
-            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
+            <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
               Mission and Vision of DSWD
             </h1>
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -118,17 +119,17 @@ const Home = () => {
                   />
                 </div>
                 <div className="order-2 sm:order-2">
-                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
+                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
                     Vision
                   </h3>
-                  <p className="text-lg mt-4 leading-relaxed text-gray-600">
+                  <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
                     We envision a society where the poor, vulnerable and
                     disadvantaged are empowered for an improved quality of life.
                     Towards this end, DSWD will be the world’s standard for the
                     delivery of coordinated social services and social
                     protection for poverty reduction by 2030.
                   </p>
-                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center cursor-pointer">
+                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center cursor-pointer dark:bg-blue-700 dark:text-white">
                     Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
                   </Button>
                 </div>
@@ -148,15 +149,15 @@ const Home = () => {
                   />
                 </div>
                 <div className="order-1 sm:order-1">
-                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700">
+                  <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
                     Mission
                   </h3>
-                  <p className="text-lg mt-4 leading-relaxed text-gray-600">
+                  <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
                     To develop, implement and coordinate social protection and
                     poverty reduction solutions for and with the poor,
                     vulnerable and disadvantaged.
                   </p>
-                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center">
+                  <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center dark:bg-blue-700  dark:text-white">
                     Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
                   </Button>
                 </div>
@@ -167,32 +168,34 @@ const Home = () => {
           {/* Core Values */}
           <section className="py-24">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-              <h3 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 text-center">
+              <h3 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
                 Core Values That Guide Our Mission
               </h3>
               <div className="grid grid-cols-3 gap-4">
-                <Card className="flex flex-col justify-center items-center">
+                <Card className="flex flex-col justify-center items-center dark:bg-gray-800">
                   <CardHeader>
                     <img src={images.value1} alt="respect" className="h-20 w-20" />
                   </CardHeader>
                   <CardContent>
-                    <span className="font-semibold text-md">Respect for Human Dignity</span>
+                    <span className="font-semibold text-md dark:text-white">
+                      Respect for Human Dignity
+                    </span>
                   </CardContent>
                 </Card>
-                <Card className="flex flex-col justify-center items-center">
+                <Card className="flex flex-col justify-center items-center dark:bg-gray-800">
                   <CardHeader>
                     <img src={images.value2} alt="integrity" className="h-20 w-20" />
                   </CardHeader>
                   <CardContent>
-                    <span className="font-semibold text-md">Integrity</span>
+                    <span className="font-semibold text-md dark:text-white">Integrity</span>
                   </CardContent>
                 </Card>
-                <Card className="flex flex-col justify-center items-center">
+                <Card className="flex flex-col justify-center items-center dark:bg-gray-800">
                   <CardHeader>
                     <img src={images.value3} alt="excellence" className="h-20 w-20" />
                   </CardHeader>
                   <CardContent>
-                    <span className="font-semibold text-md">Service Excellence</span>
+                    <span className="font-semibold text-md dark:text-white">Excellence</span>
                   </CardContent>
                 </Card>
               </div>
@@ -200,16 +203,7 @@ const Home = () => {
           </section>
         </div>
       </div>
-      <footer className="bg-gray-800 text-white py-6 text-center">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Department of Social Welfare and Development (DSWD). All rights reserved.
-          </p>
-          <p className="text-xs mt-1">
-            Government Center, Maimpis, City of San Fernando Pampanga
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
