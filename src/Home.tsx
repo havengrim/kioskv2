@@ -80,10 +80,12 @@ const Home = () => {
             Choose Section to Get the Latest Update
           </h1>
           <div className="grid grid-cols-4 gap-5">
+            <a href="/hrppms">
             <Card
               style={{ backgroundImage: `url(${images.hrppms})` }}
               className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
             ></Card>
+            </a>
             <Card
               style={{ backgroundImage: `url(${images.lds})` }}
               className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
