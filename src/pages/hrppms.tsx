@@ -52,7 +52,7 @@ const Hrppms = () => {
               <p className="text-sm lg:text-md xl:text-lg mt-2">
                 The HRPPMS of DSWD ensures strategic workforce planning and performance management, empowering employees to deliver efficient and responsive social welfare services.
               </p>
-              <Button className="w-40 bg-blue-800">Learn More</Button>
+              <Button className="w-40 bg-blue-800 rounded-full">Learn More</Button>
             </div>
             <img
               src={images.cover4}

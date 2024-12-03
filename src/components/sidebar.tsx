@@ -2,12 +2,10 @@
 import images from "@/assets/images";
 import {
   HiOutlineHome,
-  HiOutlineClipboard,
   HiOutlineCog,
-  HiOutlineLightBulb,
-  HiOutlineUserCircle,
 } from "react-icons/hi2";
 import { LuNewspaper } from "react-icons/lu";
+import { IoIosHelpCircleOutline } from "react-icons/io";
 
 const Sidebar = () => {
   return (
@@ -42,47 +40,25 @@ const Sidebar = () => {
             </a>
 
             <a
-            href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
+            href="/about"
+            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
-            <HiOutlineClipboard className="w-6 h-6" />
+            <IoIosHelpCircleOutline className="w-6 h-6" />
+            <span className=" font-regular text-sm">About</span>
             </a>
 
             <a
-            href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
+            href="/about"
+            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
             <HiOutlineCog className="w-6 h-6" />
+            <span className=" font-regular text-sm">Settings</span>
             </a>
 
-            <a
-            href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
-            >
-            <HiOutlineLightBulb className="w-6 h-6" />
-            </a>
+
+         
         </nav>
 
-        {/* Footer */}
-        <div className="flex flex-col space-y-6">
-            <a
-            href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
-            >
-            <HiOutlineCog className="w-6 h-6" />
-            </a>
-
-            <a
-            href="#"
-            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:bg-gray-800 bg-gray-100"
-            >
-            <HiOutlineLightBulb className="w-6 h-6" />
-            </a>
-
-            <a href="#">
-            <HiOutlineUserCircle className="w-8 h-8 text-gray-700 dark:text-gray-200" />
-            </a>
-        </div>
         </aside>
     </div>
   );
