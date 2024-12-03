@@ -33,7 +33,7 @@ const Hrppms = () => {
     {
       name: "Previous Posting",
       content: "View records of previous job postings and updates.",
-      type: "text", // Text-based content
+      type: "card", // Text-based content
     },
   ];
 
