@@ -5,6 +5,7 @@ import {
   import "react-vertical-timeline-component/style.min.css";
   import { FaRegCalendarAlt } from "react-icons/fa";
   import Sidebar from "@/components/sidebar";
+import Footer from "@/components/footer";
   
   
   const About = () => {
@@ -27,9 +28,9 @@ import {
     ];
   
     return (
-      <div className="flex dark:bg-gray-900 dark:text-white">
+      <div className="flex flex-col dark:bg-gray-900 dark:text-white">
         <Sidebar />
-        <div className="p-8 w-full">
+        <div className="container mx-auto p-4 lg:pl-20">
           <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
             History of DSWD
           </h1>
@@ -51,6 +52,7 @@ import {
             ))}
           </VerticalTimeline>
         </div>
+        <Footer />
       </div>
     );
   };

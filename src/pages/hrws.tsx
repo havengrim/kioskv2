@@ -80,7 +80,7 @@ const Hrws = () => {
   
 
   return (
-    <div className="flex flex-col lg:flex-row  dark:bg-gray-900 h-screen">
+    <div className="flex flex-col lg:flex-row  dark:bg-gray-900">
       <Sidebar />
       <div className="container mx-auto p-4 lg:pl-20">
         <div className="w-full rounded-md bg-gray-200 dark:bg-gray-800 dark:text-white ">
@@ -220,10 +220,12 @@ const Hrws = () => {
           )}
 
           {tabs.find((tab) => tab.name === activeTab)?.type === "card" && (
-            <div className="p-4 bg-gray-100 rounded-md shadow-md mt-4 dark:bg-gray-800 dark:text-white">
-              <h3 className="text-xl font-semibold">Vacant Positions</h3>
-              <p className="mt-2">Here you can find the available positions at DSWD.</p>
-              {/* Add any specific card content like job listings, etc. */}
+            <div className="min-h-[300px]">
+              <div className="p-4 bg-gray-100 rounded-md shadow-md mt-4 dark:bg-gray-800 dark:text-white">
+                <h3 className="text-xl font-semibold">Vacant Positions</h3>
+                <p className="mt-2">Here you can find the available positions at DSWD.</p>
+                {/* Add any specific card content like job listings, etc. */}
+              </div>
             </div>
           )}
 

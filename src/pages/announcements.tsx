@@ -9,6 +9,7 @@ import { GoArrowRight } from "react-icons/go";
 
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 import images from '@/assets/images';
+import Footer from '@/components/footer';
 
 const Announcement = () => {
   // Example data for announcements
@@ -31,7 +32,7 @@ const Announcement = () => {
   };
 
   return (
-    <div className="flex min-h-screen  dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen  dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar />
 
@@ -150,8 +151,8 @@ const Announcement = () => {
             </div>
           </div>
         </section>
-
       </div>
+      <Footer />
     </div>
   );
 };

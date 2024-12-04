@@ -1,15 +1,16 @@
+import Footer from "@/components/footer";
 import { ModeToggle } from "@/components/mode-toggle";
 import Sidebar from "@/components/sidebar";
 
 const Settings = () => {
   return (
-    <div className="flex dark:bg-gray-900 h-screen">
+    <div className="flex flex-col dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar />
 
-      <div className="w-full p-8  dark:bg-gray-900 dark:text-white">
-        <div className="container mx-auto">
-          <h1 className="text-3xl font-bold mb-8 text-gray-700 dark:text-gray-300 text-center">
+      <div className="w-full p-8  dark:bg-gray-900 dark:text-white h-screen">
+        <div className="container mx-auto p-4 lg:pl-20">
+          <h1 className="text-3xl font-bold mb-8 text-gray-700 dark:text-gray-300">
             Settings
           </h1>
 
@@ -20,10 +21,9 @@ const Settings = () => {
             </p>
             <ModeToggle />
           </div>
-
-          {/* Additional sections can go here */}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
