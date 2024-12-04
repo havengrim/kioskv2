@@ -5,7 +5,6 @@ import {
   import "react-vertical-timeline-component/style.min.css";
   import { FaRegCalendarAlt } from "react-icons/fa";
   import Sidebar from "@/components/sidebar";
-import Footer from "@/components/footer";
   
   
   const About = () => {
@@ -52,7 +51,6 @@ import Footer from "@/components/footer";
             ))}
           </VerticalTimeline>
         </div>
-        <Footer />
       </div>
     );
   };

@@ -1,4 +1,4 @@
-import Footer from "@/components/footer";
+
 import { ModeToggle } from "@/components/mode-toggle";
 import Sidebar from "@/components/sidebar";
 
@@ -23,7 +23,6 @@ const Settings = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

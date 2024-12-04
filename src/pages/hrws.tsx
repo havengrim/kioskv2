@@ -80,7 +80,7 @@ const Hrws = () => {
   
 
   return (
-    <div className="flex flex-col lg:flex-row  dark:bg-gray-900">
+    <div className="flex flex-col lg:flex-row  dark:bg-gray-900 xl:h-full lg:h-screen">
       <Sidebar />
       <div className="container mx-auto p-4 lg:pl-20">
         <div className="w-full rounded-md bg-gray-200 dark:bg-gray-800 dark:text-white ">

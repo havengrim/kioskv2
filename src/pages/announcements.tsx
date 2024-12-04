@@ -9,7 +9,7 @@ import { GoArrowRight } from "react-icons/go";
 
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 import images from '@/assets/images';
-import Footer from '@/components/footer';
+
 
 const Announcement = () => {
   // Example data for announcements
@@ -152,7 +152,6 @@ const Announcement = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </div>
   );
 };
