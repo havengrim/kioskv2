@@ -80,7 +80,7 @@ const Announcement = () => {
         >
           {announcements.map((announcement, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white dark:bg-gray-800 p-6 shadow-md rounded-lg">
+              <div className="bg-gray-100 dark:bg-gray-800 p-6 shadow-md rounded-lg">
                 <img 
                   src={getRandomImage()} 
                   alt={`Announcement ${index + 1}`} 
