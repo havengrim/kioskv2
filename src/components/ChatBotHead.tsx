@@ -46,7 +46,7 @@ const ChatBotHead = () => {
               <img
                 src={images.chatQR}
                 alt="QR Code"
-                className="w-48 h-48 mx-auto mb-4"
+                className="w-48 h-48 mx-auto mb-4 border-2 p-2 rounded-md"
               />
               <p className="text-center text-gray-800 dark:text-white">
                 Scan this QR code for your inquiry.
