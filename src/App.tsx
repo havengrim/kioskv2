@@ -9,6 +9,7 @@ import Pas from "./pages/pas";
 import About from "./pages/about";
 import { ThemeProvider } from "@/components/theme-provider"
 import Settings from "./pages/settings";
+import ChatBotHead from "./components/ChatBotHead";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </Router>
+        <ChatBotHead />
       </div>
       </ThemeProvider>
   );

@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import Footer from "./components/footer";
 
 
+
 const Home = () => {
   // Generate random slide data using Faker.js
   const slides = Array.from({ length: 8 }, () => ({
