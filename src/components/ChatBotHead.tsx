@@ -53,7 +53,7 @@ const ChatBotHead = () => {
               </p>
             </DialogDescription>
             <div className="flex justify-end">
-              <DialogClose className="mt-4 bg-black text-white dark:text-white py-2 px-4 rounded-full focus:outline-none">
+              <DialogClose className="mt-4 bg-black dark:bg-gray-100 text-white dark:text-gray-900 py-2 px-4 rounded-full focus:outline-none">
                 Close
               </DialogClose>
             </div>
