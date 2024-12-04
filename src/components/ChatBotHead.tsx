@@ -16,22 +16,24 @@ const ChatBotHead = () => {
 
   return (
     <>
-      {/* Chatbot Button on the Bottom-Right */}
-      <div className="fixed bottom-4 right-4 z-50 flex items-center">
-        {/* Popup on the Left of Chatbot Button */}
-        {showPopup && (
-          <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-3 rounded-lg shadow-md animate-slide-up mr-4 -mt-10">
-            Hi! How can I help you today?
-          </div>
-        )}
-        {/* Chatbot Button */}
-        <button
-          className="bg-blue-600 dark:bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-900 focus:outline-none"
-          title="Chat with us"
-        >
-          <BsChatDots size={24} />
-        </button>
-      </div>
+        <a href="https://m.facebook.com/dswdhrmddfo3/?__n=K">
+            {/* Chatbot Button on the Bottom-Right */}
+            <div className="fixed bottom-4 right-4 z-50 flex items-center">
+                {/* Popup on the Left of Chatbot Button */}
+                {showPopup && (
+                <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-3 rounded-lg shadow-md animate-slide-up mr-4 -mt-10">
+                    Hi! How can I help you today?
+                </div>
+                )}
+                {/* Chatbot Button */}
+                <button
+                className="bg-blue-600 dark:bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-900 focus:outline-none"
+                title="Chat with us"
+                >
+                <BsChatDots size={24} />
+                </button>
+            </div>
+        </a>
     </>
   );
 };

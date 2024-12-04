@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6 text-center">
+    <footer className="dark:bg-gray-800 dark:text-white py-6 text-center bg-gray-100 text-gray-800">
         <div className="max-w-screen-xl mx-auto px-4">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} Department of Social Welfare and Development (DSWD). All rights reserved.
