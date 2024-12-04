@@ -4,7 +4,7 @@ import {
   HiOutlineHome,
   HiOutlineCog,
 } from "react-icons/hi2";
-import { LuNewspaper } from "react-icons/lu";
+import { GoStack } from "react-icons/go";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 
 const Sidebar = () => {
@@ -35,7 +35,7 @@ const Sidebar = () => {
             href="/announcements"
             className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
-            <LuNewspaper className="w-6 h-5" />
+            <GoStack className="w-6 h-6" />
             <span className=" font-regular text-sm">News</span>
             </a>
 
