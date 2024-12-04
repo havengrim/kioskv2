@@ -37,6 +37,7 @@ import hrws2 from "@/assets/hrws2.png";
 import hrws3 from "@/assets/hrws3.png";
 import learning1 from "@/assets/learning1.svg"
 import resource1 from "@/assets/resource1.svg"
+import chatQR from "@/assets/chatQR.png"
 
 const images = {
   hrppms,
@@ -77,7 +78,8 @@ const images = {
   hrws2,
   hrws3,
   learning1,
-  resource1
+  resource1,
+  chatQR
 };
 
 export default images;
