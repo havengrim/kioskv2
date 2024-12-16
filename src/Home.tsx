@@ -64,9 +64,9 @@ const Home = () => {
                     alt={`Slide ${index + 1}`}
                     className="w-full h-auto rounded-lg"
                   />
-                  <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded">
+                  {/* <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded">
                     {slide.title}
-                  </div>
+                  </div> */}
                 </div>
               </SwiperSlide>
             ))}
