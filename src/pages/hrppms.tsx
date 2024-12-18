@@ -32,8 +32,8 @@ const Hrppms = () => {
       type: "photo", // Photo-based content
     },
     {
-      name: "Previous Posting",
-      content: "View records of previous job postings and updates.",
+      name: "Notice to the Public",
+      content: "",
       type: "card", // Text-based content
     },
   ];
@@ -85,6 +85,51 @@ const Hrppms = () => {
           {/* Render content dynamically based on tab type */}
           {tabs.find((tab) => tab.name === activeTab)?.type === "text" && (
             <div className="flex flex-col gap-5 mt-5">
+
+               <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
+                <div className="flex justify-between items-center w-full ">
+                  <div className="flex gap-2 mt-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col justify-between">
+                      <span className="font-semibold">HRPPMS - DSWD</span>
+                      <div className="flex gap-2 items-center -mt-2">
+
+                        <IoMdGlobe className="mt-1 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <BsThreeDots />
+                    <MdClose />
+                  </div>
+                </div>
+                <div>
+                  <h1 className="text-xl font-semibold">Ready your requirements in 𝗽𝗱𝗳 𝗳𝗼𝗿𝗺𝗮𝘁 and 𝘀𝗰𝗮𝗻 𝗤𝗥 𝗰𝗼𝗱𝗲 provided to apply:</h1>
+                  <p>1. Application Letter addressed to Regional Director Venus F. Rebuldela of DSWD Field Office III;<br />
+2. Duly accomplished Personal Data Sheet (PDS) with photo and thumbmark;<br />
+3. Duly accomplished Work Experience Sheet;<br />
+4. Authenticated or Photocopy of Transcript of Records and/or Diploma;<br />
+5. Certificate/s of relevant training and seminars attended, if applicable;<br />
+6. Certificate/s of Employment;<br />
+7. Clearance Certificate from Previous Employer;<br />
+8. Scanned Copy of Valid NBI/Police Clearance;<br />
+9. Scanned Copy of Civil Service Eligibility and/or Valid PRC ID; and <br />
+10. Copy of IPCR/Certificate of Performance Rating in the last rating period.<br />
+
+Qualified applicants should apply online through the DSWD FO3 Recruitment Form.
+
+Kindly scan the QR Code attached in each posting or access this link: https://bit.ly/FO3Recruitment
+
+You may also visit our Facebook Page: https://web.facebook.com/dswdfo3recruitment</p>
+                  <div className="flex justify-center items-center">
+                    <img src={images.announcement2} alt="" />
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
                 <div className="flex justify-between items-center w-full">
                   <div className="flex gap-2 mt-4">
@@ -95,7 +140,35 @@ const Hrppms = () => {
                     <div className="flex flex-col justify-between">
                       <span className="font-semibold">HRPPMS - DSWD</span>
                       <div className="flex gap-2 items-center -mt-2">
-                        <span className="opacity-75 text-xs">15 mins ago</span>
+                     
+                        <IoMdGlobe className="mt-1 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <BsThreeDots />
+                    <MdClose />
+                  </div>
+                </div>
+                <div>
+                  <h1 className="text-xl font-semibold">HR-Advisory NO. 03_Regional Guidelines on Filling Up of Contract of-Service COS Positions</h1>
+                  <div className="flex justify-center items-center">
+                    <img src={images.announcement1} alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
+                <div className="flex justify-between items-center w-full ">
+                  <div className="flex gap-2 mt-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col justify-between">
+                      <span className="font-semibold">HRPPMS - DSWD</span>
+                      <div className="flex gap-2 items-center -mt-2">
+
                         <IoMdGlobe className="mt-1 h-4" />
                       </div>
                     </div>
@@ -123,7 +196,7 @@ const Hrppms = () => {
                     <div className="flex flex-col justify-between">
                       <span className="font-semibold">HRPPMS - DSWD</span>
                       <div className="flex gap-2 items-center -mt-2">
-                        <span className="opacity-75 text-xs">15 mins ago</span>
+
                         <IoMdGlobe className="mt-1 h-4" />
                       </div>
                     </div>

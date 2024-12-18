@@ -14,22 +14,20 @@ import images from '@/assets/images';
 const Announcement = () => {
   // Example data for announcements
   const announcements = [
-    { title: "Pantawid Pamilya Program", description: "Applications for the Pantawid Pamilya program are now open. Apply today!" },
-    { title: "Social Amelioration Program", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
+    { title: "Orientation on the renewal", description: "The HRPPMS enjoins all COS and JO workers on the virtual orientation that will be conducted TOMORROW,  December 19, 2024 (Thursday), at 10:00 AM via this link: https://meet.google.com/fsc-zgme-dew." },
+    { title: "Be an Angel in RED VEST!", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
     { title: "Kalahi-CIDSS", description: "The Kalahi-CIDSS program is supporting local communities to improve infrastructure and livelihood." },
     { title: "Tahanan ng Pagmamahal", description: "The Tahanan ng Pagmamahal centers are open for support and shelter to victims of abuse." },
-    { title: "Child Protection Services", description: "Join the DSWD’s child protection program to ensure the welfare of children in your community." },
-    { title: "Bayanihan Outreach", description: "The Bayanihan outreach program aims to distribute basic goods and services to remote areas." },
-    { title: "Disaster Response & Relief", description: "DSWD is ready to provide immediate assistance to areas affected by natural disasters." },
-    { title: "Senior Citizens Assistance", description: "The senior citizens’ assistance program will provide financial help to the elderly this month." },
-    { title: "Early Childhood Care and Development", description: "DSWD promotes early childhood development initiatives to support families with young children." },
-    { title: "Adoption and Foster Care Services", description: "Applications for adoption and foster care programs are now open for qualified families." },
   ];
 
-  // Function to get random image from Lorem Picsum
-  const getRandomImage = () => {
-    return `https://picsum.photos/300/200?random=${Math.floor(Math.random() * 1000)}`;
-  };
+  // Static images for announcements
+  const announcementImages = [
+    images.announcement1,
+    images.announcement2,
+    images.cover2,
+    images.cover2,
+ 
+  ];
 
   return (
     <div className="flex flex-col min-h-screen  dark:bg-gray-900">
@@ -42,7 +40,7 @@ const Announcement = () => {
           Announcements
         </h2>
         <p className="mb-10 text-center text-gray-700 dark:text-gray-400">
-          Stay updated with the latest news and announcements from DSWD.
+          Stay updated with the latest news and announcements from HRMDD.
         </p>
 
         <Swiper
@@ -82,9 +80,9 @@ const Announcement = () => {
             <SwiperSlide key={index}>
               <div className="bg-gray-100 dark:bg-gray-800 p-6 shadow-md rounded-lg">
                 <img 
-                  src={getRandomImage()} 
+                  src={announcementImages[index % announcementImages.length]} 
                   alt={`Announcement ${index + 1}`} 
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-[30vh] object-cover rounded-t-lg"
                 />
                 <h3 className="text-xl font-semibold mt-4 text-gray-800 dark:text-gray-200">{announcement.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{announcement.description}</p>
