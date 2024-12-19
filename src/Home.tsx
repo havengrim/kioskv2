@@ -1,3 +1,4 @@
+
 import Sidebar from "@/components/sidebar";
 import { Badge } from "@/components/ui/badge";
 import images from "@/assets/images";
@@ -5,7 +6,6 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { faker } from "@faker-js/faker";
 import { Button } from "@/components/ui/button";
 import { GoArrowRight } from "react-icons/go";
 import "swiper/css";
@@ -13,15 +13,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Footer from "./components/footer";
 
-
+// Import your slide data from the JSON file
+import slideData from "@/assets/data/slides.json";
 
 const Home = () => {
-  // Generate random slide data using Faker.js
-  const slides = Array.from({ length: 8 }, () => ({
-    image: faker.image.url({ width: 800, height: 400 }),
-    title: faker.lorem.words(3),
-  }));
-
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
       <Sidebar />
@@ -56,7 +51,7 @@ const Home = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper rounded-md h-80 mb-20"
           >
-            {slides.map((slide, index) => (
+            {slideData.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="relative">
                   <img
@@ -64,6 +59,7 @@ const Home = () => {
                     alt={`Slide ${index + 1}`}
                     className="w-full h-auto rounded-lg"
                   />
+                  {/* Uncomment below if you want to display the title on the image */}
                   {/* <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded">
                     {slide.title}
                   </div> */}
