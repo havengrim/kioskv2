@@ -40,7 +40,8 @@ import resource1 from "@/assets/resource1.svg"
 import chatQR from "@/assets/chatQR.png"
 import announcement1 from "@/assets/announcement1.jpg"
 import announcement2 from "@/assets/announcement2.jpg"
-
+import announcement3 from "@/assets/announcement3.jpg"
+import announcement4 from "@/assets/announcement4.jpg"
 const images = {
   hrppms,
   lds,
@@ -83,7 +84,9 @@ const images = {
   resource1,
   chatQR,
   announcement1,
-  announcement2
+  announcement2,
+  announcement3,
+  announcement4
 };
 
 export default images;

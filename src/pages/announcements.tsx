@@ -16,17 +16,16 @@ const Announcement = () => {
   const announcements = [
     { title: "Orientation on the renewal", description: "The HRPPMS enjoins all COS and JO workers on the virtual orientation that will be conducted TOMORROW,  December 19, 2024 (Thursday), at 10:00 AM via this link: https://meet.google.com/fsc-zgme-dew." },
     { title: "Be an Angel in RED VEST!", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
-    { title: "Kalahi-CIDSS", description: "The Kalahi-CIDSS program is supporting local communities to improve infrastructure and livelihood." },
-    { title: "Tahanan ng Pagmamahal", description: "The Tahanan ng Pagmamahal centers are open for support and shelter to victims of abuse." },
+    { title: "", description: "In connection with the May 12, 2025 National and Local Elections and BARMM Parliamentary Elections, may we remind you of the prohibited acts and corresponding periods as mentioned therein." },
+    { title: "", description: "DSWD Field Office 3 aims to promote fairness and inclusion, break barriers and build futures through the Equal Employment Opportunity Principle." },
   ];
 
   // Static images for announcements
   const announcementImages = [
     images.announcement1,
     images.announcement2,
-    images.cover2,
-    images.cover2,
- 
+    images.announcement4,
+    images.announcement3,
   ];
 
   return (
@@ -82,7 +81,7 @@ const Announcement = () => {
                 <img 
                   src={announcementImages[index % announcementImages.length]} 
                   alt={`Announcement ${index + 1}`} 
-                  className="w-full h-[30vh] object-cover rounded-t-lg"
+                  className="w-full h-[50vh] object-cover rounded-t-lg"
                 />
                 <h3 className="text-xl font-semibold mt-4 text-gray-800 dark:text-gray-200">{announcement.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{announcement.description}</p>

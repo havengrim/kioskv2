@@ -151,12 +151,78 @@ You may also visit our Facebook Page: https://web.facebook.com/dswdfo3recruitmen
                   </div>
                 </div>
                 <div>
-                  <h1 className="text-xl font-semibold">HR-Advisory NO. 03_Regional Guidelines on Filling Up of Contract of-Service COS Positions</h1>
+                  <h1 className="text-xl font-semibold">Greetings! </h1>
+                  <p>DSWD Field Office 3 aims to promote fairness and inclusion, break barriers and build futures through the Equal Employment Opportunity Principle.</p>
+                  <div className="flex justify-center items-center">
+                    <img src={images.announcement3} alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
+                <div className="flex justify-between items-center w-full">
+                  <div className="flex gap-2 mt-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col justify-between">
+                      <span className="font-semibold">HRPPMS - DSWD</span>
+                      <div className="flex gap-2 items-center -mt-2">
+                     
+                        <IoMdGlobe className="mt-1 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <BsThreeDots />
+                    <MdClose />
+                  </div>
+                </div>
+                <div>
+                  {/* <h1 className="text-xl font-semibold">Greetings! </h1> */}
+                  <p>In connection with the May 12, 2025 National and Local Elections and BARMM Parliamentary Elections, may we remind you of the prohibited acts and corresponding periods as mentioned therein.</p>
+                  <div className="flex justify-center items-center">
+                    <img src={images.announcement4} alt="" />
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
+                <div className="flex justify-between items-center w-full">
+                  <div className="flex gap-2 mt-4">
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col justify-between">
+                      <span className="font-semibold">HRPPMS - DSWD</span>
+                      <div className="flex gap-2 items-center -mt-2">
+                     
+                        <IoMdGlobe className="mt-1 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <BsThreeDots />
+                    <MdClose />
+                  </div>
+                </div>
+                <div>
+                  <h1 className="text-xl font-semibold">Greetings! </h1>
+                  <p>The HRPPMS enjoins all COS and JO workers on the virtual orientation that will be conducted TOMORROW,  December 19, 2024 (Thursday), at 10:00 AM via this link: https://meet.google.com/fsc-zgme-dew.
+                  Thank you and see you virtually!</p>
                   <div className="flex justify-center items-center">
                     <img src={images.announcement1} alt="" />
                   </div>
                 </div>
               </div>
+
+
+
+              
 
               <div className="flex flex-col gap-2 bg-white rounded-md shadow-md p-4 dark:bg-gray-800">
                 <div className="flex justify-between items-center w-full ">
