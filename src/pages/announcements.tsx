@@ -50,7 +50,7 @@ const Announcement = () => {
           spaceBetween={30} // Space between slides
           coverflowEffect={{
             rotate: 50,
-            stretch: 0,
+            stretch: -50,
             depth: 100,
             modifier: 1,
             slideShadows: true,
@@ -81,7 +81,7 @@ const Announcement = () => {
                 <img 
                   src={announcementImages[index % announcementImages.length]} 
                   alt={`Announcement ${index + 1}`} 
-                  className="w-full h-[50vh] object-cover rounded-t-lg"
+                  className="w-full h-auto object-cover rounded-t-lg"
                 />
                 <h3 className="text-xl font-semibold mt-4 text-gray-800 dark:text-gray-200">{announcement.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{announcement.description}</p>

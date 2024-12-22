@@ -14,7 +14,13 @@ import "swiper/css/navigation";
 import Footer from "./components/footer";
 
 // Import your slide data from the JSON file
-import slideData from "@/assets/data/slides.json";
+const slideData = [
+  { image: images.slide1, title: "Slide 1 Title" },
+  { image: images.slide2, title: "Slide 2 Title" },
+  { image: images.slide3, title: "Slide 3 Title" },
+  { image: images.slide4, title: "Slide 4 Title" },
+  { image: images.slide5, title: "Slide 5 Title" },
+];
 
 const Home = () => {
   return (
@@ -49,7 +55,7 @@ const Home = () => {
             navigation={true}
             loop={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-80 mb-20"
+            className="mySwiper rounded-md h-[60vh] mb-20"
           >
             {slideData.map((slide, index) => (
               <SwiperSlide key={index}>
