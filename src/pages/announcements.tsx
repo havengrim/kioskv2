@@ -89,6 +89,34 @@ const Announcement = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <section className="py-24">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1">
+              <div className="order-1 sm:order-1">
+                <img
+                  src={images.image2025}
+                  alt="A representative image for Graduate School"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div className="order-2 sm:order-2">
+                <h1 className="font-bold text-5xl sm:text-7xl leading-tight mt-5 text-gray-700 dark:text-gray-300 text-center">
+                  Raise 2025
+                </h1>
+                <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400 text-center">
+                  We envision a society where the poor, vulnerable and
+                  disadvantaged are empowered for an improved quality of life.
+                  Towards this end, DSWD will be the world’s standard for the
+                  delivery of coordinated social services and social
+                  protection for poverty reduction by 2025.We are building a dynamic, skilled, and compassionate workforce dedicated to transforming lives and uplifting the poor, vulnerable, and disadvantaged. By 2030, DSWD will lead globally in delivering exceptional social services and protection, driving the fight against poverty with unwavering excellence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         <section className="py-24">
           <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
             Mission and Vision of DSWD

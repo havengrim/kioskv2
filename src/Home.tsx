@@ -55,7 +55,7 @@ const Home = () => {
             navigation={true}
             loop={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-[60vh] mb-20"
+            className="mySwiper rounded-md h-[90vh] mb-20"
           >
             {slideData.map((slide, index) => (
               <SwiperSlide key={index}>

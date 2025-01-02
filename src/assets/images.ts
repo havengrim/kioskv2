@@ -47,6 +47,7 @@ import announcement1 from "@/assets/announcement1.jpg"
 import announcement2 from "@/assets/announcement2.jpg"
 import announcement3 from "@/assets/announcement3.jpg"
 import announcement4 from "@/assets/announcement4.jpg"
+import image2025 from "@/assets/2025.png"
 const images = {
   hrppms,
   lds,
@@ -96,7 +97,8 @@ const images = {
   slide2,
   slide3,
   slide4,
-  slide5
+  slide5,
+  image2025
 };
 
 export default images;
