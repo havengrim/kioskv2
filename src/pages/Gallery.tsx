@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
 import Lightbox from "yet-another-react-lightbox";
@@ -16,7 +16,7 @@ import Sidebar from "@/components/sidebar";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
-
+  const [delay, setDelay] = React.useState(5000);
   return (
     <>
       <div className="flex flex-col dark:bg-gray-900 dark:text-white h-full w-full">
@@ -39,6 +39,7 @@ export default function App() {
             open={index >= 0}
             index={index}
             close={() => setIndex(-1)}
+            slideshow={{ delay }}
             plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
           />
         </div>
