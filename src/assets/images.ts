@@ -49,6 +49,14 @@ import announcement3 from "@/assets/announcement3.jpg"
 import announcement4 from "@/assets/announcement4.jpg"
 import rise2025 from "@/assets/rise2025.png"
 import image2025 from "@/assets/2025.png"
+import pas1 from "@/assets/pas1.jpg"
+import pas2 from "@/assets/pas2.jpg"
+import pas3 from "@/assets/pas3.jpg"
+import hs1 from "@/assets/hs1.jpg"
+import ict1 from "@/assets/ict1.jpg"
+import cs1 from "@/assets/cs1.jpg"
+import cs2 from "@/assets/cs2.jpg"
+import cs3 from "@/assets/cs3.jpg"
 const images = {
   hrppms,
   lds,
@@ -100,7 +108,15 @@ const images = {
   slide4,
   slide5,
   image2025,
-  rise2025
+  rise2025,
+  pas1,
+  pas2,
+  pas3,
+  hs1,
+  ict1,
+  cs1,
+  cs2,
+  cs3
 };
 
 export default images;

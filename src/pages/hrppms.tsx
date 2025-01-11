@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import images from "@/assets/images";
 import Sidebar from "@/components/sidebar";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {
   Avatar,
   AvatarFallback,
@@ -14,7 +16,9 @@ import { Button } from "@/components/ui/button";
 
 const Hrppms = () => {
   const [activeTab, setActiveTab] = useState("Announcements");
-
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Adjust duration as needed
+  }, []);
   const tabs = [
     {
       name: "Announcements",
@@ -35,6 +39,11 @@ const Hrppms = () => {
       name: "Notice to the Public",
       content: "",
       type: "card", // Text-based content
+    },
+    {
+      name: "Our Team",
+      content: "",
+      type: "team", // Text-based content
     },
   ];
 
@@ -319,6 +328,46 @@ You may also visit our Facebook Page: https://web.facebook.com/dswdfo3recruitmen
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          )}
+
+          {tabs.find((tab) => tab.name === activeTab)?.type === "team" && (
+            <div className="mt-4">
+                  <section className="py-6">
+      <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
+        <p
+          className="max-w-2xl text-center dark:text-gray-600"
+          data-aos="fade-up"
+        >
+          At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur
+          quam natus quis nihil quod, hic explicabo doloribus magnam neque,
+          exercitationem eius sunt!
+        </p>
+        <div
+          className="flex flex-row flex-wrap-reverse justify-center"
+          data-aos="fade-up"
+        >
+          {[...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center m-8 text-center"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100} // Stagger animations for each card
+            >
+              <img
+                alt=""
+                className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500"
+                src={`https://source.unsplash.com/100x100/?portrait?${index}`}
+              />
+              <p className="text-xl font-semibold leading-tight">
+                Leroy Jenkins
+              </p>
+              <p className="dark:text-gray-600">Visual Designer</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
             </div>
           )}
         </div>

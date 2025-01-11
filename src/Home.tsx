@@ -15,7 +15,6 @@ import Footer from "./components/footer";
 
 // Import your slide data from the JSON file
 const slideData = [
-  {image: images.rise2025, title: "Rise 2025"},
   { image: images.slide1, title: "Slide 1 Title" },
   { image: images.slide2, title: "Slide 2 Title" },
   { image: images.slide3, title: "Slide 3 Title" },

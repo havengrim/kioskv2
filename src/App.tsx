@@ -10,6 +10,7 @@ import About from "./pages/about";
 import { ThemeProvider } from "@/components/theme-provider"
 import Settings from "./pages/settings";
 import ChatBotHead from "./components/ChatBotHead";
+import Gallery from "./pages/Gallery";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/pas" element={<Pas />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </Router>
         <ChatBotHead />

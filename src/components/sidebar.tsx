@@ -6,7 +6,7 @@ import {
 } from "react-icons/hi2";
 import { GoStack } from "react-icons/go";
 import { IoIosHelpCircleOutline } from "react-icons/io";
-
+import { TbPhoto } from "react-icons/tb";
 const Sidebar = () => {
   return (
     <div className="fixed left-0 top-0 bg-gray-100">
@@ -45,6 +45,14 @@ const Sidebar = () => {
             >
             <IoIosHelpCircleOutline className="w-6 h-6" />
             <span className=" font-regular text-sm">About</span>
+            </a>
+
+            <a
+            href="/gallery"
+            className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
+            >
+            <TbPhoto className="w-6 h-6" />
+            <span className=" font-regular text-sm">Gallery</span>
             </a>
 
             <a

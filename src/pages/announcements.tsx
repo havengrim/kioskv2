@@ -14,6 +14,7 @@ import images from '@/assets/images';
 const Announcement = () => {
   // Example data for announcements
   const announcements = [
+    { title: "Rise 2025: A Movement for Excellence", description: "We will refine and enhance our processes, ensuring faster, more efficient, and impactful service delivery." },
     { title: "Orientation on the renewal", description: "The HRPPMS enjoins all COS and JO workers on the virtual orientation that will be conducted TOMORROW,  December 19, 2024 (Thursday), at 10:00 AM via this link: https://meet.google.com/fsc-zgme-dew." },
     { title: "Be an Angel in RED VEST!", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
     { title: "", description: "In connection with the May 12, 2025 National and Local Elections and BARMM Parliamentary Elections, may we remind you of the prohibited acts and corresponding periods as mentioned therein." },
@@ -22,6 +23,7 @@ const Announcement = () => {
 
   // Static images for announcements
   const announcementImages = [
+    images.rise2025,
     images.announcement1,
     images.announcement2,
     images.announcement4,
