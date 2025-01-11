@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
 import Lightbox from "yet-another-react-lightbox";
@@ -16,7 +16,8 @@ import Sidebar from "@/components/sidebar";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
-  const [delay, setDelay] = React.useState(5000);
+  const [delay, setDelay] = useState(5000); // initial delay set to 5000ms (5 seconds)
+
   return (
     <>
       <div className="flex flex-col dark:bg-gray-900 dark:text-white h-full w-full">
@@ -25,14 +26,27 @@ export default function App() {
           {/* Grid layout for photos */}
           <div className="w-full">
             <div className="photo-grid">
-                <RowsPhotoAlbum
+              <RowsPhotoAlbum
                 photos={photos}
                 targetRowHeight={200}
                 onClick={({ index }) => setIndex(index)}
-                />
+              />
             </div>
           </div>
-        
+
+          {/* Slider to adjust slideshow delay */}
+          <div className="mb-4 hidden">
+            <label className="text-white">Slideshow Delay (ms): {delay}</label>
+            <input
+              type="range"
+              min="1000"
+              max="10000"
+              step="100"
+              value={delay}
+              onChange={(e) => setDelay(Number(e.target.value))}
+              className="w-full"
+            />
+          </div>
 
           <Lightbox
             slides={photos}
@@ -44,8 +58,6 @@ export default function App() {
           />
         </div>
       </div>
-
-
     </>
   );
 }
