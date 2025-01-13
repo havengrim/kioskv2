@@ -16,7 +16,7 @@ import Sidebar from "@/components/sidebar";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
-  const [delay, setDelay] = useState(5000); // initial delay set to 5000ms (5 seconds)
+  const [delay, setDelay] = useState(10000); // initial delay set to 5000ms (5 seconds)
 
   return (
     <>
