@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flex flex-col dark:bg-gray-900 dark:text-white h-full w-full">
+      <div className="flex flex-col dark:bg-gray-900 dark:text-white h-screen w-full">
         <Sidebar />
         <div className="container mx-auto p-4 lg:pl-20">
           {/* Grid layout for photos */}
