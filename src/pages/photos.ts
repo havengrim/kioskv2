@@ -31,6 +31,18 @@ const photos = [
         alt: "A silver and black coffee mug on a brown wooden table",
       },
       {
+        asset: images.pas5,
+        width: 4080,
+        height: 4080,
+        alt: "A silver and black coffee mug on a brown wooden table",
+      },
+      {
+        asset: images.pas6,
+        width: 4080,
+        height: 4080,
+        alt: "A silver and black coffee mug on a brown wooden table",
+      },
+      {
         asset: images.cs1,
         width: 1080,
         height: 720,

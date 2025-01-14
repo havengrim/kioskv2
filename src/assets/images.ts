@@ -52,6 +52,8 @@ import image2025 from "@/assets/2025.png"
 import pas1 from "@/assets/pas1.jpg"
 import pas2 from "@/assets/pas2.jpg"
 import pas3 from "@/assets/pas3.jpg"
+import pas5 from "@/assets/pas5.jpg"
+import pas6 from "@/assets/pas6.jpg"
 import hs1 from "@/assets/hs1.jpg"
 import ict1 from "@/assets/ict1.jpg"
 import cs1 from "@/assets/cs1.jpg"
@@ -112,6 +114,8 @@ const images = {
   pas1,
   pas2,
   pas3,
+  pas5,
+  pas6,
   hs1,
   ict1,
   cs1,
