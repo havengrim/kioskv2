@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.custom-lightbox {
+  --yarl__container-background: white; /* Sets the background color to white */
+  --yarl__slide-background: white; /* Ensures the slide background is also white */
+}

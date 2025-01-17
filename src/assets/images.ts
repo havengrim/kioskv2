@@ -54,11 +54,14 @@ import pas2 from "@/assets/pas2.jpg"
 import pas3 from "@/assets/pas3.jpg"
 import pas5 from "@/assets/pas5.jpg"
 import pas6 from "@/assets/pas6.jpg"
+import pas7 from "@/assets/pas7.jpg"
 import hs1 from "@/assets/hs1.jpg"
 import ict1 from "@/assets/ict1.jpg"
 import cs1 from "@/assets/cs1.jpg"
 import cs2 from "@/assets/cs2.jpg"
 import cs3 from "@/assets/cs3.jpg"
+import weCare from "@/assets/weCare.jpg"
+import welfare from "@/assets/welfare1.png"
 const images = {
   hrppms,
   lds,
@@ -116,11 +119,14 @@ const images = {
   pas3,
   pas5,
   pas6,
+  pas7,
   hs1,
   ict1,
   cs1,
   cs2,
-  cs3
+  cs3,
+  weCare,
+  welfare
 };
 
 export default images;

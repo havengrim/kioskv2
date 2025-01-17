@@ -14,20 +14,30 @@ import images from '@/assets/images';
 const Announcement = () => {
   // Example data for announcements
   const announcements = [
+    { title: "", description: "We request you prompt cooperation in completing this requirement to ensure a smooth and efficient process." },
     { title: "Rise 2025: A Movement for Excellence", description: "We will refine and enhance our processes, ensuring faster, more efficient, and impactful service delivery." },
+    { title: "", description: "We would like to invite everyone to attend the Autism Consciousness Talk happening on January 16, 2025 at 2:00PM via Google Meet; Autism Consciousness Talk Thursday, January 16 · 2:00pm Time zone: Asia/Manila Google Meet joining info Video call link: https://meet.google.com/jay-ucaq-dfc" },
+    { title: "Magandang buhay!", description: "Please refer to the advisory below regarding the request for PVC and ARTA IDs for DSWD FO III personnel. Attached to this message is the updated link along with the corresponding QR code for your convenience and easy access. Thank you for your cooperation and understanding!" },
+    { title: "We Care!", description: "The Human Resource Welfare Section (HRWS), in coordination with the Provincial Health Office of Pampanga, will be providing FREE FLU VACCINE to ALL DSWD Field Office 3 family members (2 per staff) on January 13 to 29, 2025 between 9am to 4pm at the Regional Office Clinic." },
     { title: "Orientation on the renewal", description: "The HRPPMS enjoins all COS and JO workers on the virtual orientation that will be conducted TOMORROW,  December 19, 2024 (Thursday), at 10:00 AM via this link: https://meet.google.com/fsc-zgme-dew." },
     { title: "Be an Angel in RED VEST!", description: "DSWD announces the release of aid for vulnerable families affected by the pandemic." },
     { title: "", description: "In connection with the May 12, 2025 National and Local Elections and BARMM Parliamentary Elections, may we remind you of the prohibited acts and corresponding periods as mentioned therein." },
     { title: "", description: "DSWD Field Office 3 aims to promote fairness and inclusion, break barriers and build futures through the Equal Employment Opportunity Principle." },
+    { title: "STATEMENT OF ASSETS, LIABILITIES AND NET WORTH (SALN) ORIENTATION (BATCH 2)", description: "" },
   ];
 
   // Static images for announcements
   const announcementImages = [
+    images.pas1,
     images.rise2025,
+    images.welfare,
+    images.pas7,
+    images.weCare,
     images.announcement1,
     images.announcement2,
     images.announcement4,
     images.announcement3,
+    images.cs3
   ];
 
   return (
@@ -59,7 +69,7 @@ const Announcement = () => {
           }}
           pagination={true}
           autoplay={{
-            delay: 3000, // Delay between slides (in ms)
+            delay: 10000, // Delay between slides (in ms)
             disableOnInteraction: false, // Don't disable autoplay on user interaction
           }}
           loop={true}
@@ -91,33 +101,6 @@ const Announcement = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* <section className="py-24">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="grid grid-cols-1">
-              <div className="order-1 sm:order-1">
-                <img
-                  src={images.image2025}
-                  alt="A representative image for Graduate School"
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-              <div className="order-2 sm:order-2">
-                <h1 className="font-bold text-5xl sm:text-7xl leading-tight mt-5 text-gray-700 dark:text-gray-300 text-center">
-                  Raise 2025
-                </h1>
-                <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400 text-center">
-                  We envision a society where the poor, vulnerable and
-                  disadvantaged are empowered for an improved quality of life.
-                  Towards this end, DSWD will be the world’s standard for the
-                  delivery of coordinated social services and social
-                  protection for poverty reduction by 2025.We are building a dynamic, skilled, and compassionate workforce dedicated to transforming lives and uplifting the poor, vulnerable, and disadvantaged. By 2030, DSWD will lead globally in delivering exceptional social services and protection, driving the fight against poverty with unwavering excellence.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
 
         <section className="py-24">
           <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
