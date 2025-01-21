@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import images from "@/assets/images";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GoArrowRight } from "react-icons/go";
@@ -13,10 +13,18 @@ import { GrDocumentUser } from "react-icons/gr";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import ReactQRCode from 'react-qr-code';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
-
+import Typing from 'react-typing-effect';
+import AOS from "aos";
+import "aos/dist/aos.css"; // import AOS styles
 
 const Home = () => {
   const [selectedQRCode, setSelectedQRCode] = useState<string | null>(null);
+  useEffect(() => {
+    AOS.init({
+      duration: 500, // animation duration
+      once: true, // whether animations should happen only once
+    });
+  }, []);
 
   const forms = [
     {
@@ -74,7 +82,9 @@ const Home = () => {
     </div>
 
         <div className="max-w-lg lg:mx-12 lg:order-2">
-          <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Welcome to HRMDD Kiosk</h1>
+        <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
+        <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD Kiosk']} />
+      </h1>
           <p className="mt-4 text-gray-600 dark:text-gray-300">
           Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms, announcements, and employee management—all in one place.
           </p>
@@ -99,7 +109,9 @@ const Home = () => {
         </h1>
         <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2">
           {forms.map((form, index) => (
-            <div key={index} className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+            <div key={index} className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
               <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
                 <form.icon className="w-5 h-5" />
               </span>
