@@ -62,6 +62,9 @@ import cs2 from "@/assets/cs2.jpg"
 import cs3 from "@/assets/cs3.jpg"
 import weCare from "@/assets/weCare.jpg"
 import welfare from "@/assets/welfare1.png"
+import try1 from "@/assets/try1.png"
+import bagongPilipinas from "@/assets/Bagong_Pilipinas_logo.png"
+import   DSWDLogo from "@/assets/DSWD-Logo.png"
 const images = {
   hrppms,
   lds,
@@ -126,7 +129,10 @@ const images = {
   cs2,
   cs3,
   weCare,
-  welfare
+  welfare,
+  try1,
+  bagongPilipinas,
+  DSWDLogo
 };
 
 export default images;

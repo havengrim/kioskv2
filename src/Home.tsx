@@ -1,9 +1,9 @@
 
 import Sidebar from "@/components/sidebar";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import images from "@/assets/images";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Button } from "@/components/ui/button";
@@ -27,8 +27,8 @@ const Home = () => {
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
       <Sidebar />
       <div className="container mx-auto p-4 pl-20">
-        <div className="flex w-full justify-end gap-2">
-          <Badge className="flex gap-2 p-2 bg-blue-500 dark:bg-blue-600 dark:text-white">
+        <div className="flex w-full justify-end items-center gap-4">
+          {/* <Badge className="flex gap-2 p-2 bg-blue-500 dark:bg-blue-600 dark:text-white">
             Announcements
             <span className="bg-white text-gray-500 dark:bg-gray-700 dark:text-white px-2 py-1 rounded-full">
               5
@@ -37,7 +37,9 @@ const Home = () => {
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          </Avatar> */}
+            <img src={images.DSWDLogo} alt="Bagong Pilipinas Logo" className="h-14 w-40" />
+          <img src={images.bagongPilipinas} alt="Bagong Pilipinas Logo" className="h-24 w-24" />
         </div>
 
         {/* Swiper Section */}
@@ -55,7 +57,7 @@ const Home = () => {
             navigation={true}
             loop={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-[90vh] mb-20"
+            className="mySwiper rounded-md h-full mb-20"
           >
             {slideData.map((slide, index) => (
               <SwiperSlide key={index}>
