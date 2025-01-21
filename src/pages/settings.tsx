@@ -1,12 +1,12 @@
 
 import { ModeToggle } from "@/components/mode-toggle";
-import Sidebar from "@/components/sidebar";
+import Navbar from "@/components/Navbar";
 
 const Settings = () => {
   return (
     <div className="flex flex-col dark:bg-gray-900">
       {/* Sidebar */}
-      <Sidebar />
+      <Navbar />
 
       <div className="w-full p-8  dark:bg-gray-900 dark:text-white h-screen">
         <div className="container mx-auto p-4 lg:pl-20">

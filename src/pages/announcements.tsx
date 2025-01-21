@@ -1,4 +1,4 @@
-import Sidebar from '@/components/sidebar'; // Import Sidebar
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -9,6 +9,7 @@ import { GoArrowRight } from "react-icons/go";
 
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
 import images from '@/assets/images';
+import Navbar from '@/components/Navbar';
 
 
 const Announcement = () => {
@@ -43,10 +44,10 @@ const Announcement = () => {
   return (
     <div className="flex flex-col min-h-screen  dark:bg-gray-900">
       {/* Sidebar */}
-      <Sidebar />
+      <Navbar />
 
       {/* Main content */}
-      <div className="container mx-auto p-4 lg:pl-20">
+      <div className="container mx-auto p-4">
         <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 dark:text-gray-200 mb-3">
           Announcements
         </h2>
