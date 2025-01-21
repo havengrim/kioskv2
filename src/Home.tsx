@@ -1,107 +1,168 @@
-
-import Sidebar from "@/components/sidebar";
-// import { Badge } from "@/components/ui/badge";
+import Navbar from "@/components/Navbar";
 import images from "@/assets/images";
+import { useState } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Button } from "@/components/ui/button";
 import { GoArrowRight } from "react-icons/go";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import Footer from "./components/footer";
+import { IoDocumentTextOutline } from "react-icons/io5";
+import { HiOutlineDocumentText } from "react-icons/hi2";
+import { GrDocumentTime } from "react-icons/gr";
+import { LuTimerReset } from "react-icons/lu";
+import { GrDocumentUser } from "react-icons/gr";
+import { AiOutlineFieldTime } from "react-icons/ai";
+import ReactQRCode from 'react-qr-code';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
 
-// Import your slide data from the JSON file
-const slideData = [
-  { image: images.slide1, title: "Slide 1 Title" },
-  { image: images.slide2, title: "Slide 2 Title" },
-  { image: images.slide3, title: "Slide 3 Title" },
-  { image: images.slide4, title: "Slide 4 Title" },
-  { image: images.slide5, title: "Slide 5 Title" },
-];
 
 const Home = () => {
+  const [selectedQRCode, setSelectedQRCode] = useState<string | null>(null);
+
+  const forms = [
+    {
+      title: "Regular, Contractual, and Casual Application for Leave Form",
+      description: "Submit leave applications easily for Regular, Contractual, and Casual employees.",
+      icon: IoDocumentTextOutline,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Regular-Contractual-and-Casual-Application-for-Leave-Form.pdf",
+    },
+    {
+      title: "Contract of Service Application for Leave",
+      description: "Manage leave requests for contract-based employees seamlessly.",
+      icon: HiOutlineDocumentText,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Contract-of-Service-Application-for-Leave-form.pdf",
+    },
+    {
+      title: "Blank Daily Time Record",
+      description: "Track and log daily attendance with customizable forms.",
+      icon: GrDocumentTime,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Blank-Daily-Time-Record.pdf",
+    },
+    {
+      title: "Overtime Annex C",
+      description: "Submit and approve overtime requests efficiently.",
+      icon: LuTimerReset,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Annex-C.pdf",
+    },
+    {
+      title: "Overtime Blank Form",
+      description: "Customize and submit overtime details effortlessly.",
+      icon: AiOutlineFieldTime,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Blank-Form.pdf",
+    },
+    {
+      title: "Personal Data Sheet",
+      description: "View and download the personal data sheet for reference.",
+      icon: GrDocumentUser,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
+    },
+  ];
+
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
-      <Sidebar />
-      <div className="container mx-auto p-4 pl-20">
-        <div className="flex w-full justify-end items-center gap-4">
-          {/* <Badge className="flex gap-2 p-2 bg-blue-500 dark:bg-blue-600 dark:text-white">
-            Announcements
-            <span className="bg-white text-gray-500 dark:bg-gray-700 dark:text-white px-2 py-1 rounded-full">
-              5
-            </span>
-          </Badge>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar> */}
-            <img src={images.DSWDLogo} alt="Bagong Pilipinas Logo" className="h-14 w-40" />
-          <img src={images.bagongPilipinas} alt="Bagong Pilipinas Logo" className="h-24 w-24" />
-        </div>
+      <Navbar />
+      <div className="container mx-auto p-4">
 
-        {/* Swiper Section */}
-        <div className="mt-5 flex">
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            loop={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper rounded-md h-full mb-20"
-          >
-            {slideData.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative">
-                  <img
-                    src={slide.image}
-                    alt={`Slide ${index + 1}`}
-                    className="w-full h-auto rounded-lg"
-                  />
-                  {/* Uncomment below if you want to display the title on the image */}
-                  {/* <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded">
-                    {slide.title}
-                  </div> */}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+
+        {/* Hero Section */}
+      <div className="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+  <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+    <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
+      <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full lg:mx-0 focus:outline-none"></button>
+      <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+      <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+      <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+    </div>
+
+        <div className="max-w-lg lg:mx-12 lg:order-2">
+          <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Welcome to HRMDD Kiosk</h1>
+          <p className="mt-4 text-gray-600 dark:text-gray-300">
+          Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms, announcements, and employee management—all in one place.
+          </p>
+          <div className="mt-6">
+            <a href="#" className="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none">
+              Explore Our Services
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
+        <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="apple watch photo" />
+      </div>
+    </div>
+
 
         {/* Section Cards */}
+        <section>
+        <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-20">
+          Most Requested Forms
+        </h1>
+        <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2">
+          {forms.map((form, index) => (
+            <div key={index} className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+              <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+                <form.icon className="w-5 h-5" />
+              </span>
+              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                {form.title}
+              </h2>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{form.description}</p>
+              <div className="flex gap-4 mt-4">
+                <a href={form.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  View Form
+                </a>
+                  <div>
+                    <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        onClick={() => setSelectedQRCode(form.link)}
+                        className="text-blue-600 hover:underline"
+                      >
+                        Show QR Code
+                      </button>
+                    </DialogTrigger>
+
+                    <DialogContent>
+                      <DialogTitle>QR Code for {form.title}</DialogTitle>
+                      <DialogDescription>
+                        <ReactQRCode value={selectedQRCode || ''} size={256} className="mx-auto" />
+                      </DialogDescription>
+                      <DialogClose asChild>
+                        <button className="mt-4 text-blue-600 hover:underline">Close</button>
+                      </DialogClose>
+                    </DialogContent>
+                  </Dialog>
+                  </div>
+                </div>
+              </div>
+          ))}
+        </div>
+        </section>
+
         <div>
-          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
+          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-20">
             Choose Section to Get the Latest Update
           </h1>
           <div className="grid grid-cols-4 gap-5">
-            <a href="/hrppms">
+            <a href="https://fo3.dswd.gov.ph/hrppms/">
               <Card
                 style={{ backgroundImage: `url(${images.hrppms})` }}
                 className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
               ></Card>
             </a>
-            <a href="/lds">
+            <a href="https://fo3.dswd.gov.ph/lds/">
               <Card
                 style={{ backgroundImage: `url(${images.lds})` }}
                 className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
               ></Card>
             </a>
-            <a href="/hrws">
+            <a href="https://fo3.dswd.gov.ph/hrws/">
               <Card
                 style={{ backgroundImage: `url(${images.hrws})` }}
                 className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
               ></Card>
             </a>
-            <a href="/pas">
+            <a href="https://fo3.dswd.gov.ph/pas/">
               <Card
                 style={{ backgroundImage: `url(${images.pas})` }}
                 className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
@@ -110,7 +171,7 @@ const Home = () => {
           </div>
 
           {/* Vision Section */}
-          <section className="py-24">
+          <section className="py-24 bg">
             <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
               Mission and Vision of DSWD
             </h1>
@@ -128,11 +189,8 @@ const Home = () => {
                     Vision
                   </h3>
                   <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
-                    We envision a society where the poor, vulnerable and
-                    disadvantaged are empowered for an improved quality of life.
-                    Towards this end, DSWD will be the world’s standard for the
-                    delivery of coordinated social services and social
-                    protection for poverty reduction by 2030.
+                    We envision a society where the poor, vulnerable and disadvantaged are empowered for an improved quality of life.
+                    Towards this end, DSWD will be the world’s standard for the delivery of coordinated social services and social protection for poverty reduction by 2030.
                   </p>
                   <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center cursor-pointer dark:bg-blue-700 dark:text-white">
                     Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
@@ -158,9 +216,7 @@ const Home = () => {
                     Mission
                   </h3>
                   <p className="text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-400">
-                    To develop, implement and coordinate social protection and
-                    poverty reduction solutions for and with the poor,
-                    vulnerable and disadvantaged.
+                    To develop, implement and coordinate social protection and poverty reduction solutions for and with the poor, vulnerable and disadvantaged.
                   </p>
                   <Button className="rounded-full mt-4 bg-[#00008E] p-4 sm:p-8 text-base sm:text-lg flex items-center justify-center dark:bg-blue-700  dark:text-white">
                     Learn More <GoArrowRight className="ml-2 h-5 w-5 sm:ml-4 sm:h-10 sm:w-6" />
