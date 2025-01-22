@@ -100,6 +100,29 @@ const Home = () => {
     },
   ];
   
+  const features = [
+    {
+      title: 'Embrace Change',
+      description: 'Be open to new ideas and ways of working.',
+      icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
+    },
+    {
+      title: 'Challenge the Status Quo',
+      description: 'Think creatively and explore innovative solutions.',
+      icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
+    },
+    {
+      title: 'Pursue Excellence',
+      description: 'Strive for the highest standards in everything we do.',
+      icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
+    },
+    {
+      title: 'Lift Each Other',
+      description: 'Support and encourage one another in our pursuit of excellence.',
+      icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
+    },
+  ];
+  
 
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
@@ -329,8 +352,15 @@ const Home = () => {
 
           <section className="py-16 bg-gradient-to-b mt-20 from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
               <div className="mx-auto px-6 lg:px-8 max-w-7xl">
+              <h3 className="text-4xl font-extrabold leading-snug text-gray-800 dark:text-gray-100 flex flex-col justify-center items-center text-center">
+                      RISE 2025: A Movement for Excellence
+                    </h3>
+                    <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 text-center mb-10">
+                      Join us on a transformative journey toward innovation and success.
+                    </p>
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
                   {/* Image Section */}
+                  
                   <div className="relative">
                     <img
                       src={images.risee}
@@ -342,50 +372,19 @@ const Home = () => {
 
                   {/* Content Section */}
                   <div>
-                    <h3 className="text-4xl font-extrabold leading-snug text-gray-800 dark:text-gray-100">
-                      RISE 2025: A Movement for Excellence
-                    </h3>
-                    <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-                      Join us on a transformative journey toward innovation and success.
-                    </p>
                     <div className="flex flex-col gap-6 mt-8">
-                      {[
-                        {
-                          title: 'Embrace Change',
-                          description: 'Be open to new ideas and ways of working.',
-                          icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
-                        },
-                        {
-                          title: 'Challenge the Status Quo',
-                          description: 'Think creatively and explore innovative solutions.',
-                          icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
-                        },
-                        {
-                          title: 'Pursue Excellence',
-                          description: 'Strive for the highest standards in everything we do.',
-                          icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
-                        },
-                        {
-                          title: 'Lift Each Other',
-                          description: 'Support and encourage one another in our pursuit of excellence.',
-                          icon: <RiArrowUpDoubleFill className="h-8 w-8" />,
-                        },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-start gap-4">
-                          <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
-                            {item.icon}
-                          </div>
-                          <div>
-                            <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
-                              {item.title}
-                            </h4>
-                            <p className="mt-1 text-gray-600 dark:text-gray-400">
-                              {item.description}
-                            </p>
-                          </div>
+                    {features.map((item, index) => (
+                      <div key={index} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
+                          {item.icon}
                         </div>
-                      ))}
-                    </div>
+                        <div>
+                          <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">{item.title}</h4>
+                          <p className="mt-1 text-gray-600 dark:text-gray-400">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                   </div>
                 </div>
               </div>
