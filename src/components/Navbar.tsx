@@ -1,46 +1,75 @@
+
+import { NavLink } from "react-router-dom";
 import images from "@/assets/images";
-
-
 
 const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900">
       <div className="container flex flex-col items-center p-6 mx-auto">
-      <div className="flex w-full justify-center items-center gap-6">
-          <img src={images.bagongPilipinas} alt="Bagong Pilipinas Logo" className="h-14 w-16" />
-          <img src={images.DSWDLogo} alt="DSWD Logo" className="h-12 w-40 mt-4" />
+        {/* Logos */}
+        <div className="flex w-full justify-center items-center gap-6">
+          <img
+            src={images.bagongPilipinas}
+            alt="Bagong Pilipinas Logo"
+            className="h-14 w-16"
+          />
+          <img
+            src={images.DSWDLogo}
+            alt="DSWD Logo"
+            className="h-12 w-40 mt-4"
+          />
         </div>
 
+        {/* Navigation Links */}
         <div className="flex items-center justify-center mt-6 text-gray-600 capitalize dark:text-gray-300">
-          <a
-            href="/"
-            className="mx-2 text-gray-800 border-b-2 border-blue-500 dark:text-gray-200 sm:mx-6"
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `mx-2 sm:mx-6 border-b-2 ${
+                isActive
+                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
+                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+              }`
+            }
           >
             home
-          </a>
-
-          <a
-            href="/announcements"
-            className="mx-2 border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 sm:mx-6"
+          </NavLink>
+          <NavLink
+            to="/announcements"
+            className={({ isActive }) =>
+              `mx-2 sm:mx-6 border-b-2 ${
+                isActive
+                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
+                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+              }`
+            }
           >
             news
-          </a>
-
-          <a
-            href="#"
-            className="mx-2 border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 sm:mx-6"
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              `mx-2 sm:mx-6 border-b-2 ${
+                isActive
+                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
+                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+              }`
+            }
           >
-            announcements
-          </a>
-
-          <a
-            href="/settings"
-            className="mx-2 border-b-2 border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500 sm:mx-6"
+            gallery
+          </NavLink>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              `mx-2 sm:mx-6 border-b-2 ${
+                isActive
+                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
+                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+              }`
+            }
           >
             settings
-          </a>
-
-          
+          </NavLink>
         </div>
       </div>
     </nav>

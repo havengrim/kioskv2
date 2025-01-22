@@ -18,6 +18,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // import AOS styles
 import Lottie from 'react-lottie';
 import animationData from '@/assets/lottie.json';
+import { RiArrowUpDoubleFill } from "react-icons/ri";
 
 const Home = () => {
   const defaultOptions = {
@@ -78,40 +79,57 @@ const Home = () => {
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
       <Navbar />
-      <div className="container mx-auto p-4">
 
 
         {/* Hero Section */}
-      <div className="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
-          <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
-            <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full lg:mx-0 focus:outline-none"></button>
-            <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
-            <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
-            <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
-          </div>
+        <div
+  className="flex flex-col lg:h-[32rem] lg:flex-row lg:items-center px-6 py-4 lg:py-16 space-y-6 lg:space-y-0 mt-10"
+  style={{
+    backgroundImage: `url(${images.bg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  {/* Left Section */}
+  <div className="container mx-auto lg:w-1/2 p-4">
+    <div className="flex flex-col items-center lg:items-start lg:flex-row">
+      {/* Navigation Buttons */}
+      <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:flex-col lg:space-y-3 lg:mr-8">
+        <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full focus:outline-none"></button>
+        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+      </div>
 
-        <div className="max-w-lg lg:mx-12 lg:order-2">
-        <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
-        <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD Kiosk']} />
-      </h1>
-          <p className="mt-4 text-gray-600 dark:text-gray-300">
+      {/* Text Content */}
+      <div className="max-w-lg lg:order-2">
+        <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 dark:text-white">
+          <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD Kiosk']} className="text-gray-100 dark:text-gray-300" />
+        </h1>
+        <p className="mt-4 text-gray-100 dark:text-gray-300">
           Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms, announcements, and employee management—all in one place.
-          </p>
-          <div className="mt-6">
-            <a href="#" className="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none">
-              Explore Our Services
-            </a>
-          </div>
+        </p>
+        <div className="mt-6">
+          <a
+            href="#"
+            className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none"
+          >
+            Explore Our Services
+          </a>
         </div>
       </div>
-
-      <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
-      <Lottie options={defaultOptions} height={400} width={400} />
-      </div>
     </div>
+  </div>
+
+  {/* Right Section */}
+  <div className="flex items-center justify-center w-full lg:w-1/2">
+    <Lottie options={defaultOptions} height={400} width={400} />
+  </div>
+</div>
 
 
+
+    <div className="container mx-auto p-4">
         {/* Section Cards */}
         <section>
         <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-20">
@@ -121,7 +139,7 @@ const Home = () => {
           {forms.map((form, index) => (
             <div key={index} className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800" data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">
+            data-aos-duration="200">
               <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
                 <form.icon className="w-5 h-5" />
               </span>
@@ -145,9 +163,9 @@ const Home = () => {
                     </DialogTrigger>
 
                     <DialogContent>
-                      <DialogTitle>QR Code for {form.title}</DialogTitle>
+                      <DialogTitle className="text-gray-800 dark:text-gray-300">QR Code for {form.title}</DialogTitle>
                       <DialogDescription>
-                        <ReactQRCode value={selectedQRCode || ''} size={256} className="mx-auto" />
+                        <ReactQRCode value={selectedQRCode || ''} size={256} className="mx-auto border-4" />
                       </DialogDescription>
                       <DialogClose asChild>
                         <button className="mt-4 text-blue-600 hover:underline">Close</button>
@@ -192,6 +210,90 @@ const Home = () => {
             </a>
           </div>
 
+          <section className="py-10 mt-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+              <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
+                  {/* Image Section */}
+                  <div className="order-2 sm:order-1">
+                    <img
+                      src={images.risee}
+                      alt="A representative image for Graduate School"
+                      className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="order-1 sm:order-2">
+                    <h3 className="font-extrabold text-3xl sm:text-4xl leading-tight text-gray-800 dark:text-gray-100">
+                      RISE 2025: A Movement for Excellence
+                    </h3>
+                    <div className="flex flex-col gap-8 mt-6">
+                      {/* Embrace Change */}
+                      <div className="flex gap-4 items-start">
+                        <div className="h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
+                          <RiArrowUpDoubleFill className="h-8 w-8" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
+                            Embrace Change
+                          </h4>
+                          <p className="text-gray-600 dark:text-gray-400">
+                            Be open to new ideas and ways of working.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Challenge the Status Quo */}
+                      <div className="flex gap-4 items-start">
+                        <div className="h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
+                          <RiArrowUpDoubleFill className="h-8 w-8" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
+                            Challenge the Status Quo
+                          </h4>
+                          <p className="text-gray-600 dark:text-gray-400">
+                            Think creatively and explore innovative solutions.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Pursue Excellence */}
+                      <div className="flex gap-4 items-start">
+                        <div className="h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
+                          <RiArrowUpDoubleFill className="h-8 w-8" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
+                            Pursue Excellence
+                          </h4>
+                          <p className="text-gray-600 dark:text-gray-400">
+                            Strive for the highest standards in everything we do.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Lift Each Other */}
+                      <div className="flex gap-4 items-start">
+                        <div className="h-16 w-16 flex items-center justify-center bg-gradient-to-tr from-blue-500 to-blue-600 text-white rounded-full shadow-lg">
+                          <RiArrowUpDoubleFill className="h-8 w-8" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-lg text-gray-700 dark:text-gray-300">
+                            Lift Each Other
+                          </h4>
+                          <p className="text-gray-600 dark:text-gray-400">
+                            Support and encourage one another in our pursuit of excellence.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
           {/* Vision Section */}
           <section className="py-24 bg">
             <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
@@ -199,14 +301,14 @@ const Home = () => {
             </h1>
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
-                <div className="order-1 sm:order-1">
+                <div className="order-2  sm:order-2">
                   <img
                     src={images.cover2}
                     alt="A representative image for Graduate School"
                     className="w-full h-auto rounded-lg shadow-md"
                   />
                 </div>
-                <div className="order-2 sm:order-2">
+                <div className="order-1  sm:order-1">
                   <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
                     Vision
                   </h3>
@@ -226,14 +328,14 @@ const Home = () => {
           <section className="py-24">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-16">
-                <div className="order-2 sm:order-2">
+                <div className="order-1  sm:order-1">
                   <img
                     src={images.cover3}
                     alt="A representative image for Graduate School"
                     className="w-full h-auto rounded-lg shadow-md"
                   />
                 </div>
-                <div className="order-1 sm:order-1">
+                <div className="order-2  sm:order-2">
                   <h3 className="font-bold text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
                     Mission
                   </h3>

@@ -65,6 +65,8 @@ import welfare from "@/assets/welfare1.png"
 import try1 from "@/assets/try1.png"
 import bagongPilipinas from "@/assets/Bagong_Pilipinas_logo.png"
 import   DSWDLogo from "@/assets/DSWD-Logo.png"
+import risee from "@/assets/risee.png"
+import bg from "@/assets/header-bg-1.jpg"
 const images = {
   hrppms,
   lds,
@@ -132,7 +134,9 @@ const images = {
   welfare,
   try1,
   bagongPilipinas,
-  DSWDLogo
+  DSWDLogo,
+  risee,
+  bg
 };
 
 export default images;

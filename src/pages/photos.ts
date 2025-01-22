@@ -4,14 +4,7 @@ import type { Photo } from "react-photo-album";
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
 const photos = [
-
-    {
-      asset: images.try1,
-      width: 5000,
-      height: 1620,
-      alt: "A silver and black coffee mug on a brown wooden table",
-    },
-    {
+      {
         asset: images.rise2025,
         width: 5000,
         height: 1620,

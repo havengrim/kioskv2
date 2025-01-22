@@ -12,7 +12,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import photos from "./photos";
-import Sidebar from "@/components/sidebar";
+import Navbar from "@/components/Navbar";
+
 
 export default function App() {
   const [index, setIndex] = useState(-1);
@@ -21,8 +22,8 @@ export default function App() {
   return (
     <>
       <div className="flex flex-col dark:bg-gray-900 dark:text-white h-screen w-full">
-        <Sidebar />
-        <div className="container mx-auto p-4 lg:pl-20">
+          <Navbar />
+        <div className="container mx-auto p-4 ">
           {/* Grid layout for photos */}
           <div className="w-full">
             <div className="photo-grid">

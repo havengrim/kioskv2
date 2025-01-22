@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Settings from "./pages/settings";
 import ChatBotHead from "./components/ChatBotHead";
 import Gallery from "./pages/Gallery";
+import KioskDashboard from "./KioskDashboard";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/dashboard" element={<KioskDashboard />} />
           </Routes>
         </Router>
         <ChatBotHead />
