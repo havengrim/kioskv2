@@ -67,6 +67,7 @@ import bagongPilipinas from "@/assets/Bagong_Pilipinas_logo.png"
 import   DSWDLogo from "@/assets/DSWD-Logo.png"
 import risee from "@/assets/risee.png"
 import bg from "@/assets/header-bg-1.jpg"
+import hr from "@/assets/hr.png"
 const images = {
   hrppms,
   lds,
@@ -136,7 +137,8 @@ const images = {
   bagongPilipinas,
   DSWDLogo,
   risee,
-  bg
+  bg,
+  hr
 };
 
 export default images;
