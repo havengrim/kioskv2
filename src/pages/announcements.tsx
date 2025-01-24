@@ -17,6 +17,7 @@ const Announcement = () => {
   const announcements = [
     { title: "", description: "We request you prompt cooperation in completing this requirement to ensure a smooth and efficient process." },
     { title: "Rise 2025: A Movement for Excellence", description: "We will refine and enhance our processes, ensuring faster, more efficient, and impactful service delivery." },
+    { title: "10 - 2 HABIT MUSIC OF THE DAY", description: "Happy 2025! Every day at 10:00 AM and 2:00 PM, we will play music to remind you to stand up, take a short break from your tasks, and move your body. To make it more fun, you may take a video of your team members dancing in today's music. Here is the link for today’s music:" },
     { title: "", description: "We would like to invite everyone to attend the Autism Consciousness Talk happening on January 16, 2025 at 2:00PM via Google Meet; Autism Consciousness Talk Thursday, January 16 · 2:00pm Time zone: Asia/Manila Google Meet joining info Video call link: https://meet.google.com/jay-ucaq-dfc" },
     { title: "Magandang buhay!", description: "Please refer to the advisory below regarding the request for PVC and ARTA IDs for DSWD FO III personnel. Attached to this message is the updated link along with the corresponding QR code for your convenience and easy access. Thank you for your cooperation and understanding!" },
     { title: "We Care!", description: "The Human Resource Welfare Section (HRWS), in coordination with the Provincial Health Office of Pampanga, will be providing FREE FLU VACCINE to ALL DSWD Field Office 3 family members (2 per staff) on January 13 to 29, 2025 between 9am to 4pm at the Regional Office Clinic." },
@@ -25,12 +26,14 @@ const Announcement = () => {
     { title: "", description: "In connection with the May 12, 2025 National and Local Elections and BARMM Parliamentary Elections, may we remind you of the prohibited acts and corresponding periods as mentioned therein." },
     { title: "", description: "DSWD Field Office 3 aims to promote fairness and inclusion, break barriers and build futures through the Equal Employment Opportunity Principle." },
     { title: "STATEMENT OF ASSETS, LIABILITIES AND NET WORTH (SALN) ORIENTATION (BATCH 2)", description: "" },
+    
   ];
 
   // Static images for announcements
   const announcementImages = [
     images.pas1,
     images.rise2025,
+    images.habit,
     images.welfare,
     images.pas7,
     images.weCare,

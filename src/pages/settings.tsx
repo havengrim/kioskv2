@@ -10,13 +10,12 @@ const Settings = () => {
 
       <div className="w-full p-8  dark:bg-gray-900 dark:text-white h-screen">
         <div className="container mx-auto p-4 lg:pl-20">
-          <h1 className="text-3xl font-bold mb-8 text-gray-700 dark:text-gray-300">
-            Settings
-          </h1>
+        <h2 className="text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800 dark:text-gray-200 mb-3">
+          Settings
+        </h2>
 
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Choose Your Theme</h2>
-            <p className="text-gray-700 dark:text-gray-400 mb-4">
+          <div className="mb-14">
+            <p className="text-gray-700 dark:text-gray-400 mb-4 text-center">
               Toggle between Light and Dark themes to personalize your experience.
             </p>
             <ModeToggle />

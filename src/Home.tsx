@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import images from "@/assets/images";
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,9 +20,25 @@ import "aos/dist/aos.css"; // import AOS styles
 import Lottie from 'react-lottie';
 import animationData from '@/assets/lottie.json';
 import { RiArrowUpDoubleFill } from "react-icons/ri";
+import App from "./components/Swiper";
+import memo1 from "@/assets/memo/memo1.pdf"
+import memo2 from "@/assets/memo/memo2.pdf"
+import memo3 from "@/assets/memo/memo3.pdf"
+import memo4 from "@/assets/memo/memo4.pdf"
+import memo5 from "@/assets/memo/memo5.pdf"
+import memo6 from "@/assets/memo/memo6.pdf"
+import Example from "./components/FloatingPhone";
 
 
 const Home = () => {
+
+  const [position1Count, setPosition1Count] = useState(0);
+  const [position1Name, setPosition1Name] = useState(0);
+  const [position2Count, setPosition2Count] = useState(0);
+  const [position2Name, setPosition2Name] = useState(0);
+
+
+
   const defaultOptions = {
     loop: true,  // Set to true if you want the animation to loop
     autoplay: true,  // Set to true to autoplay the animation
@@ -79,24 +96,34 @@ const Home = () => {
 
   const advisories = [
     { 
-      text: 'Advisory 1: HR ADVISORY NO. 03 RE', 
-      description: 'REGIONAL GUIDELINES ON FILLING UP OF COS', 
-      url: 'https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/HR-ADVISORY-NO.-03_Regional-Guidelines-on-Filling-Up-of-Contract-of-Service-COS-Positions.pdf' 
+      text: 'HRMDD MEMORANDUM NO. 01 -  2025 LIST OF DESIGNATED ALM VERIFIERS', 
+      description: '', 
+      url: memo1 
     },
     { 
-      text: 'Advisory 2: HR ADVISORY NO. 02 RE.', 
-      url: 'https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/HR-ADVISORY-NO.-02-REGIONAL-GUIDELINES-STREAMLINING-OF-THE-RECRUITMENT-SELECTION-AND-PLACEMENT-PROCESS-FOR-VACANT-NON-CAREER-POSITIONS.pdf', 
-      description: 'STREAMLINING RECRUITMENT FOR NON-CAREER POSITIONS' 
+      text: 'HRMDD MEMORANDUM NO. 02 -  2025 MEMO_INVITATION TO VIRTUAL ORIENTATION ON VERIFYING eDTR USING ALM', 
+      url: memo2, 
+      description: '' 
     },
     { 
-      text: 'Advisory 3: LAUNCH OF ONLINE REQUEST FOR ELC', 
-      description: 'HRMDD announces launch of Online Request Platform for ELC, effective July 8, 2024. Scan QR Code.', 
-      url: 'https://fo3.dswd.gov.ph/wp-content/uploads/2024/08/HRMDD-MEMO-NO-59-2024_LAUNCH-OF-ONLINE-REQUEST-FOR-ELECTRONIC-LEAVE-CARDS-1.pdf' 
+      text: 'HRMDD MEMORANDUM NO. 03 -  2025 INCREASE ON THE SOCIAL SECURITY SYSTEM (SSS) PREMIUM CONTRIBUTION RATE', 
+      description: '', 
+      url: memo3
     },
     { 
-      text: 'Advisory 4: OBSERVANCE OF LENTEN SEASON', 
-      url: 'https://fo3.dswd.gov.ph/wp-content/uploads/2024/08/HRMDD-MEMO-NO.-23-2024_OBSERVANCE-OF-LENTEN-SEASON.pdf', 
-      description: 'Reflective devotional activity, March 27, 2024, 10:00 AM' 
+      text: 'HRMDD MEMORANDUM NO. 04 -  2025 Memo Clarifying Attendance to Flag', 
+      url: memo4, 
+      description: '' 
+    },
+    { 
+      text: 'HRMDD MEMORANDUM NO. 05 -  2025 FACILITATION OF THE APPROVAL AND SIGNING OF CBJD', 
+      url: memo5, 
+      description: '' 
+    },
+    { 
+      text: 'HRMDD MEMORANDUM NO. 06 -  2025 SUBMISSION OF HRMPSC COMPOSITION', 
+      url: memo6, 
+      description: '' 
     },
   ];
   
@@ -123,6 +150,34 @@ const Home = () => {
     },
   ];
   
+  useEffect(() => {
+    const fetchEmployeeData = async () => {
+      const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      try {
+        const response = await axios.get(url);
+
+        // Process the response data
+        const fetchedData = response.data;
+        if (fetchedData && fetchedData.data) {
+          const position1 = fetchedData.data.position1?.number || 0;
+          const position2 = fetchedData.data.position2?.number || 0;
+          const positionName1 = fetchedData.data.position1?.name || 'N/A';
+          const positionName2 = fetchedData.data.position2?.name || 'N/A';
+
+          setPosition1Count(position1);
+          setPosition1Name(positionName1);
+          setPosition2Count(position2);
+          setPosition2Name(positionName2);
+        } else {
+          console.warn('Unexpected response structure:', fetchedData);
+        }
+      } catch (err) {
+        console.error('Error fetching data from Google Apps Script:', err);
+      }
+    };
+
+    fetchEmployeeData();
+  }, []);
 
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
@@ -152,10 +207,10 @@ const Home = () => {
       {/* Text Content */}
       <div className="max-w-lg lg:order-2">
         <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 dark:text-white">
-          <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD Kiosk']} className="text-gray-100 dark:text-gray-300" />
+          <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD E-Access']} className="text-gray-100 dark:text-gray-300" />
         </h1>
         <p className="mt-4 text-gray-100 dark:text-gray-300">
-          Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms, announcements, and employee management—all in one place.
+          Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms and announcements all in one place.
         </p>
         <div className="mt-6">
           <a
@@ -180,10 +235,16 @@ const Home = () => {
     <div className="container mx-auto p-4">
         {/* Section Cards */}
         <section>
-        <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-20">
-          Most Requested Forms
-        </h1>
-        <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2">
+        <div className="text-center mt-20">
+          <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+            Most Requested Forms
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl">
+            Access the most commonly requested forms quickly and easily. Find what you need below.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2 mb-20">
             {forms.map((form, index) => (
               <div
                 key={index}
@@ -246,31 +307,37 @@ const Home = () => {
 
         </section>
 
-        <section>
-        <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-20">
-          Advisories and Memorandum
-        </h1>
+        <App />
+
+          <section>
+            <div className="text-center mt-20">
+              <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+                Advisories & Memos
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl">
+                Find the latest advisories and memos to stay updated on important announcements and guidelines.
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center lg:justify-between gap-8 py-12 mt-10">
-      {/* Left Advisory Section */}
+              {/* Left Advisory Section */}
               <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
-                {advisories.slice(0, 2).map((advisory, index) => (
+                {advisories.slice(0, 3).map((advisory, index) => (
                   <div
                     key={index}
-                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-gradient-to-tr from-blue-100 to-blue-50 dark:from-gray-700 dark:to-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
                   >
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg">
+                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
                       {index + 1}
                     </div>
                     <a
                       href={advisory.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg font-medium leading-relaxed hover:underline"
+                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       {advisory.text}
                     </a>
                     <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                      {/* Optional description */}
                       {advisory.description}
                     </div>
                   </div>
@@ -278,81 +345,182 @@ const Home = () => {
               </div>
 
               {/* Center Picture Section */}
-              <div className="w-full lg:w-auto">
-                <div className="relative group">
-                  <img
-                    src={images.hr}
-                    alt="Center Image"
-                    className="w-80 rounded-lg transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0"></div>
-                </div>
+              <div className="w-full lg:w-auto flex justify-center items-center">
+                <img
+                  src={images.hr}
+                  alt="Center Image"
+                  className="w-80 rounded-lg"
+                />
               </div>
 
               {/* Right Advisory Section */}
               <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
-                {advisories.slice(2).map((advisory, index) => (
+                {advisories.slice(3).map((advisory, index) => (
                   <div
                     key={index}
-                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-gradient-to-tr from-blue-100 to-blue-50 dark:from-gray-700 dark:to-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
                   >
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg">
-                      {index + 3}
+                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
+                      {index + 4}
                     </div>
                     <a
                       href={advisory.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg font-medium leading-relaxed hover:underline"
+                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       {advisory.text}
                     </a>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      {/* Optional description */}
-                    {advisory.description}
+                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
+                      {advisory.description}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-        </section>
+          </section>
+
 
 
 
         <div>
-          <h1 className="font-bold mb-8 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center mt-12">
-            Choose Section to Get the Latest Update
-          </h1>
+          <div className="text-center mt-12">
+            <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+              Select a Section for Updates
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl mb-10">
+              Get the latest news and updates. Choose a section to begin.
+            </p>
+          </div>
+
           <div className="grid grid-cols-4 gap-5">
             <a href="https://fo3.dswd.gov.ph/hrppms/">
-              <Card
-                style={{ backgroundImage: `url(${images.hrppms})` }}
-                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-              ></Card>
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.hrppms2})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                    <div className="w-1 h-20 bg-white mr-4"></div>
+                    <div className="flex flex-col justify-center">
+                      <h2 className="font-semibold text-xl">HRPPMS</h2>
+                      <p className="text-sm">Human Resource Planning and Performance Management Section</p>
+                    </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </a>
             <a href="https://fo3.dswd.gov.ph/lds/">
-              <Card
-                style={{ backgroundImage: `url(${images.lds})` }}
-                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-              ></Card>
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.lds10})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                    <div className="w-1 h-20 bg-white mr-4"></div>
+                    <div className="flex flex-col justify-center">
+                      <h2 className="font-semibold text-xl">LDS</h2>
+                      <p className="text-sm">Learning and Development Section</p>
+                    </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </a>
             <a href="https://fo3.dswd.gov.ph/hrws/">
-              <Card
-                style={{ backgroundImage: `url(${images.hrws})` }}
-                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-              ></Card>
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.welfare2})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">HRWS</h2>
+                        <p className="text-sm">Human Resource Welfare Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
             </a>
             <a href="https://fo3.dswd.gov.ph/pas/">
-              <Card
-                style={{ backgroundImage: `url(${images.pas})` }}
-                className="bg-cover bg-no-repeat h-32 cursor-pointer bg-center"
-              ></Card>
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.pas8})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                  <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">PAS</h2>
+                        <p className="text-sm">Personnel Administrative Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
             </a>
+
           </div>
+
+          <section className="mt-20 relative">
+              <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
+                Employee Summary
+              </h1>
+
+              {/* Cards on the left */}
+              <div className="absolute top-40 left-0 flex flex-col gap-4">
+                <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                  <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                    <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                    {position1Count}
+                    </span>
+                    <h3 className="text-xl font-medium">{position1Name}</h3>
+                  </div>
+                </Card>
+                
+                {/* Lines connecting the cards */}
+                <div className="absolute -right-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+                <div className="absolute -right-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full -rotate-45"></div>
+              </div>
+
+              {/* Line connecting to phone */}
+              <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-px h-48 bg-gradient-to-b from-transparent to-purple-500"></div>
+
+              {/* Phone Section on the Right */}
+              <div className="absolute top-40 right-0 flex flex-col gap-4">
+                <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                  <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                    <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                    {position2Count}
+                    </span>
+                    <h3 className="text-xl font-medium">{position2Name}</h3>
+                  </div>
+                </Card>
+                {/* Repeat for more cards */}
+
+                <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+                <div className="absolute -left-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full rotate-45"></div>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-400 text-center mb-6">
+                This section provides a summary of the total number of employees, as well as a breakdown by division.
+              </p>
+              <Example />
+            </section>
+
+
+          
 
           <section className="py-16 bg-gradient-to-b mt-20 from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
               <div className="mx-auto px-6 lg:px-8 max-w-7xl">
-              <h3 className="text-4xl font-extrabold leading-snug text-gray-800 dark:text-gray-100 flex flex-col justify-center items-center text-center">
+              <h3 className="text-4xl font-bold leading-snug text-gray-800 dark:text-gray-100 flex flex-col justify-center items-center text-center">
                       RISE 2025: A Movement for Excellence
                     </h3>
                     <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 text-center mb-10">

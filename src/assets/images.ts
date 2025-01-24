@@ -48,7 +48,6 @@ import announcement2 from "@/assets/announcement2.jpg"
 import announcement3 from "@/assets/announcement3.jpg"
 import announcement4 from "@/assets/announcement4.jpg"
 import rise2025 from "@/assets/rise2025.png"
-import image2025 from "@/assets/2025.png"
 import pas1 from "@/assets/pas1.jpg"
 import pas2 from "@/assets/pas2.jpg"
 import pas3 from "@/assets/pas3.jpg"
@@ -68,6 +67,13 @@ import   DSWDLogo from "@/assets/DSWD-Logo.png"
 import risee from "@/assets/risee.png"
 import bg from "@/assets/header-bg-1.jpg"
 import hr from "@/assets/hr.png"
+import habit from "@/assets/habit.png"
+import cse from "@/assets/cse.gif"
+import arta from "@/assets/arta.jpg"
+import hrppms2 from "@/assets/hrppms2.png"
+import lds10 from "@/assets/lds.jpg"
+import welfare2 from "@/assets/welfare2.jpg"
+import pas8 from "@/assets/pas8.jpg"
 const images = {
   hrppms,
   lds,
@@ -118,7 +124,6 @@ const images = {
   slide3,
   slide4,
   slide5,
-  image2025,
   rise2025,
   pas1,
   pas2,
@@ -126,6 +131,7 @@ const images = {
   pas5,
   pas6,
   pas7,
+  pas8,
   hs1,
   ict1,
   cs1,
@@ -138,7 +144,13 @@ const images = {
   DSWDLogo,
   risee,
   bg,
-  hr
+  hr,
+  habit,
+  cse,
+  arta,
+  hrppms2,
+  lds10,
+  welfare2
 };
 
 export default images;

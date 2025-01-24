@@ -12,10 +12,11 @@ import Settings from "./pages/settings";
 import ChatBotHead from "./components/ChatBotHead";
 import Gallery from "./pages/Gallery";
 import KioskDashboard from "./KioskDashboard";
+import ScrollToTopButton from "./components/ui/GoToTop";
 
 const App = () => {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="dark:bg-gray-900 bg-white">
         <Router>
           <Routes>
@@ -32,6 +33,7 @@ const App = () => {
           </Routes>
         </Router>
         <ChatBotHead />
+        <ScrollToTopButton />
       </div>
       </ThemeProvider>
   );
