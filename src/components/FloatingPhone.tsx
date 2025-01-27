@@ -125,7 +125,7 @@ const Screen = ({ openDialog }: { openDialog: () => void }) => {
         onClick={openDialog}
         className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white py-3 text-sm font-medium text-violet-500 shadow-md hover:bg-violet-50 transition-colors"
       >
-        Show All List
+        Show All Divison
       </button>
       <div className="absolute -bottom-72 left-[50%] h-96 w-96 -translate-x-[50%] rounded-full bg-violet-500" />
     </div>
