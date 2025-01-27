@@ -74,6 +74,7 @@ import hrppms2 from "@/assets/hrppms2.png"
 import lds10 from "@/assets/lds.jpg"
 import welfare2 from "@/assets/welfare2.jpg"
 import pas8 from "@/assets/pas8.jpg"
+import review from "@/assets/review.gif"
 const images = {
   hrppms,
   lds,
@@ -150,7 +151,8 @@ const images = {
   arta,
   hrppms2,
   lds10,
-  welfare2
+  welfare2,
+  review
 };
 
 export default images;

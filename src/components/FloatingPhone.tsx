@@ -70,7 +70,7 @@ const Screen = () => {
       </div>
 
       <button className="absolute bottom-4 left-4 right-4 z-10 rounded-lg border-[1px] bg-white py-2 text-sm font-medium text-violet-500 backdrop-blur">
-        Get Started
+        Show All List
       </button>
 
       {/* <div className="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-violet-500" /> */}

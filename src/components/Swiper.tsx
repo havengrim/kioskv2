@@ -13,7 +13,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 // Assuming 'images' is an object or array imported correctly from "@/assets/images"
 const imagesCover = [
   images.cse,  // Ensure 'images.cse' is a valid path or imported image
-  images.arta
+  images.arta,
+  images.review
 
 ];
 

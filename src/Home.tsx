@@ -29,19 +29,23 @@ import memo5 from "@/assets/memo/memo5.pdf"
 import memo6 from "@/assets/memo/memo6.pdf"
 import Example from "./components/FloatingPhone";
 
+
 interface Position {
   name: string;
   count: number;
 }
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+
 
 const Home = () => {
+
+  const toCapitalizedCase = (str: string): string => {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+  
 
   const [positions, setPositions] = useState<Position[]>([]);
 
@@ -496,7 +500,9 @@ const Home = () => {
                         <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
                           {positions[0].count}
                         </span>
-                        <h3 className="text-xl font-medium">{positions[0].name}</h3>
+                              <h3 className="text-lg font-medium">
+                                  {positions[0]?.name ? toCapitalizedCase(positions[0].name) : "N/A"}
+                              </h3>
                       </div>
                     </Card>
                   )}
@@ -511,13 +517,16 @@ const Home = () => {
               {/* Phone Section on the Right */}
               <div className="absolute top-40 right-0 flex flex-col gap-4">
                 {/* Second Position (position2) */}
-                {positions[1] && (
+                {positions[9] && (
                   <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                     <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                       <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                        {positions[1].count}
+                        {positions[9].count}
                       </span>
-                      <h3 className="text-xl font-medium">{positions[1].name}</h3>
+                        <h3 className="text-lg font-medium">
+                          {positions[9]?.name ? toCapitalizedCase(positions[9].name) : "N/A"}
+                        </h3>
+
                     </div>
                   </Card>
                 )}
@@ -530,24 +539,7 @@ const Home = () => {
                 This section provides a summary of the total number of employees, as well as a breakdown by division.
               </p>
               <Example />
-              <div className="w-full mt-8">
-  <Carousel className="w-full">
-    <CarouselContent className="space-x-4">
-      {positions.slice(2).map((position, index) => (
-        <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-          <Card className="h-40 flex flex-col items-center justify-center shadow-lg rounded-xl bg-blue-500 text-white w-full">
-            <CardContent className="flex flex-col items-center justify-center p-6 space-y-3">
-              <span className="text-3xl font-semibold text-center">{position.count}</span>
-              <h3 className="text-md font-medium text-center">{position.name}</h3>
-            </CardContent>
-          </Card>
-        </CarouselItem>
-      ))}
-    </CarouselContent>
-    <CarouselPrevious />
-    <CarouselNext />
-  </Carousel>
-</div>
+
 
             </section>
 
