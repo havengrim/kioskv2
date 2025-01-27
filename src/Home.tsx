@@ -29,14 +29,54 @@ import memo5 from "@/assets/memo/memo5.pdf"
 import memo6 from "@/assets/memo/memo6.pdf"
 import Example from "./components/FloatingPhone";
 
+interface Position {
+  name: string;
+  count: number;
+}
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const Home = () => {
 
-  const [position1Count, setPosition1Count] = useState(0);
-  const [position1Name, setPosition1Name] = useState(0);
-  const [position2Count, setPosition2Count] = useState(0);
-  const [position2Name, setPosition2Name] = useState(0);
+  const [positions, setPositions] = useState<Position[]>([]);
 
+  useEffect(() => {
+    const fetchEmployeeData = async () => {
+      const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
+      try {
+        const response = await axios.get(url);
+
+        // Process the response data
+        const fetchedData = response.data;
+        if (fetchedData && fetchedData.data) {
+          // Dynamically gather up to 24 positions
+          const positionsArray: Position[] = []; // Explicitly type this as an array of Position
+          for (let i = 1; i <= 24; i++) {
+            const position = fetchedData.data[`position${i}`];
+            if (position) {
+              positionsArray.push({
+                name: position.name || "N/A",
+                count: position.number || 0,
+              });
+            }
+          }
+          setPositions(positionsArray); // Now this will work without TypeScript errors
+        } else {
+          console.warn("Unexpected response structure:", fetchedData);
+        }
+      } catch (err) {
+        console.error("Error fetching data from Google Apps Script:", err);
+      }
+    };
+
+    fetchEmployeeData();
+  }, []);
 
 
   const defaultOptions = {
@@ -96,34 +136,34 @@ const Home = () => {
 
   const advisories = [
     { 
-      text: 'HRMDD MEMORANDUM NO. 01 -  2025 LIST OF DESIGNATED ALM VERIFIERS', 
-      description: '', 
+      text: 'HRMDD MEMORANDUM NO. 01', 
+      description: '2025 LIST OF DESIGNATED ALM VERIFIERS', 
       url: memo1 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 02 -  2025 MEMO_INVITATION TO VIRTUAL ORIENTATION ON VERIFYING eDTR USING ALM', 
+      text: 'HRMDD MEMORANDUM NO. 02', 
       url: memo2, 
-      description: '' 
+      description: '2025 MEMO_INVITATION TO VIRTUAL ORIENTATION ON VERIFYING eDTR USING ALM' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 03 -  2025 INCREASE ON THE SOCIAL SECURITY SYSTEM (SSS) PREMIUM CONTRIBUTION RATE', 
-      description: '', 
+      text: 'HRMDD MEMORANDUM NO. 03 ', 
+      description: '2025 INCREASE ON THE SOCIAL SECURITY SYSTEM (SSS) PREMIUM CONTRIBUTION RATE', 
       url: memo3
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 04 -  2025 Memo Clarifying Attendance to Flag', 
+      text: 'HRMDD MEMORANDUM NO. 04', 
       url: memo4, 
-      description: '' 
+      description: '2025 Memo Clarifying Attendance to Flag' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 05 -  2025 FACILITATION OF THE APPROVAL AND SIGNING OF CBJD', 
+      text: 'HRMDD MEMORANDUM NO. 05 ', 
       url: memo5, 
-      description: '' 
+      description: '2025 FACILITATION OF THE APPROVAL AND SIGNING OF CBJD' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 06 -  2025 SUBMISSION OF HRMPSC COMPOSITION', 
+      text: 'HRMDD MEMORANDUM NO. 06', 
       url: memo6, 
-      description: '' 
+      description: '2025 SUBMISSION OF HRMPSC COMPOSITION' 
     },
   ];
   
@@ -150,34 +190,7 @@ const Home = () => {
     },
   ];
   
-  useEffect(() => {
-    const fetchEmployeeData = async () => {
-      const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-      try {
-        const response = await axios.get(url);
 
-        // Process the response data
-        const fetchedData = response.data;
-        if (fetchedData && fetchedData.data) {
-          const position1 = fetchedData.data.position1?.number || 0;
-          const position2 = fetchedData.data.position2?.number || 0;
-          const positionName1 = fetchedData.data.position1?.name || 'N/A';
-          const positionName2 = fetchedData.data.position2?.name || 'N/A';
-
-          setPosition1Count(position1);
-          setPosition1Name(positionName1);
-          setPosition2Count(position2);
-          setPosition2Name(positionName2);
-        } else {
-          console.warn('Unexpected response structure:', fetchedData);
-        }
-      } catch (err) {
-        console.error('Error fetching data from Google Apps Script:', err);
-      }
-    };
-
-    fetchEmployeeData();
-  }, []);
 
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white">
@@ -309,77 +322,77 @@ const Home = () => {
 
         <App />
 
-          <section>
-            <div className="text-center mt-20">
-              <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
-                Advisories & Memos
-              </h1>
-              <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl">
-                Find the latest advisories and memos to stay updated on important announcements and guidelines.
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center lg:justify-between gap-8 py-12 mt-10">
-              {/* Left Advisory Section */}
-              <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
-                {advisories.slice(0, 3).map((advisory, index) => (
-                  <div
-                    key={index}
-                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
-                  >
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
-                      {index + 1}
-                    </div>
-                    <a
-                      href={advisory.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      {advisory.text}
-                    </a>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                      {advisory.description}
-                    </div>
+        <section>
+          <div className="text-center mt-20">
+            <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+              Advisories & Memos
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl">
+              Find the latest advisories and memos to stay updated on important announcements and guidelines.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center lg:justify-between gap-8 py-12 mt-10">
+            {/* Left Advisory Section */}
+  
+            <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
+              {advisories.slice(0, 3).map((advisory, index) => (
+                <div
+                  key={index}
+                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
+                >
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
+                    {index + 1}
                   </div>
-                ))}
-              </div>
-
-              {/* Center Picture Section */}
-              <div className="w-full lg:w-auto flex justify-center items-center">
-                <img
-                  src={images.hr}
-                  alt="Center Image"
-                  className="w-80 rounded-lg"
-                />
-              </div>
-
-              {/* Right Advisory Section */}
-              <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
-                {advisories.slice(3).map((advisory, index) => (
-                  <div
-                    key={index}
-                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
+                  <a
+                    href={advisory.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
                   >
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
-                      {index + 4}
-                    </div>
-                    <a
-                      href={advisory.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      {advisory.text}
-                    </a>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                      {advisory.description}
-                    </div>
+                    {advisory.text}
+                  </a>
+                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
+                    {advisory.description}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          </section>
 
+            {/* Center Picture Section */}
+            <div className="w-full lg:w-auto flex justify-center items-center">
+              <img
+                src={images.hr}
+                alt="Center Image"
+                className="w-80 rounded-lg"
+              />
+            </div>
+
+            {/* Right Advisory Section */}
+            <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
+              {advisories.slice(3).map((advisory, index) => (
+                <div
+                  key={index}
+                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
+                >
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
+                    {index + 4}
+                  </div>
+                  <a
+                    href={advisory.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
+                  >
+                    {advisory.text}
+                  </a>
+                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
+                    {advisory.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+      </section>
 
 
 
@@ -476,43 +489,66 @@ const Home = () => {
 
               {/* Cards on the left */}
               <div className="absolute top-40 left-0 flex flex-col gap-4">
-                <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
-                  <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
-                    <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                    {position1Count}
-                    </span>
-                    <h3 className="text-xl font-medium">{position1Name}</h3>
-                  </div>
-                </Card>
-                
-                {/* Lines connecting the cards */}
-                <div className="absolute -right-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
-                <div className="absolute -right-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full -rotate-45"></div>
-              </div>
+                  {/* First Position (position1) */}
+                  {positions[0] && (
+                    <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                      <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                        <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                          {positions[0].count}
+                        </span>
+                        <h3 className="text-xl font-medium">{positions[0].name}</h3>
+                      </div>
+                    </Card>
+                  )}
 
-              {/* Line connecting to phone */}
+                  {/* Lines connecting the cards */}
+                  <div className="absolute -right-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+                  <div className="absolute -right-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full -rotate-45"></div>
+                </div>
+                              {/* Line connecting to phone */}
               <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-px h-48 bg-gradient-to-b from-transparent to-purple-500"></div>
 
               {/* Phone Section on the Right */}
               <div className="absolute top-40 right-0 flex flex-col gap-4">
-                <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
-                  <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
-                    <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                    {position2Count}
-                    </span>
-                    <h3 className="text-xl font-medium">{position2Name}</h3>
-                  </div>
-                </Card>
-                {/* Repeat for more cards */}
+                {/* Second Position (position2) */}
+                {positions[1] && (
+                  <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                    <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                      <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                        {positions[1].count}
+                      </span>
+                      <h3 className="text-xl font-medium">{positions[1].name}</h3>
+                    </div>
+                  </Card>
+                )}
 
-                <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
-                <div className="absolute -left-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full rotate-45"></div>
+              <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+              <div className="absolute -left-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full rotate-45"></div>
               </div>
 
               <p className="text-gray-600 dark:text-gray-400 text-center mb-6">
                 This section provides a summary of the total number of employees, as well as a breakdown by division.
               </p>
               <Example />
+              <div className="w-full mt-8">
+  <Carousel className="w-full">
+    <CarouselContent className="space-x-4">
+      {positions.slice(2).map((position, index) => (
+        <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+          <Card className="h-40 flex flex-col items-center justify-center shadow-lg rounded-xl bg-blue-500 text-white w-full">
+            <CardContent className="flex flex-col items-center justify-center p-6 space-y-3">
+              <span className="text-3xl font-semibold text-center">{position.count}</span>
+              <h3 className="text-md font-medium text-center">{position.name}</h3>
+            </CardContent>
+          </Card>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
+</div>
+
             </section>
 
 

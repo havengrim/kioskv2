@@ -18,7 +18,7 @@ const FloatingPhone = () => {
         transformStyle: "preserve-3d",
         transform: "rotateY(-30deg) rotateX(15deg)",
       }}
-      className="rounded-[24px] bg-violet-500"
+      className="rounded-[24px] bg-violet-500 z-50"
     >
       <motion.div
         initial={{
