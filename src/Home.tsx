@@ -272,7 +272,7 @@ const Home = () => {
 
                 {/* Icon and Title */}
                 <div className="flex flex-col gap-4">
-                  <span className="inline-block p-3 text-white rounded-lg bg-blue-800/80 w-12 flex items-center justify-center ">
+                  <span className=" p-3 text-white rounded-lg bg-blue-800/80 w-12 flex items-center justify-center ">
                     <form.icon className="w-5 h-5" />
                   </span>
                   <h2 className="mt-4 text-xl font-semibold text-white">{form.title}</h2>
@@ -517,14 +517,14 @@ const Home = () => {
               {/* Phone Section on the Right */}
               <div className="absolute top-40 right-0 flex flex-col gap-4">
                 {/* Second Position (position2) */}
-                {positions[9] && (
+                {positions[1] && (
                   <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                     <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                       <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                        {positions[9].count}
+                        {positions[1].count}
                       </span>
                         <h3 className="text-lg font-medium">
-                          {positions[9]?.name ? toCapitalizedCase(positions[9].name) : "N/A"}
+                          {positions[1]?.name ? toCapitalizedCase(positions[1].name) : "N/A"}
                         </h3>
 
                     </div>
@@ -540,7 +540,7 @@ const Home = () => {
               </p>
               <Example />
 
-
+                
             </section>
 
 

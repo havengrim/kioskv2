@@ -6,15 +6,3 @@
     --radius: 0.5rem
   }
 }
-
-@keyframes neon {
-  0% {
-    box-shadow: 0 0 5px #3b82f6, 0 0 10px #2563eb, 0 0 15px #1e3a8a;
-  }
-  50% {
-    box-shadow: 0 0 10px #2563eb, 0 0 20px #1e40af, 0 0 30px #1e3a8a;
-  }
-  100% {
-    box-shadow: 0 0 5px #3b82f6, 0 0 10px #2563eb, 0 0 15px #1e3a8a;
-  }
-}
