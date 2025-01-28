@@ -89,7 +89,7 @@ const Example = () => {
       <div className="mb-4">
         <input
           type="text"
-          placeholder="Search by Position Name"
+          placeholder="Search by Division Name"
           value={searchQuery}
           onChange={handleSearchChange}
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -127,7 +127,7 @@ const Example = () => {
             ) : (
               <tr>
                 <td  className="px-6 py-4 text-center text-gray-500" colSpan={3}>
-                  No positions found
+                  No division found
                 </td>
               </tr>
             )}
