@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 const imagesCover = [
   images.cse,  // Ensure 'images.cse' is a valid path or imported image
   images.arta,
-  images.review
+  images.review,
 
 ];
 
@@ -41,7 +41,7 @@ export default function App() {
                   <img 
               src={image} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-[50vh] sm:h-[60vh] md:h-[50vh] lg:h-[80vh] xl:h-[90vh]" 
+              className="w-full h-[50vh] sm:h-[60vh] md:h-[50vh] lg:h-[50vh] xl:h-[50vh]" 
             />
           </SwiperSlide>
         ))}
