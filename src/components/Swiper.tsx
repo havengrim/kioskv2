@@ -41,7 +41,7 @@ export default function App() {
                   <img 
               src={image} 
               alt={`Slide ${index + 1}`} 
-              className="w-full h-[50vh] sm:h-[60vh] md:h-[50vh] lg:h-[50vh] xl:h-[50vh]" 
+              className="w-full h-[50vh] sm:h-[60vh] md:h-[45vh] lg:h-[45vh] xl:h-[45vh]" 
             />
           </SwiperSlide>
         ))}

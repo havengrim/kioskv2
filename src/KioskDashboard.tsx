@@ -14,7 +14,7 @@ const KioskDashboard = () => {
         // Process the response data
         const fetchedData = response.data;
         if (fetchedData && fetchedData.data) {
-          const totalEmployees = fetchedData.data.position25?.number || 0;
+          const totalEmployees = fetchedData.data.position25?.filled || 0;
 
 
           setEmployeeCount(totalEmployees);

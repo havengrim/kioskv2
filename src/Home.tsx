@@ -32,7 +32,7 @@ import Example from "./components/FloatingPhone";
 
 interface Position {
   name: string;
-  count: number;
+  filled: number;
 }
 
 
@@ -66,7 +66,7 @@ const Home = () => {
             if (position) {
               positionsArray.push({
                 name: position.name || "N/A",
-                count: position.number || 0,
+                filled: position.filled || 0,
               });
             }
           }
@@ -498,7 +498,7 @@ const Home = () => {
                     <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                       <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                         <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                          {positions[0].count}
+                          {positions[0].filled}
                         </span>
                               <h3 className="text-lg font-medium">
                                   {positions[0]?.name ? toCapitalizedCase(positions[0].name) : "N/A"}
@@ -521,7 +521,7 @@ const Home = () => {
                   <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                     <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                       <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
-                        {positions[1].count}
+                        {positions[1].filled}
                       </span>
                         <h3 className="text-lg font-medium">
                           {positions[1]?.name ? toCapitalizedCase(positions[1].name) : "N/A"}
