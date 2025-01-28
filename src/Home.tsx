@@ -356,7 +356,7 @@ const Home = () => {
                     {advisory.text}
                   </a>
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                    {advisory.description}
+                    {toCapitalizedCase(advisory.description)}
                   </div>
                 </div>
               ))}
@@ -390,7 +390,7 @@ const Home = () => {
                     {advisory.text}
                   </a>
                   <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                    {advisory.description}
+                  {toCapitalizedCase(advisory.description)}
                   </div>
                 </div>
               ))}
@@ -411,7 +411,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-5">
-            <a href="https://fo3.dswd.gov.ph/hrppms/">
+            <a href="https://fo3.dswd.gov.ph/hrppms/" target="_blank">
               <div className="relative h-32">
                 <Card
                   style={{ backgroundImage: `url(${images.hrppms2})` }}
@@ -429,7 +429,7 @@ const Home = () => {
                 </Card>
               </div>
             </a>
-            <a href="https://fo3.dswd.gov.ph/lds/">
+            <a href="https://fo3.dswd.gov.ph/lds/" target="_blank">
               <div className="relative h-32">
                 <Card
                   style={{ backgroundImage: `url(${images.lds10})` }}
@@ -447,7 +447,7 @@ const Home = () => {
                 </Card>
               </div>
             </a>
-            <a href="https://fo3.dswd.gov.ph/hrws/">
+            <a href="https://fo3.dswd.gov.ph/hrws/" target="_blank">
               <div className="relative h-32">
                 <Card
                   style={{ backgroundImage: `url(${images.welfare2})` }}
@@ -465,7 +465,7 @@ const Home = () => {
                 </Card>
               </div>
             </a>
-            <a href="https://fo3.dswd.gov.ph/pas/">
+            <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
               <div className="relative h-32">
                 <Card
                   style={{ backgroundImage: `url(${images.pas8})` }}
