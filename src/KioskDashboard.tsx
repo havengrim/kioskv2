@@ -36,7 +36,7 @@ const KioskDashboard = () => {
         <p className="error-message">{error}</p>
       ) : (
         <div>
-          <p>{employeeCount}</p>
+          <p className='dark:text-black'>{employeeCount}</p>
         </div>
       )}
     </div>

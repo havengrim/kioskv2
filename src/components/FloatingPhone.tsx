@@ -186,7 +186,7 @@ const Screen = ({ openDialog }: { openDialog: () => void }) => {
         <h4 className="font-extrabold text-6xl">
           <KioskDashboard />
         </h4>
-        <h4 className="font-bold">Total Employees</h4>
+        <h4 className="font-bold dark:text-black">Total Employees</h4>
       </div>
       <button
         onClick={openDialog}

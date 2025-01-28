@@ -203,49 +203,49 @@ const Home = () => {
 
         {/* Hero Section */}
         <div
-  className="flex flex-col lg:h-[32rem] lg:flex-row lg:items-center px-6 py-4 lg:py-16 space-y-6 lg:space-y-0 mt-10"
-  style={{
-    backgroundImage: `url(${images.bg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
->
-  {/* Left Section */}
-  <div className="container mx-auto lg:w-1/2 p-4">
-    <div className="flex flex-col items-center lg:items-start lg:flex-row">
-      {/* Navigation Buttons */}
-      <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:flex-col lg:space-y-3 lg:mr-8">
-        <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full focus:outline-none"></button>
-        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
-        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
-        <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
-      </div>
-
-      {/* Text Content */}
-      <div className="max-w-lg lg:order-2">
-        <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 dark:text-white">
-          <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD E-Access']} className="text-gray-100 dark:text-gray-300" />
-        </h1>
-        <p className="mt-4 text-gray-100 dark:text-gray-300">
-          Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms and announcements all in one place.
-        </p>
-        <div className="mt-6">
-          <a
-            href="#"
-            className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none"
+            className="flex flex-col lg:h-[32rem] lg:flex-row lg:items-center px-6 py-4 lg:py-16 space-y-6 lg:space-y-0 mt-10"
+            style={{
+              backgroundImage: `url(${images.bg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
           >
-            Explore Our Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+            {/* Left Section */}
+            <div className="container mx-auto lg:w-1/2 p-4">
+              <div className="flex flex-col items-center lg:items-start lg:flex-row">
+                {/* Navigation Buttons */}
+                <div className="flex justify-center order-2 mt-6 lg:mt-0 lg:flex-col lg:space-y-3 lg:mr-8">
+                  <button className="w-3 h-3 mx-2 bg-blue-500 rounded-full focus:outline-none"></button>
+                  <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+                  <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+                  <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full hover:bg-blue-500 focus:outline-none"></button>
+                </div>
 
-  {/* Right Section */}
-  <div className="flex items-center justify-center w-full lg:w-1/2">
-    <Lottie options={defaultOptions} height={400} width={400} />
-  </div>
-</div>
+                {/* Text Content */}
+                <div className="max-w-lg lg:order-2">
+                  <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 dark:text-white">
+                    <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD E-Access']} className="text-gray-100 dark:text-gray-300" />
+                  </h1>
+                  <p className="mt-4 text-gray-100 dark:text-gray-300">
+                    Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms and announcements all in one place.
+                  </p>
+                  <div className="mt-6">
+                    <a
+                      href="#"
+                      className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none"
+                    >
+                      Explore Our Services
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex items-center justify-center w-full lg:w-1/2">
+              <Lottie options={defaultOptions} height={400} width={400} />
+            </div>
+          </div>
 
 
 
@@ -339,26 +339,31 @@ const Home = () => {
             {/* Left Advisory Section */}
   
             <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
+            
               {advisories.slice(0, 3).map((advisory, index) => (
-                <div
-                  key={index}
-                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
-                >
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
-                    {index + 1}
-                  </div>
-                  <a
-                    href={advisory.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
+                <a  href={advisory.url}
+                target="_blank"
+                rel="noopener noreferrer">
+                  <div
+                    key={index}
+                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300 cursor-pointer"
                   >
-                    {advisory.text}
-                  </a>
-                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                    {toCapitalizedCase(advisory.description)}
+                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
+                      {index + 1}
+                    </div>
+                    <a
+                      href={advisory.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
+                    >
+                      {advisory.text}
+                    </a>
+                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
+                      {toCapitalizedCase(advisory.description)}
+                    </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
@@ -374,9 +379,12 @@ const Home = () => {
             {/* Right Advisory Section */}
             <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
               {advisories.slice(3).map((advisory, index) => (
+                <a  href={advisory.url}
+                target="_blank"
+                rel="noopener noreferrer">
                 <div
                   key={index}
-                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300"
+                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300  cursor-pointer"
                 >
                   <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
                     {index + 4}
@@ -393,6 +401,7 @@ const Home = () => {
                   {toCapitalizedCase(advisory.description)}
                   </div>
                 </div>
+                </a>
               ))}
             </div>
           </div>

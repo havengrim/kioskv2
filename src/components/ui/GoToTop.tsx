@@ -36,7 +36,7 @@ const ScrollToTopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-1/2 right-3 z-50 p-4 text-lg text-white bg-red-600 shadow-lg hover:bg-gray-700 transform transition-all duration-300 ease-in-out ${
+      className={`fixed bottom-1/2 right-3 z-50 p-4 text-lg text-white bg-blue-600 shadow-lg hover:bg-gray-700 transform transition-all duration-300 ease-in-out ${
         isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
       }`} // Applying transition for the left-to-right effect
       title="Go to top"
