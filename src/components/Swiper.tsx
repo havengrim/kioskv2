@@ -15,6 +15,7 @@ const imagesCover = [
   images.cse,  // Ensure 'images.cse' is a valid path or imported image
   images.arta,
   images.review,
+  images.neo
 
 ];
 

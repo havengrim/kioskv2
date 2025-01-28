@@ -75,6 +75,7 @@ import lds10 from "@/assets/lds.jpg"
 import welfare2 from "@/assets/welfare2.jpg"
 import pas8 from "@/assets/pas8.jpg"
 import review from "@/assets/review.gif"
+import neo from "@/assets/neo.jpg"
 const images = {
   hrppms,
   lds,
@@ -152,7 +153,8 @@ const images = {
   hrppms2,
   lds10,
   welfare2,
-  review
+  review,
+  neo
 };
 
 export default images;
