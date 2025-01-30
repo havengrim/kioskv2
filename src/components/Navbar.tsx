@@ -4,7 +4,7 @@ import images from "@/assets/images";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white dark:bg-gray-900">
+    <nav className="z-50 bg-white dark:bg-gray-900">
       <div className="container flex flex-col items-center p-6 mx-auto">
         {/* Logos */}
         <div className="flex w-full justify-center items-center gap-6">

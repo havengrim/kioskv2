@@ -16,7 +16,6 @@ const imagesCover = [
   images.arta,
   images.review,
   images.neo
-
 ];
 
 export default function App() {

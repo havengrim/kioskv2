@@ -102,42 +102,42 @@ const Home = () => {
   const forms = [
     {
       title: "Regular, Contractual, and Casual Application for Leave Form",
-      description: "Submit leave applications easily for Regular, Contractual, and Casual employees.",
+      description: "Download and view the leave application form for Permanent, Contractual, and Casual employees.",
       icon: IoDocumentTextOutline,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Regular-Contractual-and-Casual-Application-for-Leave-Form.pdf",
     },
     {
       title: "Contract of Service Application for Leave",
-      description: "Manage leave requests for contract-based employees seamlessly.",
+      description: "Download and view the leave application form for Contract of Service employees.",
       icon: HiOutlineDocumentText,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Contract-of-Service-Application-for-Leave-form.pdf",
     },
     {
       title: "Blank Daily Time Record",
-      description: "Track and log daily attendance with customizable forms.",
+      description: "Download and use the daily time record form for attendance tracking.",
       icon: GrDocumentTime,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Blank-Daily-Time-Record.pdf",
     },
     {
       title: "Overtime Annex C",
-      description: "Submit and approve overtime requests efficiently.",
+      description: "Download the form for submitting and approving overtime requests.",
       icon: LuTimerReset,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Annex-C.pdf",
     },
     {
       title: "Overtime Blank Form",
-      description: "Customize and submit overtime details effortlessly.",
+      description: "Access the overtime submission form.",
       icon: AiOutlineFieldTime,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Blank-Form.pdf",
     },
     {
       title: "Personal Data Sheet",
-      description: "View and download the personal data sheet for reference.",
+      description: "Download and view the personal data sheet for employee reference.",
       icon: GrDocumentUser,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
     },
   ];
-
+  
   const advisories = [
     { 
       text: 'HRMDD MEMORANDUM NO. 01', 
