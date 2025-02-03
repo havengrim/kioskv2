@@ -47,7 +47,7 @@ const Navbar = () => {
             news
           </NavLink>
           <NavLink
-            to="/gallery"
+            to="/info"
             className={({ isActive }) =>
               `mx-2 sm:mx-6 border-b-2 ${
                 isActive
@@ -56,7 +56,7 @@ const Navbar = () => {
               }`
             }
           >
-            gallery
+            info
           </NavLink>
           <NavLink
             to="/settings"

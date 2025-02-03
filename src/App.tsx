@@ -13,6 +13,8 @@ import ChatBotHead from "./components/ChatBotHead";
 import Gallery from "./pages/Gallery";
 import KioskDashboard from "./KioskDashboard";
 import ScrollToTopButton from "./components/ui/GoToTop";
+import Calendar from "./pages/Calendar";
+import Info from "./pages/Info";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
             <Route path="/settings" element={<Settings />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/dashboard" element={<KioskDashboard />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/info" element={<Info />} />
           </Routes>
         </Router>
         <ChatBotHead />

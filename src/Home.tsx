@@ -493,8 +493,27 @@ const Home = () => {
               </div>
             </a>
 
-          </div>
 
+            <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.pas8})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                  <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">SWEAP</h2>
+                        <p className="text-sm">Personnel Administrative Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
+            </a>
+          </div>
+            
           <section className="mt-20 relative">
               <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
                 Employee Summary
