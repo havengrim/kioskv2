@@ -77,6 +77,7 @@ import pas8 from "@/assets/pas8.jpg"
 import review from "@/assets/review.gif"
 import neo from "@/assets/neo.jpg"
 import orgChart from "@/assets/orgChart.jpg"
+import groundFloor from "@/assets/ground_floor.jpg"
 const images = {
   hrppms,
   lds,
@@ -156,7 +157,8 @@ const images = {
   welfare2,
   review,
   neo,
-  orgChart
+  orgChart,
+  groundFloor
 };
 
 export default images;

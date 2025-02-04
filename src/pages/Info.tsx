@@ -4,9 +4,12 @@ import Navbar from "@/components/Navbar";
 import Calendar from "./Calendar";
 import { Card, CardContent } from "@/components/ui/card";
 import images from "@/assets/images";
-
-
+// Import pan and pinch components
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { BiReset, BiPlus, BiMinus, BiTargetLock } from "react-icons/bi";
+import FloorPlanMap from "@/components/FloorPlanMap";
 // Telephone Data Array
+
 const offices = [
   { name: "Office of the Administrative Division Chief", phone: "120", fax: "ADMIN - DC" },
   { name: "General Services Section", phone: "126", fax: "ADMIN - GS" },
@@ -134,8 +137,36 @@ const Info = () => {
         <Calendar />
       </div>
 
-      <div>
-        <img src={images.orgChart} alt="" />
+      {/* Wrap the orgChart image with TransformWrapper and TransformComponent for pan and pinch functionality */}
+      <div className="mt-10 mx-auto w-full max-w-6xl">
+        <TransformWrapper>
+          {({ zoomIn, zoomOut, resetTransform, centerView }) => (
+            <div className="relative">
+              {/* Controls */}
+              <div className="absolute top-2 left-2 flex flex-col gap-2 z-10">
+                <button onClick={() => zoomIn()} className="p-2 bg-green-500 text-white rounded-md">
+                  <BiPlus className="text-lg" />
+                </button>
+                <button onClick={() => zoomOut()} className="p-2 bg-red-500 text-white rounded-md">
+                  <BiMinus className="text-lg" />
+                </button>
+                <button onClick={() => centerView(500)} className="p-2 bg-purple-500 text-white rounded-md">
+                  <BiTargetLock className="text-lg" />
+                </button>
+                <button onClick={() => resetTransform(500)} className="p-2 bg-gray-500 text-white rounded-md">
+                  <BiReset className="text-lg" />
+                </button>
+              </div>
+
+              {/* Zoomable Component */}
+              <TransformComponent>
+                <img src={images.orgChart} alt="Organization Chart" className="w-full" />
+              </TransformComponent>
+            </div>
+          )}
+        </TransformWrapper>
+
+        <FloorPlanMap />
       </div>
     </div>
   );

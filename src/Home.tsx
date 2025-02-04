@@ -494,7 +494,7 @@ const Home = () => {
             </a>
 
 
-            <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
+            {/* <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
               <div className="relative h-32">
                 <Card
                   style={{ backgroundImage: `url(${images.pas8})` }}
@@ -511,7 +511,7 @@ const Home = () => {
                   </div>
                 </Card>
               </div>
-            </a>
+            </a> */}
           </div>
             
           <section className="mt-20 relative">
