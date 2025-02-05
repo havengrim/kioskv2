@@ -78,6 +78,7 @@ import review from "@/assets/review.gif"
 import neo from "@/assets/neo.jpg"
 import orgChart from "@/assets/orgChart.jpg"
 import groundFloor from "@/assets/ground_floor.jpg"
+import secondFloor from "@/assets/secondFloor.jpg"
 const images = {
   hrppms,
   lds,
@@ -158,7 +159,8 @@ const images = {
   review,
   neo,
   orgChart,
-  groundFloor
+  groundFloor,
+  secondFloor
 };
 
 export default images;
