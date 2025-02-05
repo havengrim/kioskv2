@@ -165,7 +165,6 @@ const Info = () => {
             </div>
           )}
         </TransformWrapper>
-
         <FloorPlanMap />
       </div>
     </div>

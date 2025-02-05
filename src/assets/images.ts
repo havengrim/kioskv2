@@ -79,6 +79,7 @@ import neo from "@/assets/neo.jpg"
 import orgChart from "@/assets/orgChart.jpg"
 import groundFloor from "@/assets/ground_floor.jpg"
 import secondFloor from "@/assets/secondFloor.jpg"
+import thirdFloor from "@/assets/thirdFloor.jpg"
 const images = {
   hrppms,
   lds,
@@ -160,7 +161,8 @@ const images = {
   neo,
   orgChart,
   groundFloor,
-  secondFloor
+  secondFloor,
+  thirdFloor
 };
 
 export default images;
