@@ -148,14 +148,17 @@ const FloorPlanMap = () => {
     </div>
   
     <MapContainer center={center} zoom={defaultZoom} style={{ height: "600px", width: "100%" }} crs={CRS.Simple}>
-      <ImageOverlay url={
-        currentFloor === "floor1"
-          ? images.groundFloor
-          : currentFloor === "floor2"
-          ? images.secondFloor
-          : images.thirdFloor  // Add a condition for floor3
-      } bounds={floorPlanBounds} />
-  
+            <ImageOverlay
+          url={
+            currentFloor === "floor1"
+              ? images.groundFloor
+              : currentFloor === "floor2"
+              ? images.secondFloor
+              : images.thirdFloor // This should load the third floor
+          }
+          bounds={floorPlanBounds}
+        />
+
       {searchedDivision && (
         <Marker position={searchedDivision.coordinates} icon={customIcon}>
           <Popup>{searchedDivision.name}</Popup>
