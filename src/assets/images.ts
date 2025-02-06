@@ -80,6 +80,8 @@ import orgChart from "@/assets/orgChart.jpg"
 import groundFloor from "@/assets/ground_floor.jpg"
 import secondFloor from "@/assets/secondFloor.jpg"
 import thirdFloor from "@/assets/thirdFloor.jpg"
+import waitingArea from "@/assets/waitingArea.jpg"
+import mainSecondFloor from "@/assets/mainSecondFloor.jpg"
 const images = {
   hrppms,
   lds,
@@ -162,7 +164,9 @@ const images = {
   orgChart,
   groundFloor,
   secondFloor,
-  thirdFloor
+  thirdFloor,
+  waitingArea,
+  mainSecondFloor
 };
 
 export default images;
