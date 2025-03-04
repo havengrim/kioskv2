@@ -28,6 +28,7 @@ import memo4 from "@/assets/memo/memo4.pdf"
 import memo5 from "@/assets/memo/memo5.pdf"
 import memo6 from "@/assets/memo/memo6.pdf"
 import Example from "./components/FloatingPhone";
+import RevealBento from "./components/RevealBento";
 
 
 interface Position {
@@ -101,6 +102,12 @@ const Home = () => {
 
   const forms = [
     {
+      title: "Personal Data Sheet",
+      description: "Download and view the personal data sheet for employee reference.",
+      icon: GrDocumentUser,
+      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
+    },
+    {
       title: "Regular, Contractual, and Casual Application for Leave Form",
       description: "Download and view the leave application form for Permanent, Contractual, and Casual employees.",
       icon: IoDocumentTextOutline,
@@ -113,7 +120,7 @@ const Home = () => {
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Contract-of-Service-Application-for-Leave-form.pdf",
     },
     {
-      title: "Blank Daily Time Record",
+      title: "Daily Time Record",
       description: "Download and use the daily time record form for attendance tracking.",
       icon: GrDocumentTime,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Blank-Daily-Time-Record.pdf",
@@ -125,49 +132,44 @@ const Home = () => {
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Annex-C.pdf",
     },
     {
-      title: "Overtime Blank Form",
+      title: "Overtime Form",
       description: "Access the overtime submission form.",
       icon: AiOutlineFieldTime,
       link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Blank-Form.pdf",
     },
-    {
-      title: "Personal Data Sheet",
-      description: "Download and view the personal data sheet for employee reference.",
-      icon: GrDocumentUser,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
-    },
+
   ];
   
   const advisories = [
     { 
       text: 'HRMDD MEMORANDUM NO. 01', 
-      description: '2025 LIST OF DESIGNATED ALM VERIFIERS', 
+      description: 'Designated ALM Verifiers for 2025', 
       url: memo1 
     },
     { 
       text: 'HRMDD MEMORANDUM NO. 02', 
       url: memo2, 
-      description: '2025 MEMO_INVITATION TO VIRTUAL ORIENTATION ON VERIFYING eDTR USING ALM' 
+      description: 'Invitation to a virtual orientation on verifying eDTR using ALM' 
     },
     { 
       text: 'HRMDD MEMORANDUM NO. 03 ', 
-      description: '2025 INCREASE ON THE SOCIAL SECURITY SYSTEM (SSS) PREMIUM CONTRIBUTION RATE', 
+      description: 'Increase in the Social Security System (SSS) premium contribution rate 2025', 
       url: memo3
     },
     { 
       text: 'HRMDD MEMORANDUM NO. 04', 
       url: memo4, 
-      description: '2025 Memo Clarifying Attendance to Flag' 
+      description: ' Clarification regarding attendance at the flag ceremony 2025' 
     },
     { 
       text: 'HRMDD MEMORANDUM NO. 05 ', 
       url: memo5, 
-      description: '2025 FACILITATION OF THE APPROVAL AND SIGNING OF CBJD' 
+      description: 'Facilitation of the approval and signing of CBJD' 
     },
     { 
       text: 'HRMDD MEMORANDUM NO. 06', 
       url: memo6, 
-      description: '2025 SUBMISSION OF HRMPSC COMPOSITION' 
+      description: 'Submission of HRMPSC composition' 
     },
   ];
   
@@ -223,15 +225,22 @@ const Home = () => {
 
                 {/* Text Content */}
                 <div className="max-w-lg lg:order-2">
-                  <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-gray-800 dark:text-white">
-                    <Typing speed={100} eraseDelay={2000} text={['Welcome to HRMDD E-Access']} className="text-gray-100 dark:text-gray-300" />
+                  <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide text-white dark:text-white">
+                 <span className="text-wite"> Welcome to HRMDD </span><br />
+                  <Typing
+                    speed={100}
+                    eraseDelay={2000}
+                    text={['e-ACCESS']}
+                    className="text-gray-100 dark:text-gray-300"
+                  />
+
                   </h1>
                   <p className="mt-4 text-gray-100 dark:text-gray-300">
                     Our HRMDD Kiosk streamlines workplace operations, offering intuitive access to HR forms and announcements all in one place.
                   </p>
                   <div className="mt-6">
                     <a
-                      href="#"
+                      href="#selection"
                       className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none"
                     >
                       Explore Our Services
@@ -250,8 +259,113 @@ const Home = () => {
 
 
     <div className="container mx-auto p-4">
+    <App />
+
+    <div className="text-center mt-20" id="selection">
+            <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
+              Select a Division for Updates
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl mb-10">
+              Get the latest news and updates. Choose a section to begin.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-5">
+            <a href="https://fo3.dswd.gov.ph/hrppms/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.slide2})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                    <div className="w-1 h-20 bg-white mr-4"></div>
+                    <div className="flex flex-col justify-center">
+                      <h2 className="font-semibold text-xl">HRPPMS</h2>
+                      <p className="text-sm">Human Resource Planning and Performance Management Section</p>
+                    </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </a>
+            <a href="https://fo3.dswd.gov.ph/lds/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.slide3})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                    <div className="w-1 h-20 bg-white mr-4"></div>
+                    <div className="flex flex-col justify-center">
+                      <h2 className="font-semibold text-xl">LDS</h2>
+                      <p className="text-sm">Learning and Development Section</p>
+                    </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </a>
+            <a href="https://fo3.dswd.gov.ph/hrws/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.slide4  })` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                    <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">HRWS</h2>
+                        <p className="text-sm">Human Resource Welfare Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
+            </a>
+            <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.slide1})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                  <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">PAS</h2>
+                        <p className="text-sm">Personnel Administrative Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
+            </a>
+
+
+            {/* <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
+              <div className="relative h-32">
+                <Card
+                  style={{ backgroundImage: `url(${images.pas8})` }}
+                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
+                  <div className="flex">
+                      <div className="w-1 h-20 bg-white mr-4"></div>
+                      <div className="flex flex-col justify-center">
+                        <h2 className="font-semibold text-xl">SWEAP</h2>
+                        <p className="text-sm">Personnel Administrative Section</p>
+                      </div>
+                      </div>
+                  </div>
+                </Card>
+              </div>
+            </a> */}
+          </div>
         {/* Section Cards */}
-        <section>
+        <section className="mt-20">
         <div className="text-center mt-20">
           <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
             Most Requested Forms
@@ -324,7 +438,8 @@ const Home = () => {
 
         </section>
 
-        <App />
+        
+
 
         <section>
           <div className="text-center mt-20">
@@ -359,8 +474,8 @@ const Home = () => {
                     >
                       {advisory.text}
                     </a>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                      {toCapitalizedCase(advisory.description)}
+                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                      {advisory.description}
                     </div>
                   </div>
                 </a>
@@ -397,8 +512,8 @@ const Home = () => {
                   >
                     {advisory.text}
                   </a>
-                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400 capitalize">
-                  {toCapitalizedCase(advisory.description)}
+                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                   {advisory.description}
                   </div>
                 </div>
                 </a>
@@ -410,109 +525,6 @@ const Home = () => {
 
 
         <div>
-          <div className="text-center mt-12">
-            <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300">
-              Select a Section for Updates
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl mb-10">
-              Get the latest news and updates. Choose a section to begin.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-4 gap-5">
-            <a href="https://fo3.dswd.gov.ph/hrppms/" target="_blank">
-              <div className="relative h-32">
-                <Card
-                  style={{ backgroundImage: `url(${images.hrppms2})` }}
-                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
-                    <div className="flex">
-                    <div className="w-1 h-20 bg-white mr-4"></div>
-                    <div className="flex flex-col justify-center">
-                      <h2 className="font-semibold text-xl">HRPPMS</h2>
-                      <p className="text-sm">Human Resource Planning and Performance Management Section</p>
-                    </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </a>
-            <a href="https://fo3.dswd.gov.ph/lds/" target="_blank">
-              <div className="relative h-32">
-                <Card
-                  style={{ backgroundImage: `url(${images.lds10})` }}
-                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
-                    <div className="flex">
-                    <div className="w-1 h-20 bg-white mr-4"></div>
-                    <div className="flex flex-col justify-center">
-                      <h2 className="font-semibold text-xl">LDS</h2>
-                      <p className="text-sm">Learning and Development Section</p>
-                    </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </a>
-            <a href="https://fo3.dswd.gov.ph/hrws/" target="_blank">
-              <div className="relative h-32">
-                <Card
-                  style={{ backgroundImage: `url(${images.welfare2})` }}
-                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
-                    <div className="flex">
-                      <div className="w-1 h-20 bg-white mr-4"></div>
-                      <div className="flex flex-col justify-center">
-                        <h2 className="font-semibold text-xl">HRWS</h2>
-                        <p className="text-sm">Human Resource Welfare Section</p>
-                      </div>
-                      </div>
-                  </div>
-                </Card>
-              </div>
-            </a>
-            <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
-              <div className="relative h-32">
-                <Card
-                  style={{ backgroundImage: `url(${images.pas8})` }}
-                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
-                  <div className="flex">
-                      <div className="w-1 h-20 bg-white mr-4"></div>
-                      <div className="flex flex-col justify-center">
-                        <h2 className="font-semibold text-xl">PAS</h2>
-                        <p className="text-sm">Personnel Administrative Section</p>
-                      </div>
-                      </div>
-                  </div>
-                </Card>
-              </div>
-            </a>
-
-
-            {/* <a href="https://fo3.dswd.gov.ph/pas/" target="_blank">
-              <div className="relative h-32">
-                <Card
-                  style={{ backgroundImage: `url(${images.pas8})` }}
-                  className="bg-cover bg-no-repeat h-full cursor-pointer bg-center"
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white p-4">
-                  <div className="flex">
-                      <div className="w-1 h-20 bg-white mr-4"></div>
-                      <div className="flex flex-col justify-center">
-                        <h2 className="font-semibold text-xl">SWEAP</h2>
-                        <p className="text-sm">Personnel Administrative Section</p>
-                      </div>
-                      </div>
-                  </div>
-                </Card>
-              </div>
-            </a> */}
-          </div>
             
           <section className="mt-20 relative">
               <h1 className="font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
@@ -523,21 +535,49 @@ const Home = () => {
               <div className="absolute top-40 left-0 flex flex-col gap-4">
                   {/* First Position (position1) */}
                   {positions[0] && (
-                    <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                    <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                       <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                         <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
                           {positions[0].filled}
                         </span>
-                              <h3 className="text-lg font-medium">
+                              <h3 className="text-sm font-medium">
                                   {positions[0]?.name ? toCapitalizedCase(positions[0].name) : "N/A"}
                               </h3>
                       </div>
                     </Card>
+                    
+                  )}
+
+                  {positions[5] && (
+                    <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                      <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                        <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                          {positions[5].filled}
+                        </span>
+                              <h3 className="text-sm font-medium">
+                                  {positions[5]?.name ? toCapitalizedCase(positions[5].name) : "N/A"}
+                              </h3>
+                      </div>
+                    </Card>
+                    
+                  )}
+                  {positions[9] && (
+                    <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                      <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                        <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                          {positions[9].filled}
+                        </span>
+                              <h3 className="text-sm font-medium">
+                                  {positions[9]?.name ? toCapitalizedCase(positions[9].name) : "N/A"}
+                              </h3>
+                      </div>
+                    </Card>
+                    
                   )}
 
                   {/* Lines connecting the cards */}
-                  <div className="absolute -right-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
-                  <div className="absolute -right-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full -rotate-45"></div>
+                  {/* <div className="absolute -right-32 top-1/2 transform -translate-rm -translate-y-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+                  <div className="absolute -right-[9.9rem] top-[80px] transfo1/2 w-0.5 h-20 bg-blue-500 rounded-full -rotate-45"></div> */}
                 </div>
                               {/* Line connecting to phone */}
               <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-px h-48 bg-gradient-to-b from-transparent to-purple-500"></div>
@@ -546,12 +586,26 @@ const Home = () => {
               <div className="absolute top-40 right-0 flex flex-col gap-4">
                 {/* Second Position (position2) */}
                 {positions[1] && (
-                  <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-sm mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                  <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
                     <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
                       <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
                         {positions[1].filled}
                       </span>
-                        <h3 className="text-lg font-medium">
+                        <h3 className="text-sm font-medium">
+                          {positions[2]?.name ? toCapitalizedCase(positions[2].name) : "N/A"}
+                        </h3>
+
+                    </div>
+                  </Card>
+                )}
+
+              {positions[1] && (
+                  <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                    <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                      <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                        {positions[1].filled}
+                      </span>
+                        <h3 className="text-sm font-medium">
                           {positions[1]?.name ? toCapitalizedCase(positions[1].name) : "N/A"}
                         </h3>
 
@@ -559,8 +613,23 @@ const Home = () => {
                   </Card>
                 )}
 
-              <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
-              <div className="absolute -left-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full rotate-45"></div>
+                {positions[3] && (
+                  <Card className="bg-white shadow-md rounded-xl overflow-hidden max-w-xs mx-auto transition-transform transform hover:scale-105 hover:shadow-lg z-10">
+                    <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-t-xl flex items-center gap-4 justify-center">
+                      <span className="bg-white text-indigo-600 text-xl font-bold p-3 rounded-md shadow-md">
+                        {positions[3].filled}
+                      </span>
+                        <h3 className="text-sm font-medium">
+                          {positions[3]?.name ? toCapitalizedCase(positions[3].name) : "N/A"}
+                        </h3>
+
+                    </div>
+                  </Card>
+                )}
+                
+
+              {/* <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 w-36 h-0.5 bg-blue-500 z-0"></div>
+              <div className="absolute -left-[9.9rem] top-[80px] transform -translate-y-1/2 w-0.5 h-20 bg-blue-500 rounded-full rotate-45"></div> */}
               </div>
 
               <p className="text-gray-600 dark:text-gray-400 text-center mb-6">
@@ -570,9 +639,7 @@ const Home = () => {
 
                 
             </section>
-
-
-          
+            <RevealBento />
 
           <section className="py-16 bg-gradient-to-b mt-20 from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
               <div className="mx-auto px-6 lg:px-8 max-w-7xl">
@@ -582,6 +649,7 @@ const Home = () => {
                     <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 text-center mb-10">
                       Join us on a transformative journey toward innovation and success.
                     </p>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
                   {/* Image Section */}
                   

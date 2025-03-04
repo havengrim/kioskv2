@@ -8,7 +8,7 @@ const Calendar = () => {
       <p className=" text-gray-600 dark:text-gray-400 max-w-2xl text-center">
         Stay up to date with upcoming events, meetings, and important schedules 
         from the HRMDD
-      </p>
+      </p>    
 
       <div className="mt-10 w-full max-w-7xl overflow-hidden rounded-lg shadow-lg dark:bg-gray-800 dark:border dark:border-gray-700">
         <iframe

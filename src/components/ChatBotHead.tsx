@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
 import { BsChatDots } from "react-icons/bs";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog"; // Import ShadCN's Dialog components
-import images from "@/assets/images";
+import ReactQRCode from "react-qr-code"; // Import ReactQRCode
 
 const ChatBotHead = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Show popup every 5 seconds
     const popupInterval = setInterval(() => {
       setShowPopup(true);
       setTimeout(() => {
-        setShowPopup(false); // Hide popup after a short duration (e.g., 5 seconds)
+        setShowPopup(false);
       }, 5000);
-    }, 5000); // Show every 5 seconds
+    }, 5000);
 
-    return () => clearInterval(popupInterval); // Clean up interval when component unmounts
+    return () => clearInterval(popupInterval);
   }, []);
 
   return (
@@ -41,14 +40,17 @@ const ChatBotHead = () => {
 
           {/* QR Code Dialog Content */}
           <DialogContent className="sm:max-w-[425px] w-[90%] dark:text-white">
-            <DialogTitle className="dark:text-white">Scan the QR Code</DialogTitle>
-            <DialogDescription>
-              <img
-                src={images.chatQR}
-                alt="QR Code"
-                className="w-48 h-48 mx-auto mb-4 border-2 p-2 rounded-md"
-              />
-              <p className="text-center text-gray-800 dark:text-white">
+            <DialogTitle className="dark:text-white text-center">Scan the QR Code</DialogTitle>
+            <DialogDescription className="flex flex-col items-center">
+              <div className="bg-white p-4 border-2 rounded-md">
+                <ReactQRCode
+                  value="https://www.google.com/" // Replace with your chatbot URL
+                  size={192}
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                />
+              </div>
+              <p className="text-center text-gray-800 dark:text-white mt-4">
                 Scan this QR code for your inquiry.
               </p>
             </DialogDescription>

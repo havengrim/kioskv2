@@ -35,18 +35,6 @@ const Navbar = () => {
             home
           </NavLink>
           <NavLink
-            to="/announcements"
-            className={({ isActive }) =>
-              `mx-2 sm:mx-6 border-b-2 ${
-                isActive
-                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
-                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
-              }`
-            }
-          >
-            news
-          </NavLink>
-          <NavLink
             to="/info"
             className={({ isActive }) =>
               `mx-2 sm:mx-6 border-b-2 ${
@@ -57,6 +45,18 @@ const Navbar = () => {
             }
           >
             info
+          </NavLink>
+          <NavLink
+            to="/feedback"
+            className={({ isActive }) =>
+              `mx-2 sm:mx-6 border-b-2 ${
+                isActive
+                  ? "border-blue-500 text-gray-800 dark:text-gray-200"
+                  : "border-transparent hover:text-gray-800 dark:hover:text-gray-200 hover:border-blue-500"
+              }`
+            }
+          >
+            Feedback
           </NavLink>
           <NavLink
             to="/settings"

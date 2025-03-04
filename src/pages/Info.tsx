@@ -3,11 +3,13 @@ import Fuse from "fuse.js";
 import Navbar from "@/components/Navbar";
 import Calendar from "./Calendar";
 import { Card, CardContent } from "@/components/ui/card";
-import images from "@/assets/images";
-// Import pan and pinch components
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { BiReset, BiPlus, BiMinus, BiTargetLock } from "react-icons/bi";
+// import images from "@/assets/images";
+// // Import pan and pinch components
+// import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+// import { BiReset, BiPlus, BiMinus, BiTargetLock } from "react-icons/bi";
 import FloorPlanMap from "@/components/FloorPlanMap";
+import OrgChart from "@/components/OrgChart";
+
 // Telephone Data Array
 
 const offices = [
@@ -80,6 +82,15 @@ const Info = () => {
   return (
     <div>
       <Navbar />
+      <div className="container mx-auto p-4 lg:pl-10">
+        <h1 className="mt-10 font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
+        DSWD Office Guide & Map
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 text-center mb-6">
+        Lost? Use this map to find your way around the DSWD office.
+        </p>
+      <FloorPlanMap />
+      </div>
       <div className="container mx-auto p-4 lg:pl-20">
         <h1 className="mt-10 font-bold mb-4 text-3xl sm:text-4xl leading-tight text-gray-700 dark:text-gray-300 text-center">
           DSWD Regional Office Contact Numbers
@@ -139,10 +150,10 @@ const Info = () => {
 
       {/* Wrap the orgChart image with TransformWrapper and TransformComponent for pan and pinch functionality */}
       <div className="mt-10 mx-auto w-full max-w-6xl">
-        <TransformWrapper>
+        {/* <TransformWrapper>
           {({ zoomIn, zoomOut, resetTransform, centerView }) => (
             <div className="relative">
-              {/* Controls */}
+      
               <div className="absolute top-2 left-2 flex flex-col gap-2 z-10">
                 <button onClick={() => zoomIn()} className="p-2 bg-green-500 text-white rounded-md">
                   <BiPlus className="text-lg" />
@@ -158,14 +169,13 @@ const Info = () => {
                 </button>
               </div>
 
-              {/* Zoomable Component */}
               <TransformComponent>
                 <img src={images.orgChart} alt="Organization Chart" className="w-full" />
               </TransformComponent>
             </div>
           )}
-        </TransformWrapper>
-        <FloorPlanMap />
+        </TransformWrapper> */}
+        <OrgChart />
       </div>
     </div>
   );

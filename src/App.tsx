@@ -15,7 +15,7 @@ import KioskDashboard from "./KioskDashboard";
 import ScrollToTopButton from "./components/ui/GoToTop";
 import Calendar from "./pages/Calendar";
 import Info from "./pages/Info";
-
+import Feedback from "./pages/Feedback";
 const App = () => {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
@@ -34,6 +34,7 @@ const App = () => {
             <Route path="/dashboard" element={<KioskDashboard />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/info" element={<Info />} />
+            <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </Router>
         <ChatBotHead />

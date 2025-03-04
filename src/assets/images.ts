@@ -75,13 +75,14 @@ import lds10 from "@/assets/lds.jpg"
 import welfare2 from "@/assets/welfare2.jpg"
 import pas8 from "@/assets/pas8.jpg"
 import review from "@/assets/review.gif"
-import neo from "@/assets/neo.jpg"
+import neo from "@/assets/neo.png"
 import orgChart from "@/assets/orgChart.jpg"
 import groundFloor from "@/assets/ground_floor.jpg"
 import secondFloor from "@/assets/secondFloor.jpg"
 import thirdFloor from "@/assets/thirdFloor.jpg"
 import waitingArea from "@/assets/waitingArea.jpg"
 import mainSecondFloor from "@/assets/mainSecondFloor.jpg"
+import women from "@/assets/womens.png"
 const images = {
   hrppms,
   lds,
@@ -166,7 +167,8 @@ const images = {
   secondFloor,
   thirdFloor,
   waitingArea,
-  mainSecondFloor
+  mainSecondFloor,
+  women
 };
 
 export default images;
