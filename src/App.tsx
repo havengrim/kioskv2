@@ -16,10 +16,14 @@ import ScrollToTopButton from "./components/ui/GoToTop";
 import Calendar from "./pages/Calendar";
 import Info from "./pages/Info";
 import Feedback from "./pages/Feedback";
+import FeedbackDialog from "./components/FeedbackDialog";
+import { Toaster } from "sonner";
+
 const App = () => {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="dark:bg-gray-900 bg-white">
+      <Toaster position="top-right" richColors />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,6 +39,7 @@ const App = () => {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/info" element={<Info />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="/barometer" element={<FeedbackDialog />} />
           </Routes>
         </Router>
         <ChatBotHead />

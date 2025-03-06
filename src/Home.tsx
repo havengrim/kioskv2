@@ -29,6 +29,7 @@ import memo5 from "@/assets/memo/memo5.pdf"
 import memo6 from "@/assets/memo/memo6.pdf"
 import Example from "./components/FloatingPhone";
 import RevealBento from "./components/RevealBento";
+import Barometer from "@/components/FeedbackDialog"
 
 
 interface Position {
@@ -256,7 +257,7 @@ const Home = () => {
             </div>
           </div>
 
-
+          <Barometer />
 
     <div className="container mx-auto p-4">
     <App />

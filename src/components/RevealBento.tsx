@@ -12,7 +12,7 @@ interface RowData {
 
 const GridLayout = () => {
   return (
-    <div className="flex px-6 py-16 text-zinc-900 mt-10">
+    <div className="flex px-6 py-16 text-zinc-900">
       <div className="mx-auto w-full grid grid-cols-12 gap-6">
         <HeaderBlock />
         <SocialsBlock />
@@ -59,7 +59,7 @@ const HeaderBlock = () => {
   }, []);
 
   return (
-    <Block className="col-span-3 md:col-span-3 cursor-pointer">
+    <Block className="col-span-3 md:col-span-3">
       {row4Data && (
         <div className="flex flex-col items-center">
           <FiUsers className="text-4xl text-zinc-500 mb-3" /> {/* New modern icon */}
@@ -106,7 +106,7 @@ const SocialsBlock = () => {
   return (
     <>
       {Object.keys(rowData).map((key) => (
-        <Block key={key} className="col-span-3 md:col-span-3 cursor-pointer">
+        <Block key={key} className="col-span-3 md:col-span-3">
           <FiUsers className="text-4xl text-zinc-500 mb-3" /> {/* New modern icon */}
           <h1 className="text-5xl font-extrabold dark:text-zinc-400 text-zinc-900">
             {rowData[key].Filled}

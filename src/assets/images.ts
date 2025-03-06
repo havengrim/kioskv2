@@ -83,6 +83,9 @@ import thirdFloor from "@/assets/thirdFloor.jpg"
 import waitingArea from "@/assets/waitingArea.jpg"
 import mainSecondFloor from "@/assets/mainSecondFloor.jpg"
 import women from "@/assets/womens.png"
+import sad from "@/assets/sad.png"
+import happy from "@/assets/happy.png"
+import okay from "@/assets/okay.png"
 const images = {
   hrppms,
   lds,
@@ -168,7 +171,10 @@ const images = {
   thirdFloor,
   waitingArea,
   mainSecondFloor,
-  women
+  women,
+  happy,
+  sad,
+  okay
 };
 
 export default images;

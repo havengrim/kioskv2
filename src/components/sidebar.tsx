@@ -48,7 +48,7 @@ const Sidebar = () => {
             </a>
 
             <a
-            href="/gallery"
+            href="/gallery  "
             className="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 flex flex-col items-center"
             >
             <TbPhoto className="w-6 h-6" />

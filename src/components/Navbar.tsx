@@ -46,7 +46,7 @@ const Navbar = () => {
           >
             info
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/feedback"
             className={({ isActive }) =>
               `mx-2 sm:mx-6 border-b-2 ${
@@ -57,7 +57,7 @@ const Navbar = () => {
             }
           >
             Feedback
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/settings"
             className={({ isActive }) =>

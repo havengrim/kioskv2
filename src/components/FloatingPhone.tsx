@@ -15,7 +15,7 @@ type Position = {
   unfilled: number;
 };
 
-const Example = () => {
+const   Example = () => {
   const [positions, setPositions] = useState<Position[]>([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
