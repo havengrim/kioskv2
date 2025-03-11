@@ -66,7 +66,7 @@ const HeaderBlock = () => {
           <h1 className="mb-2 text-5xl font-extrabold text-zinc-900 dark:text-zinc-400 ">
             {row4Data.Filled}
           </h1>
-          <p className="text-lg font-medium text-zinc-500">{row4Data.Title}</p>
+          <p className="text-sm font-medium text-zinc-500">{row4Data.Title}</p>
         </div>
       )}
     </Block>

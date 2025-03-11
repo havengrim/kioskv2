@@ -12,6 +12,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // Assuming 'images' is an object or array imported correctly from "@/assets/images"
 const imagesCover = [
+  images.praise,
   images.women,
   images.arta,
   images.neo,
@@ -25,7 +26,7 @@ export default function App() {
         centeredSlides={true}
         loop={true}
         autoplay={{
-          delay: 5000,
+          delay: 20000,
           disableOnInteraction: false,
         }}
         pagination={{

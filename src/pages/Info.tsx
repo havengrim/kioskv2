@@ -29,7 +29,7 @@ const offices = [
   { name: "Human Resource Welfare Section - Clinic", phone: "143", fax: "HRWS - CLINIC" },
   { name: "Internal Audit Unit", phone: "128", fax: "IAU" },
   { name: "ICTMS Section", phone: "159", fax: "ICTMS" },
-  { name: "Learning and Development Section", phone: "131", fax: "LDS" },
+  { name: "Learning and Development Section", phone: "111", fax: "LDS" },
   { name: "Legal Unit", phone: "114", fax: "LEGAL" },
   { name: "Main Building - Guard", phone: "112", fax: "MAIN BUILDING" },
   { name: "Office of the Regional Director", phone: "154", fax: "ORD - ADMIN" },
@@ -47,7 +47,8 @@ const offices = [
   { name: "Technical Assistance and Advisory", phone: "147", fax: "TAAORS" },
   { name: "Regional Resource Logistic Management Section", phone: "136", fax: "DRRS/RRLMS" },
   { name: "Innovation Division", phone: "148", fax: "T8TP - RPMO / PAG ABOT" },
-  { name: "Disaster Response and Information Management Section", phone: "117", fax: "DRIMS-DRMD" }
+  { name: "Disaster Response and Information Management Section", phone: "117", fax: "DRIMS-DRMD" },
+  { name: "Human Resource - ODC", phone: "115", fax: "HR-ODC" }
 ];
 
 const Info = () => {

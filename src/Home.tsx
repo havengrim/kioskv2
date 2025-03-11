@@ -106,37 +106,43 @@ const Home = () => {
       title: "Personal Data Sheet",
       description: "Download and view the personal data sheet for employee reference.",
       icon: GrDocumentUser,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
+      link: "https://docs.google.com/spreadsheets/d/15q6RhXWmajWXeWz7TRlmwh7Sp8HYlW65yQlYpE0J7Og/edit?gid=1257943944#gid=1257943944",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/12/CS-Form-No.-212-Personal-Data-Sheet-revised.xlsx",
     },
     {
       title: "Regular, Contractual, and Casual Application for Leave Form",
       description: "Download and view the leave application form for Permanent, Contractual, and Casual employees.",
       icon: IoDocumentTextOutline,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Regular-Contractual-and-Casual-Application-for-Leave-Form.pdf",
+      link: "https://drive.google.com/file/d/1Jt9_zJhFoLiDvAoIVkjRdeZOpNJxb-GY/preview",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Regular-Contractual-and-Casual-Application-for-Leave-Form.pdf",
     },
     {
       title: "Contract of Service Application for Leave",
       description: "Download and view the leave application form for Contract of Service employees.",
       icon: HiOutlineDocumentText,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Contract-of-Service-Application-for-Leave-form.pdf",
+      link:"https://drive.google.com/file/d/1P0qUhYDghoOYgV22rupHkdgULTlbP4v7/preview",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Contract-of-Service-Application-for-Leave-form.pdf",
     },
     {
       title: "Daily Time Record",
       description: "Download and use the daily time record form for attendance tracking.",
       icon: GrDocumentTime,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Blank-Daily-Time-Record.pdf",
+      link:"https://drive.google.com/file/d/1bPwOmmfo75a4zTmEtNCX1Rc7huxVdz1t/preview",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Blank-Daily-Time-Record.pdf",
     },
     {
       title: "Overtime Annex C",
       description: "Download the form for submitting and approving overtime requests.",
       icon: LuTimerReset,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Annex-C.pdf",
+      link: "https://drive.google.com/file/d/1BALdJd2lITMoZnhNtVWUHdUw1U-EPXx7/preview",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Annex-C.pdf",
     },
     {
       title: "Overtime Form",
       description: "Access the overtime submission form.",
       icon: AiOutlineFieldTime,
-      link: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Blank-Form.pdf",
+      link:"https://drive.google.com/file/d/1Ro52BLypJwXWgl0xtMZIV20HdWEeF1DI/preview",
+      Downloadlink: "https://fo3.dswd.gov.ph/wp-content/uploads/2024/07/Overtime-Blank-Form.pdf",
     },
 
   ];
@@ -398,21 +404,29 @@ const Home = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-4 mt-6 items-center">
-                  <a
-                    href={form.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white bg-blue-600 hover:bg-blue-700 rounded-md px-4 py-2 transition-colors"
-                  >
-                    View Form
-                  </a>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="text-white bg-blue-600 hover:bg-blue-700 rounded-md px-4 py-2 transition-colors">
+                      View Form
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="w-[90vw] h-[80vh] max-w-5xl">
+                    <iframe
+                      src={form.link}
+                      width="100%"
+                      height="100%"
+                      className="rounded-md border"
+                      allow="autoplay"
+                    />
+                  </DialogContent>
+                </Dialog>
 
                   {/* QR Code Button */}
                   <div>
                     <Dialog>
                       <DialogTrigger asChild>
                         <button
-                          onClick={() => setSelectedQRCode(form.link)}
+                         onClick={() => setSelectedQRCode(form.Downloadlink ?? '')}
                           className="text-white hover:underline transition-colors"
                         >
                           Show QR Code
