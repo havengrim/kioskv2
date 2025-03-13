@@ -87,6 +87,7 @@ import sad from "@/assets/sad.png"
 import happy from "@/assets/happy.png"
 import okay from "@/assets/okay.png"
 import praise from "@/assets/praise.gif"
+import coffeeBreak from "@/assets/lds-1.png"
 const images = {
   hrppms,
   lds,
@@ -176,7 +177,8 @@ const images = {
   happy,
   sad,
   okay,
-  praise
+  praise,
+  coffeeBreak
 };
 
 export default images;

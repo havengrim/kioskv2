@@ -13,6 +13,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 // Assuming 'images' is an object or array imported correctly from "@/assets/images"
 const imagesCover = [
   images.praise,
+  images.coffeeBreak,
   images.women,
   images.arta,
   images.neo,

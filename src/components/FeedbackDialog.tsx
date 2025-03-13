@@ -39,9 +39,9 @@ const handleSubmit = (
   setSelectedMood: (mood: "Happy" | "Neutral" | "Sad" | null) => void,
   setQuote: (quote: string) => void
 ) => {
-  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScjO7npU8dlivNUtvaMV6vo_RQkkyVCFNM9tQK2Hc26MJSVnw/formResponse";
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScIgtP3u_LjAEPqIxtJWWNRgjWMlSjiZgOIFajeQGwQMTLnhw/formResponse";
   const formData = new FormData();
-  formData.append("entry.510663196", mood);
+  formData.append("entry.1119164033", mood);
 
   fetch(formUrl, {
     method: "POST",
