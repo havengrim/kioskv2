@@ -131,7 +131,7 @@ const FeedbackDialog = () => {
             <div className="flex justify-center gap-12 mt-14 mb-8">
               <Button
                 onClick={() => handleSubmit("Happy", setOpen, setSelectedMood, setQuote)}
-                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all"
+                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all border-none shadow-none outline-none focus:ring-0"
               >
                 <img src={images.happy} alt="Happy" className="w-32 h-32" />
                 <span className="text-gray-800 font-semibold text-2xl">Happy</span>
@@ -139,7 +139,7 @@ const FeedbackDialog = () => {
 
               <Button
                 onClick={() => handleSubmit("Neutral", setOpen, setSelectedMood, setQuote)}
-                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all"
+                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all border-none shadow-none outline-none focus:ring-0"
               >
                 <img src={images.okay} alt="Neutral" className="w-32 h-32" />
                 <span className="text-gray-800 font-semibold text-2xl">Okay na 'to</span>
@@ -147,7 +147,7 @@ const FeedbackDialog = () => {
 
               <Button
                 onClick={() => handleSubmit("Sad", setOpen, setSelectedMood, setQuote)}
-                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all"
+                className="flex flex-col items-center gap-4 px-12 py-8 bg-white hover:bg-white rounded-2xl transition-all border-none shadow-none outline-none focus:ring-0"
               >
                 <img src={images.sad} alt="Sad" className="w-32 h-32" />
                 <span className="text-gray-800 font-semibold text-2xl">Sad</span>

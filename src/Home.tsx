@@ -13,7 +13,7 @@ import { LuTimerReset } from "react-icons/lu";
 import { GrDocumentUser } from "react-icons/gr";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import ReactQRCode from 'react-qr-code';
-import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose, DialogHeader } from '@/components/ui/dialog';
 import Typing from 'react-typing-effect';
 import AOS from "aos";
 import "aos/dist/aos.css"; // import AOS styles
@@ -21,12 +21,12 @@ import Lottie from 'react-lottie';
 import animationData from '@/assets/lottie.json';
 import { RiArrowUpDoubleFill } from "react-icons/ri";
 import App from "./components/Swiper";
-import memo1 from "@/assets/memo/memo1.pdf"
-import memo2 from "@/assets/memo/memo2.pdf"
-import memo3 from "@/assets/memo/memo3.pdf"
-import memo4 from "@/assets/memo/memo4.pdf"
-import memo5 from "@/assets/memo/memo5.pdf"
-import memo6 from "@/assets/memo/memo6.pdf"
+import memo13 from "@/assets/memo/HRMDD-MEMO-13.pdf"
+import memo15 from "@/assets/memo/HRMDD-MEMO-15.pdf"
+import memo16 from "@/assets/memo/HRMDD-MEMO-16.pdf"
+import memo17 from "@/assets/memo/HRMDD-MEMO-17.pdf"
+import memo18 from "@/assets/memo/HRMDD-MEMO-18.pdf"
+import memo23 from "@/assets/memo/HRMDD-MEMO-23.pdf"
 import Example from "./components/FloatingPhone";
 import RevealBento from "./components/RevealBento";
 import Barometer from "@/components/FeedbackDialog"
@@ -149,34 +149,34 @@ const Home = () => {
   
   const advisories = [
     { 
-      text: 'HRMDD MEMORANDUM NO. 01', 
-      description: 'Designated ALM Verifiers for 2025', 
-      url: memo1 
+      text: 'HRMDD MEMORANDUM NO. 13', 
+      description: 'Tracking of Learning and Development Interventions Provided and Distribution of Training Kits', 
+      url: memo13 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 02', 
-      url: memo2, 
-      description: 'Invitation to a virtual orientation on verifying eDTR using ALM' 
+      text: 'HRMDD MEMORANDUM NO. 15', 
+      url: memo15, 
+      description: 'Revised Dress Code for Government Officials and Employees.' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 03 ', 
-      description: 'Increase in the Social Security System (SSS) premium contribution rate 2025', 
-      url: memo3
+      text: 'HRMDD MEMORANDUM NO. 16 ', 
+      description: ' Extension on the Submission of CY 2024 2nd Semester Performance Ratings.', 
+      url: memo16
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 04', 
-      url: memo4, 
-      description: ' Clarification regarding attendance at the flag ceremony 2025' 
+      text: 'HRMDD MEMORANDUM NO. 17', 
+      url: memo17, 
+      description: 'Optional Availment of Wellness Session' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 05 ', 
-      url: memo5, 
-      description: 'Facilitation of the approval and signing of CBJD' 
+      text: 'HRMDD MEMORANDUM NO. 18 ', 
+      url: memo18, 
+      description: 'Last Call for the Submission of CY 2025 MOA Contract for Renewal' 
     },
     { 
-      text: 'HRMDD MEMORANDUM NO. 06', 
-      url: memo6, 
-      description: 'Submission of HRMPSC composition' 
+      text: 'HRMDD MEMORANDUM NO. 23', 
+      url: memo23, 
+      description: 'Gender and Development (GAD) Training Mapping' 
     },
   ];
   
@@ -470,31 +470,38 @@ const Home = () => {
   
             <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
             
-              {advisories.slice(0, 3).map((advisory, index) => (
-                <a  href={advisory.url}
-                target="_blank"
-                rel="noopener noreferrer">
+            {advisories.slice(0, 3).map((advisory, index) => (
+              <Dialog key={index}>
+                <DialogTrigger asChild>
                   <div
-                    key={index}
                     className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300 cursor-pointer"
                   >
                     <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
                       {index + 1}
                     </div>
-                    <a
-                      href={advisory.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
-                    >
+                    <h3 className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400">
                       {advisory.text}
-                    </a>
-                    <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                       {advisory.description}
-                    </div>
+                    </p>
                   </div>
-                </a>
-              ))}
+                </DialogTrigger>
+                <DialogContent className="p-6 flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 w-[90vw] max-w-3xl h-full">
+                  <DialogHeader>
+                    <DialogTitle className="text-lg font-semibold">{advisory.text} -   {advisory.description}</DialogTitle>
+                  </DialogHeader>
+                  <div className="mt-4 w-full h-full">
+                    <iframe
+                      src={advisory.url}
+                      className="w-full h-full border-none"
+                    ></iframe>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+
+
             </div>
 
             {/* Center Picture Section */}
@@ -508,31 +515,38 @@ const Home = () => {
 
             {/* Right Advisory Section */}
             <div className="hidden lg:flex flex-col gap-6 lg:w-1/4">
-              {advisories.slice(3).map((advisory, index) => (
-                <a  href={advisory.url}
-                target="_blank"
-                rel="noopener noreferrer">
-                <div
-                  key={index}
-                  className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300  cursor-pointer"
-                >
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
-                    {index + 4}
-                  </div>
-                  <a
-                    href={advisory.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400"
+            {advisories.slice(3).map((advisory, index) => (
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <div
+                    className="relative p-6 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-colors duration-300 cursor-pointer"
                   >
-                    {advisory.text}
-                  </a>
-                  <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                   {advisory.description}
+                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center shadow">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-lg font-semibold leading-relaxed hover:text-blue-600 dark:hover:text-blue-400">
+                      {advisory.text}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                      {advisory.description}
+                    </p>
                   </div>
-                </div>
-                </a>
-              ))}
+                </DialogTrigger>
+                <DialogContent className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 w-[90vw] max-w-3xl h-[80vh]">
+                  <DialogHeader>
+                    <DialogTitle className="text-lg font-semibold">{advisory.text} -   {advisory.description} </DialogTitle>
+                    
+                  </DialogHeader>
+                  <div className="mt-4 w-full h-full">
+                    <iframe
+                      src={advisory.url}
+                      className="w-full h-full border-none"
+                    ></iframe>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+
             </div>
           </div>
       </section>
